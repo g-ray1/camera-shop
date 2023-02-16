@@ -4,7 +4,30 @@ type PreviewCardProps = {
   product: Camera;
 };
 
-function PreviewCard({product}: PreviewCardProps):JSX.Element {
+function PreviewCard({ product }: PreviewCardProps): JSX.Element {
+
+  const getStars = () => {
+    const stars = [];
+
+    for (let i = 1; i <= 5; i++) {
+      if (i <= product.rating) {
+        stars.push(
+          <svg width="17" height="16" aria-hidden="true">
+            <use xlinkHref="#icon-full-star"></use>
+          </svg>
+        );
+      } else {
+        stars.push(
+          <svg width="17" height="16" aria-hidden="true">
+            <use xlinkHref="#icon-star"></use>
+          </svg>
+        );
+      }
+    }
+
+    return stars;
+  };
+
   return (
     <div className="product-card">
       <div className="product-card__img">
@@ -24,21 +47,9 @@ function PreviewCard({product}: PreviewCardProps):JSX.Element {
       </div>
       <div className="product-card__info">
         <div className="rate product-card__rate">
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-full-star"></use>
-          </svg>
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-full-star"></use>
-          </svg>
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-full-star"></use>
-          </svg>
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-star"></use>
-          </svg>
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-star"></use>
-          </svg>
+
+          {getStars()}
+
           <p className="visually-hidden">Рейтинг: {product.rating}</p>
           <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>
         </div>
