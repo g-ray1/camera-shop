@@ -3,13 +3,14 @@ import PreviewCard from '../preview-card/preview-card';
 
 type PreviewCardsListProps = {
   products: Camera[];
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-function PreviewCardsList({products}: PreviewCardsListProps): JSX.Element {
+function PreviewCardsList({products, setActive}: PreviewCardsListProps): JSX.Element {
   return (
     <div className="cards catalog__cards">
 
-      {products.map((product)=> <PreviewCard product={product} key={product.id}/>)}
+      {products.map((product)=> <PreviewCard product={product} setActive={setActive} key={product.id}/>)}
 
     </div>
   );

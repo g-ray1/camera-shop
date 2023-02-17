@@ -1,10 +1,12 @@
+import { Link } from 'react-router-dom';
 import { Camera } from '../../types/types';
 
 type PreviewCardProps = {
   product: Camera;
+  setActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function PreviewCard({ product }: PreviewCardProps): JSX.Element {
+function PreviewCard({ product, setActive }: PreviewCardProps): JSX.Element {
 
   const getStars = () => {
     const stars = [];
@@ -27,6 +29,8 @@ function PreviewCard({ product }: PreviewCardProps): JSX.Element {
 
     return stars;
   };
+
+  const handleClick = () => setActive(true);
 
   return (
     <div className="product-card">
@@ -57,9 +61,8 @@ function PreviewCard({ product }: PreviewCardProps): JSX.Element {
         <p className="product-card__price"><span className="visually-hidden">Цена:</span>{`${product.price} ₽`}</p>
       </div>
       <div className="product-card__buttons">
-        <button className="btn btn--purple product-card__btn" type="button">Купить
-        </button>
-        <a className="btn btn--transparent" href="#">Подробнее</a>
+        <button className="btn btn--purple product-card__btn" type="button" onClick={handleClick}>Купить</button>
+        <Link className="btn btn--transparent" to={`/product/${product.id}`}>Подробнее</Link>
       </div>
     </div>
   );

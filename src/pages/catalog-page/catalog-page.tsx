@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import AddItemModal from '../../components/add-item-modal/add-item-modal';
 import Banner from '../../components/banner/banner';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import CatalogFilter from '../../components/catalog-filter/catalog-filter';
@@ -7,6 +9,7 @@ import PreviewCardsList from '../../components/preview-cards-list/preview-cards-
 import { cameras } from '../../mocks/cameras';
 
 function CatalogPage(): JSX.Element {
+  const [modalIsActive, setModaIMode] = useState(false);
 
   return (
     <main>
@@ -28,7 +31,7 @@ function CatalogPage(): JSX.Element {
 
                 <CatalogSort />
 
-                <PreviewCardsList products={cameras} />
+                <PreviewCardsList products={cameras} setActive={setModaIMode}/>
 
                 <PaginationList />
 
@@ -37,6 +40,9 @@ function CatalogPage(): JSX.Element {
           </div>
         </section>
       </div>
+
+      {modalIsActive && <AddItemModal setDisactive={setModaIMode} />}
+
     </main>
   );
 }
