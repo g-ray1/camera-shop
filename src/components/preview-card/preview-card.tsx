@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useAppDispatch } from '../../hooks/hooks';
+import { setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
 
 type PreviewCardProps = {
   product: Camera;
-  setActive: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-function PreviewCard({ product, setActive }: PreviewCardProps): JSX.Element {
+function PreviewCard({ product }: PreviewCardProps): JSX.Element {
+
+  const dispatch = useAppDispatch();
+
+  const handleBuyButtoneClick = () => dispatch(setModalMode(true));
 
   const getStars = () => {
     const stars = [];
@@ -29,8 +34,6 @@ function PreviewCard({ product, setActive }: PreviewCardProps): JSX.Element {
 
     return stars;
   };
-
-  const handleClick = () => setActive(true);
 
   return (
     <div className="product-card">
@@ -61,7 +64,7 @@ function PreviewCard({ product, setActive }: PreviewCardProps): JSX.Element {
         <p className="product-card__price"><span className="visually-hidden">Цена:</span>{`${product.price} ₽`}</p>
       </div>
       <div className="product-card__buttons">
-        <button className="btn btn--purple product-card__btn" type="button" onClick={handleClick}>Купить</button>
+        <button className="btn btn--purple product-card__btn" type="button" onClick={handleBuyButtoneClick}>Купить</button>
         <Link className="btn btn--transparent" to={`/product/${product.id}`}>Подробнее</Link>
       </div>
     </div>

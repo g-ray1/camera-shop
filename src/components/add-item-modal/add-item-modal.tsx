@@ -1,10 +1,10 @@
-type AddItemModalProps = {
-  setDisactive: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import { useAppDispatch } from '../../hooks/hooks';
+import { setModalMode } from '../../store/utils-slice/utils-slice';
 
-function AddItemModal({setDisactive}: AddItemModalProps): JSX.Element {
+function AddItemModal(): JSX.Element {
+  const dispatch = useAppDispatch();
 
-  const handleCloseButtoneCLick = () => setDisactive(false);
+  const handleCloseButtoneClick = () => dispatch(setModalMode(false));
 
   return (
     <div className="modal is-active">
@@ -37,7 +37,7 @@ function AddItemModal({setDisactive}: AddItemModalProps): JSX.Element {
               </svg>Добавить в корзину
             </button>
           </div>
-          <button className="cross-btn" type="button" aria-label="Закрыть попап" onClick={handleCloseButtoneCLick}>
+          <button className="cross-btn" type="button" aria-label="Закрыть попап" onClick={handleCloseButtoneClick}>
             <svg width="10" height="10" aria-hidden="true">
               <use xlinkHref="#icon-close"></use>
             </svg>
