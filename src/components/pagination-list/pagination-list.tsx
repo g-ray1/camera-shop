@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { CARDS_PER_PAGE } from '../../consts';
+import { PRODUCTS_PER_PAGE } from '../../consts';
 
 type PaginationListProps = {
   cardsCount: number;
@@ -10,7 +10,7 @@ type PaginationListProps = {
 function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationListProps): JSX.Element {
 
   const getPages = () => {
-    const pagesCount = Math.ceil(cardsCount / CARDS_PER_PAGE);
+    const pagesCount = Math.ceil(cardsCount / PRODUCTS_PER_PAGE);
     const pages = [];
 
     if (currentPage > 1) {
@@ -39,7 +39,7 @@ function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationLis
       );
     }
 
-    if (cardsCount > CARDS_PER_PAGE && currentPage < pagesCount) {
+    if (cardsCount > PRODUCTS_PER_PAGE && currentPage < pagesCount) {
       pages.push(
         <li className="pagination__item">
           <Link

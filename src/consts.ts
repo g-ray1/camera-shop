@@ -1,1 +1,1 @@
-export const CARDS_PER_PAGE = 9;
+export const PRODUCTS_PER_PAGE = 9;
