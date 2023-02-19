@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import AddItemModal from '../../components/add-item-modal/add-item-modal';
 import Banner from '../../components/banner/banner';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
@@ -10,8 +11,10 @@ import { getCamerasList } from '../../store/data-slice/data-slice-selectors';
 import { getModalMode } from '../../store/utils-slice/utils-slice-selectors';
 
 function CatalogPage(): JSX.Element {
-  const cameras = useAppSelector(getCamerasList);
+  const [currentPage, setCurrentPage] = useState(1);
   const modalIsActive = useAppSelector(getModalMode);
+  const cameras = useAppSelector(getCamerasList);
+  console.log(currentPage);
 
   return (
     <main>
@@ -35,7 +38,7 @@ function CatalogPage(): JSX.Element {
 
                 <PreviewCardsList products={cameras} />
 
-                <PaginationList />
+                <PaginationList cardsCount={cameras.length} currentPage={currentPage} clickHandler={setCurrentPage}/>
 
               </div>
             </div>
