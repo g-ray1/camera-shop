@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch } from '../../hooks/hooks';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
+import Stars from '../stars/stars';
 
 type PreviewCardProps = {
   product: Camera;
@@ -10,30 +11,7 @@ type PreviewCardProps = {
 function PreviewCard({ product }: PreviewCardProps): JSX.Element {
 
   const dispatch = useAppDispatch();
-
   const handleBuyButtoneClick = () => dispatch(setModalMode(true));
-
-  const getStars = () => {
-    const stars = [];
-
-    for (let i = 1; i <= 5; i++) {
-      if (i <= product.rating) {
-        stars.push(
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-full-star"></use>
-          </svg>
-        );
-      } else {
-        stars.push(
-          <svg width="17" height="16" aria-hidden="true">
-            <use xlinkHref="#icon-star"></use>
-          </svg>
-        );
-      }
-    }
-
-    return stars;
-  };
 
   return (
     <div className="product-card">
@@ -55,7 +33,7 @@ function PreviewCard({ product }: PreviewCardProps): JSX.Element {
       <div className="product-card__info">
         <div className="rate product-card__rate">
 
-          {getStars()}
+          <Stars product={product}/>
 
           <p className="visually-hidden">Рейтинг: {product.rating}</p>
           <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>
