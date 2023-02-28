@@ -9,8 +9,8 @@ function Slider(): JSX.Element {
               <div className="product-card is-active">
                 <div className="product-card__img">
                   <picture>
-                    <source type="image/webp" srcSet="img/content/img9.webp, img/content/img9@2x.webp 2x" />
-                    <img src="img/content/img9.jpg" srcSet="img/content/img9@2x.jpg 2x" width="280" height="240" alt="Фотоаппарат FastShot MR-5" />
+                    <source type="image/webp" srcSet="/img/content/img9.webp, /img/content/img9@2x.webp 2x" />
+                    <img src="/img/content/img9.jpg" srcSet="/img/content/img9@2x.jpg 2x" width="280" height="240" alt="Фотоаппарат FastShot MR-5" />
                   </picture>
                 </div>
                 <div className="product-card__info">
@@ -47,8 +47,8 @@ function Slider(): JSX.Element {
               <div className="product-card is-active">
                 <div className="product-card__img">
                   <picture>
-                    <source type="image/webp" srcSet="img/content/img1.webp, img/content/img1@2x.webp 2x" />
-                    <img src="img/content/img1.jpg" srcSet="img/content/img1@2x.jpg 2x" width="280" height="240" alt="Ретрокамера «Das Auge IV»" />
+                    <source type="image/webp" srcSet="/img/content/img1.webp, /img/content/img1@2x.webp 2x" />
+                    <img src="/img/content/img1.jpg" srcSet="/img/content/img1@2x.jpg 2x" width="280" height="240" alt="Ретрокамера «Das Auge IV»" />
                   </picture>
                 </div>
                 <div className="product-card__info">
@@ -85,8 +85,8 @@ function Slider(): JSX.Element {
               <div className="product-card is-active">
                 <div className="product-card__img">
                   <picture>
-                    <source type="image/webp" srcSet="img/content/img5.webp, img/content/img5@2x.webp 2x" />
-                    <img src="img/content/img5.jpg" srcSet="img/content/img5@2x.jpg 2x" width="280" height="240" alt="Фотоаппарат Instaprinter P2" />
+                    <source type="image/webp" srcSet="/img/content/img5.webp, /img/content/img5@2x.webp 2x" />
+                    <img src="/img/content/img5.jpg" srcSet="/img/content/img5@2x.jpg 2x" width="280" height="240" alt="Фотоаппарат Instaprinter P2" />
                   </picture>
                 </div>
                 <div className="product-card__info">

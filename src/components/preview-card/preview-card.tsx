@@ -33,7 +33,7 @@ function PreviewCard({ product }: PreviewCardProps): JSX.Element {
       <div className="product-card__info">
         <div className="rate product-card__rate">
 
-          <Stars product={product}/>
+          <Stars rating={product.rating} reviewCount={product.reviewCount}/>
 
           <p className="visually-hidden">Рейтинг: {product.rating}</p>
           <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>

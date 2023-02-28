@@ -1,24 +1,23 @@
-import { Camera } from '../../types/types';
-
 type StarsProps = {
-  product: Camera;
+  rating: number;
+  reviewCount: number;
 }
 
-function Stars({product}: StarsProps): JSX.Element {
+function Stars({rating, reviewCount}: StarsProps): JSX.Element {
 
   const getStars = () => {
     const stars = [];
 
     for (let i = 1; i <= 5; i++) {
-      if (i <= product.rating) {
+      if (i <= rating) {
         stars.push(
-          <svg width="17" height="16" aria-hidden="true">
+          <svg width="17" height="16" aria-hidden="true" key={i}>
             <use xlinkHref="#icon-full-star"></use>
           </svg>
         );
       } else {
         stars.push(
-          <svg width="17" height="16" aria-hidden="true">
+          <svg width="17" height="16" aria-hidden="true" key={i}>
             <use xlinkHref="#icon-star"></use>
           </svg>
         );
@@ -33,8 +32,8 @@ function Stars({product}: StarsProps): JSX.Element {
 
       {getStars()}
 
-      <p className="visually-hidden">Рейтинг: {product.rating}</p>
-      <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>
+      <p className="visually-hidden">Рейтинг: {rating}</p>
+      <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{reviewCount}</p>
     </div>
   );
 }

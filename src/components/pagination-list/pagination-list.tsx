@@ -15,7 +15,7 @@ function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationLis
 
     if (currentPage > 1) {
       pages.push(
-        <li className="pagination__item">
+        <li className="pagination__item" key='back'>
           <Link
             to="#"
             className="pagination__link pagination__link--text"
@@ -28,7 +28,7 @@ function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationLis
 
     for (let i = 1; i <= pagesCount; i++) {
       pages.push(
-        <li className="pagination__item">
+        <li className="pagination__item" key={i}>
           <Link
             to="#"
             className={`pagination__link ${i === currentPage ? 'pagination__link--active' : ''}`}
@@ -41,7 +41,7 @@ function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationLis
 
     if (cardsCount > PRODUCTS_PER_PAGE && currentPage < pagesCount) {
       pages.push(
-        <li className="pagination__item">
+        <li className="pagination__item" key='forward'>
           <Link
             to="#"
             className="pagination__link pagination__link--text"
