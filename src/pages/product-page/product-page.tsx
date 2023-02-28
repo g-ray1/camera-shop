@@ -7,13 +7,14 @@ import ReviewBlock from '../../components/review-block/review-block';
 import Slider from '../../components/slider/slider';
 import UpButton from '../../components/up-button/up-button';
 import { useAppSelector } from '../../hooks/hooks';
-import { getCamerasList } from '../../store/data-slice/data-slice-selectors';
+import { getCamerasList, getSimilarCameras } from '../../store/data-slice/data-slice-selectors';
 import { getModalMode } from '../../store/utils-slice/utils-slice-selectors';
 
 function ProductPage(): JSX.Element {
-  const cameras = useAppSelector(getCamerasList);
+  const allProducts = useAppSelector(getCamerasList);
   const { id } = useParams();
-  const product = cameras.find((camera) => camera.id === Number(id));
+  const product = allProducts.find((item) => item.id === Number(id));
+  const similarProducts = useAppSelector(getSimilarCameras);
   const modalIsActive = useAppSelector(getModalMode);
 
   if (!product) {
@@ -31,7 +32,7 @@ function ProductPage(): JSX.Element {
 
           <Product product={product} />
 
-          <Slider />
+          <Slider products={similarProducts} />
 
           <ReviewBlock />
 

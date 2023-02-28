@@ -5,25 +5,26 @@ import { Camera } from '../../types/types';
 import Stars from '../stars/stars';
 
 type PreviewCardProps = {
+  isActive?: boolean;
   product: Camera;
 };
 
-function PreviewCard({ product }: PreviewCardProps): JSX.Element {
+function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
 
   const dispatch = useAppDispatch();
   const handleBuyButtoneClick = () => dispatch(setModalMode(true));
 
   return (
-    <div className="product-card">
+    <div className={`product-card ${isActive ? 'is-active' : ''}`}>
       <div className="product-card__img">
         <picture>
           <source
             type="image/webp"
-            srcSet={`${product.previewImgWebp}, ${product.previewImgWebp2x} 2x`}
+            srcSet={`/${product.previewImgWebp}, /${product.previewImgWebp2x} 2x`}
           />
           <img
-            src={product.previewImg}
-            srcSet={`${product.previewImg2x} 2x`}
+            src={`/${product.previewImg}`}
+            srcSet={`/${product.previewImg2x} 2x`}
             width="280"
             height="240"
             alt={product.name}
