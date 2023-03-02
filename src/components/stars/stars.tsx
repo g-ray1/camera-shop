@@ -1,6 +1,6 @@
 type StarsProps = {
   rating: number;
-  reviewCount: number;
+  reviewCount?: number;
 }
 
 function Stars({rating, reviewCount}: StarsProps): JSX.Element {
