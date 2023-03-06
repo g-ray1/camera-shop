@@ -25,3 +25,16 @@ export type Review = {
   createAt: string;
   cameraId: number;
 };
+
+export type UserReview = {
+  userName: string;
+  advantage: string;
+  disadvantage: string;
+  review: string;
+  rating: number;
+  cameraId: number;
+};
+
+export type UserParams = {
+  id: string;
+};

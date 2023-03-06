@@ -1,17 +1,24 @@
-import { useAppDispatch } from '../../hooks/hooks';
-import { setModalMode } from '../../store/utils-slice/utils-slice';
+import { ModalContent } from '../../consts';
+import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
 import Page404 from '../page-404/page-404';
 import Stars from '../stars/stars';
 import Tabs from '../tabs/tabs';
 
 type ProductProps = {
-  product: Camera;
+  product?: Camera;
 }
 
 function Product({ product }: ProductProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const handleBuyButtoneClick = () => dispatch(setModalMode(true));
+  const { lockScroll } = useScrollLock();
+
+  const handleBuyButtoneClick = () => {
+    dispatch(setModalMode(true));
+    dispatch(setModalContent(ModalContent.AddItem));
+    lockScroll();
+  };
 
   if (!product) {
     return (
@@ -41,7 +48,7 @@ function Product({ product }: ProductProps): JSX.Element {
           <div className="product__content">
             <h1 className="title title--h3">{product.name}</h1>
 
-            <Stars rating={product.rating} reviewCount={product.reviewCount}/>
+            <Stars rating={product.rating} reviewCount={product.reviewCount} />
 
             <p className="product__price"><span className="visually-hidden">Цена:</span>{product.price} ₽</p>
             <button className="btn btn--purple" type="button" onClick={handleBuyButtoneClick}>
@@ -50,7 +57,7 @@ function Product({ product }: ProductProps): JSX.Element {
               </svg>Добавить в корзину
             </button>
 
-            <Tabs product={product}/>
+            <Tabs product={product} />
 
           </div>
         </div>

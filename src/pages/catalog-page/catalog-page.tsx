@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import history from 'history/browser';
-import AddItemModal from '../../components/add-item-modal/add-item-modal';
 import Banner from '../../components/banner/banner';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import CatalogFilter from '../../components/catalog-filter/catalog-filter';
@@ -10,17 +8,17 @@ import PreviewCardsList from '../../components/preview-cards-list/preview-cards-
 import { PRODUCTS_PER_PAGE } from '../../consts';
 import { useAppSelector } from '../../hooks/hooks';
 import { getCamerasList } from '../../store/data-slice/data-slice-selectors';
-import { getModalMode } from '../../store/utils-slice/utils-slice-selectors';
+import { getModalContent, getModalMode } from '../../store/utils-slice/utils-slice-selectors';
+import ModalWindow from '../../components/modal-window/modal-window';
 
 function CatalogPage(): JSX.Element {
   const [currentPage, setCurrentPage] = useState(1);
-  history.push(`page_${currentPage}`, );
-
-  const modalIsActive = useAppSelector(getModalMode);
   const totalProducts = useAppSelector(getCamerasList);
   const lastIndex = currentPage * PRODUCTS_PER_PAGE;
   const firstIndex = lastIndex - PRODUCTS_PER_PAGE;
   const productsOnPage = totalProducts.slice(firstIndex, lastIndex);
+  const modalIsActive = useAppSelector(getModalMode);
+  const modalContent = useAppSelector(getModalContent);
 
   return (
     <main>
@@ -52,7 +50,7 @@ function CatalogPage(): JSX.Element {
         </section>
       </div>
 
-      {modalIsActive && <AddItemModal />}
+      {modalIsActive && <ModalWindow content={modalContent} />}
 
     </main>
   );

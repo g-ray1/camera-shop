@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { cameras } from '../../mocks/cameras';
-import { reviews } from '../../mocks/reviews';
 import { similarCameras } from '../../mocks/similar';
 import { Camera, Review } from '../../types/types';
+import { fetchReviews } from '../api-actions';
 
 type DataState = {
   cameras: Camera[];
@@ -13,11 +13,17 @@ type DataState = {
 const initialState: DataState = {
   cameras: cameras,
   similarCameras: similarCameras,
-  reviews: reviews,
+  reviews: [],
 };
 
 export const dataSlice = createSlice({
   name: 'data',
   initialState: initialState,
-  reducers: {}
+  reducers: {},
+  extraReducers(builder) {
+    builder
+      .addCase(fetchReviews.fulfilled, (state, action) => {
+        state.reviews = action.payload;
+      });
+  },
 });
