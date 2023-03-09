@@ -5,7 +5,9 @@ import { setModalMode } from '../../store/utils-slice/utils-slice';
 const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
   const dispatch = useAppDispatch();
 
-  const handleButtonClick = () => dispatch(setModalMode(false));
+  const handleButtonClick = () => {
+    dispatch(setModalMode(false));
+  };
 
   return (
     <>

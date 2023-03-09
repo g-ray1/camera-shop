@@ -9,7 +9,7 @@ type ReviewsBlockProps = {
   reviews: Review[];
 }
 
-function ReviewsBlock({ reviews }: ReviewsBlockProps): JSX.Element {
+function ReviewsBlock({ reviews }: ReviewsBlockProps): JSX.Element | null {
   const [reviewsCount, setReviewsCount] = useState(REVIEWS_PER_PAGE);
   const dispatch = useAppDispatch();
   const { lockScroll } = useScrollLock();
@@ -31,6 +31,10 @@ function ReviewsBlock({ reviews }: ReviewsBlockProps): JSX.Element {
   //     document.removeEventListener('scroll', scrollHandler);
   //   };
   // });
+
+  if (reviews.length === 0) {
+    return null;
+  }
 
   return (
     <div className="page-content__section">

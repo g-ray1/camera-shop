@@ -12,5 +12,7 @@ export const enum ModalContent {
 
 export const enum APIRoutes {
   Cameras = '/cameras',
-  Reviews = '/reviews'
+  Reviews = '/reviews',
+  SimilarCameras = '/similar',
+  Promo = '/promo'
 }

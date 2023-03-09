@@ -21,9 +21,7 @@ function Product({ product }: ProductProps): JSX.Element {
   };
 
   if (!product) {
-    return (
-      <Page404 />
-    );
+    return <Page404 />;
   }
 
   return (
