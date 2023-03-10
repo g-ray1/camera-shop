@@ -15,6 +15,15 @@ export type Camera = {
   reviewCount: number;
 };
 
+export type Promo = {
+  id: number;
+  name: string;
+  previewImg: string;
+  previewImg2x: string;
+  previewImgWebp: string;
+  previewImgWebp2x: string;
+}
+
 export type Review = {
   id: string;
   userName: string;
@@ -24,4 +33,17 @@ export type Review = {
   rating: number;
   createAt: string;
   cameraId: number;
+};
+
+export type UserReview = {
+  userName: string;
+  advantage: string;
+  disadvantage: string;
+  review: string;
+  rating: number;
+  cameraId: number;
+};
+
+export type UserParams = {
+  id: string;
 };

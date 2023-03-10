@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { useAppDispatch } from '../../hooks/hooks';
-import { setModalMode } from '../../store/utils-slice/utils-slice';
+import { ModalContent } from '../../consts';
+import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
 import Stars from '../stars/stars';
 
@@ -10,9 +11,14 @@ type PreviewCardProps = {
 };
 
 function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
-
   const dispatch = useAppDispatch();
-  const handleBuyButtoneClick = () => dispatch(setModalMode(true));
+  const { lockScroll } = useScrollLock();
+
+  const handleBuyButtoneClick = () => {
+    dispatch(setModalMode(true));
+    dispatch(setModalContent(ModalContent.AddItem));
+    lockScroll();
+  };
 
   return (
     <div className={`product-card ${isActive ? 'is-active' : ''}`}>
@@ -34,7 +40,7 @@ function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
       <div className="product-card__info">
         <div className="rate product-card__rate">
 
-          <Stars rating={product.rating} reviewCount={product.reviewCount}/>
+          <Stars rating={product.rating} reviewCount={product.reviewCount} />
 
           <p className="visually-hidden">Рейтинг: {product.rating}</p>
           <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>
@@ -43,7 +49,13 @@ function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
         <p className="product-card__price"><span className="visually-hidden">Цена:</span>{`${product.price} ₽`}</p>
       </div>
       <div className="product-card__buttons">
-        <button className="btn btn--purple product-card__btn" type="button" onClick={handleBuyButtoneClick}>Купить</button>
+        <button
+          className="btn btn--purple product-card__btn"
+          type="button"
+          onClick={handleBuyButtoneClick}
+        >
+          Купить
+        </button>
         <Link className="btn btn--transparent" to={`/product/${product.id}`}>Подробнее</Link>
       </div>
     </div>

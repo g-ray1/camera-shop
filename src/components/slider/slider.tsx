@@ -7,10 +7,14 @@ type SliderProps = {
   products: Camera[];
 }
 
-function Slider({ products }: SliderProps): JSX.Element {
+function Slider({ products }: SliderProps): JSX.Element | null {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const list = products.slice(currentIndex, currentIndex + SIMILAR_PRODUCTS_COUNT);
+
+  if (products.length === 0) {
+    return null;
+  }
 
   return (
     <div className="page-content__section">
