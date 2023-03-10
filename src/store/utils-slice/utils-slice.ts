@@ -22,7 +22,7 @@ export const utilSlice = createSlice({
     },
     setModalContent(state, action: PayloadAction<string>) {
       state.modalContent = action.payload;
-    },
+    }
   },
   extraReducers(builder) {
     builder

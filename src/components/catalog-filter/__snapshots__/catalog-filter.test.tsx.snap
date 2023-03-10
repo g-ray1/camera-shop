@@ -1,0 +1,558 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CatalogFilter component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="catalog__aside"
+      >
+        <div
+          class="catalog-filter"
+        >
+          <form
+            action="#"
+          >
+            <h2
+              class="visually-hidden"
+            >
+              Фильтр
+            </h2>
+            <fieldset
+              class="catalog-filter__block"
+            >
+              <legend
+                class="title title--h5"
+              >
+                Цена, ₽
+              </legend>
+              <div
+                class="catalog-filter__price-range"
+              >
+                <div
+                  class="custom-input"
+                >
+                  <label>
+                    <input
+                      name="price"
+                      placeholder="от"
+                      type="number"
+                    />
+                  </label>
+                </div>
+                <div
+                  class="custom-input"
+                >
+                  <label>
+                    <input
+                      name="priceUp"
+                      placeholder="до"
+                      type="number"
+                    />
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset
+              class="catalog-filter__block"
+            >
+              <legend
+                class="title title--h5"
+              >
+                Категория
+              </legend>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="photocamera"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Фотокамера
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="videocamera"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Видеокамера
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset
+              class="catalog-filter__block"
+            >
+              <legend
+                class="title title--h5"
+              >
+                Тип камеры
+              </legend>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="digital"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Цифровая
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="film"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Плёночная
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="snapshot"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Моментальная
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="collection"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Коллекционная
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <fieldset
+              class="catalog-filter__block"
+            >
+              <legend
+                class="title title--h5"
+              >
+                Уровень
+              </legend>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="zero"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Нулевой
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="non-professional"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Любительский
+                  </span>
+                </label>
+              </div>
+              <div
+                class="custom-checkbox catalog-filter__item"
+              >
+                <label>
+                  <input
+                    name="professional"
+                    type="checkbox"
+                  />
+                  <span
+                    class="custom-checkbox__icon"
+                  />
+                  <span
+                    class="custom-checkbox__label"
+                  >
+                    Профессиональный
+                  </span>
+                </label>
+              </div>
+            </fieldset>
+            <button
+              class="btn catalog-filter__reset-btn"
+              type="reset"
+            >
+              Сбросить фильтры
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="catalog__aside"
+    >
+      <div
+        class="catalog-filter"
+      >
+        <form
+          action="#"
+        >
+          <h2
+            class="visually-hidden"
+          >
+            Фильтр
+          </h2>
+          <fieldset
+            class="catalog-filter__block"
+          >
+            <legend
+              class="title title--h5"
+            >
+              Цена, ₽
+            </legend>
+            <div
+              class="catalog-filter__price-range"
+            >
+              <div
+                class="custom-input"
+              >
+                <label>
+                  <input
+                    name="price"
+                    placeholder="от"
+                    type="number"
+                  />
+                </label>
+              </div>
+              <div
+                class="custom-input"
+              >
+                <label>
+                  <input
+                    name="priceUp"
+                    placeholder="до"
+                    type="number"
+                  />
+                </label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset
+            class="catalog-filter__block"
+          >
+            <legend
+              class="title title--h5"
+            >
+              Категория
+            </legend>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="photocamera"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Фотокамера
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="videocamera"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Видеокамера
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset
+            class="catalog-filter__block"
+          >
+            <legend
+              class="title title--h5"
+            >
+              Тип камеры
+            </legend>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="digital"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Цифровая
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="film"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Плёночная
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="snapshot"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Моментальная
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="collection"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Коллекционная
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <fieldset
+            class="catalog-filter__block"
+          >
+            <legend
+              class="title title--h5"
+            >
+              Уровень
+            </legend>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="zero"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Нулевой
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="non-professional"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Любительский
+                </span>
+              </label>
+            </div>
+            <div
+              class="custom-checkbox catalog-filter__item"
+            >
+              <label>
+                <input
+                  name="professional"
+                  type="checkbox"
+                />
+                <span
+                  class="custom-checkbox__icon"
+                />
+                <span
+                  class="custom-checkbox__label"
+                >
+                  Профессиональный
+                </span>
+              </label>
+            </div>
+          </fieldset>
+          <button
+            class="btn catalog-filter__reset-btn"
+            type="reset"
+          >
+            Сбросить фильтры
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

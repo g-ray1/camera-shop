@@ -24,7 +24,7 @@ function Slider({ products }: SliderProps): JSX.Element | null {
           <div className="product-similar__slider">
             <div className="product-similar__slider-list">
 
-              {list.map((product) => <PreviewCard product={product} isActive key={product.id} />)}
+              {list.map((product) => <PreviewCard product={product} inSlider key={product.id} />)}
 
               <button
                 className="slider-controls slider-controls--prev"

@@ -1,0 +1,287 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs component Snapshot with props 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="breadcrumbs"
+      >
+        <div
+          class="container"
+        >
+          <ul
+            class="breadcrumbs__list"
+          >
+            <li
+              class="breadcrumbs__item"
+            >
+              <a
+                class="breadcrumbs__link"
+                href="/"
+              >
+                Главная
+                <svg
+                  aria-hidden="true"
+                  height="8"
+                  width="5"
+                >
+                  <use
+                    xlink:href="#icon-arrow-mini"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li
+              class="breadcrumbs__item"
+            >
+              <span
+                class="breadcrumbs__link breadcrumbs__link--active"
+              >
+                Каталог
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="breadcrumbs"
+    >
+      <div
+        class="container"
+      >
+        <ul
+          class="breadcrumbs__list"
+        >
+          <li
+            class="breadcrumbs__item"
+          >
+            <a
+              class="breadcrumbs__link"
+              href="/"
+            >
+              Главная
+              <svg
+                aria-hidden="true"
+                height="8"
+                width="5"
+              >
+                <use
+                  xlink:href="#icon-arrow-mini"
+                />
+              </svg>
+            </a>
+          </li>
+          <li
+            class="breadcrumbs__item"
+          >
+            <span
+              class="breadcrumbs__link breadcrumbs__link--active"
+            >
+              Каталог
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`Breadcrumbs component Snapshot without props 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="breadcrumbs"
+      >
+        <div
+          class="container"
+        >
+          <ul
+            class="breadcrumbs__list"
+          >
+            <li
+              class="breadcrumbs__item"
+            >
+              <a
+                class="breadcrumbs__link"
+                href="/"
+              >
+                Главная
+                <svg
+                  aria-hidden="true"
+                  height="8"
+                  width="5"
+                >
+                  <use
+                    xlink:href="#icon-arrow-mini"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li
+              class="breadcrumbs__item"
+            >
+              <span
+                class="breadcrumbs__link breadcrumbs__link--active"
+              >
+                Каталог
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="breadcrumbs"
+    >
+      <div
+        class="container"
+      >
+        <ul
+          class="breadcrumbs__list"
+        >
+          <li
+            class="breadcrumbs__item"
+          >
+            <a
+              class="breadcrumbs__link"
+              href="/"
+            >
+              Главная
+              <svg
+                aria-hidden="true"
+                height="8"
+                width="5"
+              >
+                <use
+                  xlink:href="#icon-arrow-mini"
+                />
+              </svg>
+            </a>
+          </li>
+          <li
+            class="breadcrumbs__item"
+          >
+            <span
+              class="breadcrumbs__link breadcrumbs__link--active"
+            >
+              Каталог
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

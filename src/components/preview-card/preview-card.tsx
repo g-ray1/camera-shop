@@ -6,11 +6,11 @@ import { Camera } from '../../types/types';
 import Stars from '../stars/stars';
 
 type PreviewCardProps = {
-  isActive?: boolean;
+  inSlider?: boolean;
   product: Camera;
 };
 
-function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
+function PreviewCard({ product, inSlider }: PreviewCardProps): JSX.Element {
   const dispatch = useAppDispatch();
   const { lockScroll } = useScrollLock();
 
@@ -21,7 +21,7 @@ function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
   };
 
   return (
-    <div className={`product-card ${isActive ? 'is-active' : ''}`}>
+    <div className={`product-card ${inSlider ? 'is-active' : ''}`}>
       <div className="product-card__img">
         <picture>
           <source
@@ -42,8 +42,6 @@ function PreviewCard({ product, isActive }: PreviewCardProps): JSX.Element {
 
           <Stars rating={product.rating} reviewCount={product.reviewCount} />
 
-          <p className="visually-hidden">Рейтинг: {product.rating}</p>
-          <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{product.reviewCount}</p>
         </div>
         <p className="product-card__title">{product.name}</p>
         <p className="product-card__price"><span className="visually-hidden">Цена:</span>{`${product.price} ₽`}</p>

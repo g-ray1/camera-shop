@@ -1,26 +1,27 @@
 import { render } from '@testing-library/react';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import thunk from 'redux-thunk';
-import App from './app';
+import ProductPage from './product-page';
+import { similarCameras } from '../../mocks/similar';
 import { Provider } from 'react-redux';
-import { cameras } from '../../mocks/cameras';
-
 
 jest.mock('react-redux');
 
 const mockStore = configureMockStore([thunk]);
 const store = mockStore({
-  data: { cameras: cameras },
+  data: { similarCameras: similarCameras },
 });
 
-describe('App component', () => {
-  it('App component snapshot', () => {
+describe('ProductPage component', () => {
+  it('Snapshot', () => {
+
     const view = render(
       <Provider store={store}>
-        <App />;
+        <ProductPage />;
       </Provider>
     );
 
     expect(view).toMatchSnapshot();
   });
 });
+
