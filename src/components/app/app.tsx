@@ -10,8 +10,10 @@ function App(): JSX.Element {
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<CatalogPage />} />
-          <Route path='/product' element={<ProductPage />} />
-          <Route path='/basket' element={<BasketPage />} />
+          <Route path='product/:id'>
+            <Route index element={<ProductPage />} />
+          </Route>
+          <Route path='basket' element={<BasketPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

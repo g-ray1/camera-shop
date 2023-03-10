@@ -14,13 +14,13 @@ import { getModalMode } from '../../store/utils-slice/utils-slice-selectors';
 
 function CatalogPage(): JSX.Element {
   const [currentPage, setCurrentPage] = useState(1);
+  history.push(`page_${currentPage}`, );
+
   const modalIsActive = useAppSelector(getModalMode);
   const totalProducts = useAppSelector(getCamerasList);
   const lastIndex = currentPage * PRODUCTS_PER_PAGE;
   const firstIndex = lastIndex - PRODUCTS_PER_PAGE;
   const productsOnPage = totalProducts.slice(firstIndex, lastIndex);
-
-  history.push(`page_${currentPage}`);
 
   return (
     <main>
