@@ -1,0 +1,850 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Layout component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="wrapper"
+      >
+        <header
+          class="header"
+          id="header"
+        >
+          <div
+            class="container"
+          >
+            <a
+              aria-label="Переход на главную"
+              class="header__logo"
+              href="index.html"
+            >
+              <svg
+                aria-hidden="true"
+                height="36"
+                width="100"
+              >
+                <use
+                  xlink:href="#icon-logo"
+                />
+              </svg>
+            </a>
+            <nav
+              class="main-nav header__main-nav"
+            >
+              <ul
+                class="main-nav__list"
+              >
+                <li
+                  class="main-nav__item"
+                >
+                  <a
+                    class="main-nav__link"
+                    href="catalog.html"
+                  >
+                    Каталог
+                  </a>
+                </li>
+                <li
+                  class="main-nav__item"
+                >
+                  <a
+                    class="main-nav__link"
+                    href="#"
+                  >
+                    Гарантии
+                  </a>
+                </li>
+                <li
+                  class="main-nav__item"
+                >
+                  <a
+                    class="main-nav__link"
+                    href="#"
+                  >
+                    Доставка
+                  </a>
+                </li>
+                <li
+                  class="main-nav__item"
+                >
+                  <a
+                    class="main-nav__link"
+                    href="#"
+                  >
+                    О компании
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <div
+              class="form-search"
+            >
+              <form>
+                <label>
+                  <svg
+                    aria-hidden="true"
+                    class="form-search__icon"
+                    height="16"
+                    width="16"
+                  >
+                    <use
+                      xlink:href="#icon-lens"
+                    />
+                  </svg>
+                  <input
+                    autocomplete="off"
+                    class="form-search__input"
+                    placeholder="Поиск по сайту"
+                    type="text"
+                  />
+                </label>
+                <ul
+                  class="form-search__select-list"
+                >
+                  <li
+                    class="form-search__select-item"
+                    tabindex="0"
+                  >
+                    Cannonball Pro MX 8i
+                  </li>
+                  <li
+                    class="form-search__select-item"
+                    tabindex="0"
+                  >
+                    Cannonball Pro MX 7i
+                  </li>
+                  <li
+                    class="form-search__select-item"
+                    tabindex="0"
+                  >
+                    Cannonball Pro MX 6i
+                  </li>
+                  <li
+                    class="form-search__select-item"
+                    tabindex="0"
+                  >
+                    Cannonball Pro MX 5i
+                  </li>
+                  <li
+                    class="form-search__select-item"
+                    tabindex="0"
+                  >
+                    Cannonball Pro MX 4i
+                  </li>
+                </ul>
+              </form>
+              <button
+                class="form-search__reset"
+                type="reset"
+              >
+                <svg
+                  aria-hidden="true"
+                  height="10"
+                  width="10"
+                >
+                  <use
+                    xlink:href="#icon-close"
+                  />
+                </svg>
+                <span
+                  class="visually-hidden"
+                >
+                  Сбросить поиск
+                </span>
+              </button>
+            </div>
+            <a
+              class="header__basket-link"
+              href="#"
+            >
+              <svg
+                aria-hidden="true"
+                height="16"
+                width="16"
+              >
+                <use
+                  xlink:href="#icon-basket"
+                />
+              </svg>
+            </a>
+          </div>
+        </header>
+        <footer
+          class="footer"
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="footer__info"
+            >
+              <a
+                aria-label="Переход на главную"
+                class="footer__logo"
+                href="index.html"
+              >
+                <svg
+                  aria-hidden="true"
+                  height="36"
+                  width="100"
+                >
+                  <use
+                    xlink:href="#icon-logo-mono"
+                  />
+                </svg>
+              </a>
+              <p
+                class="footer__description"
+              >
+                Интернет-магазин фото- и видеотехники
+              </p>
+              <ul
+                class="social"
+              >
+                <li
+                  class="social__item"
+                >
+                  <a
+                    aria-label="Переход на страницу вконтатке"
+                    class="link"
+                    href="#"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="20"
+                      width="20"
+                    >
+                      <use
+                        xlink:href="#icon-vk"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="social__item"
+                >
+                  <a
+                    aria-label="Переход на страницу pinterest"
+                    class="link"
+                    href="#"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="20"
+                      width="20"
+                    >
+                      <use
+                        xlink:href="#icon-pinterest"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="social__item"
+                >
+                  <a
+                    aria-label="Переход на страницу reddit"
+                    class="link"
+                    href="#"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="20"
+                      width="20"
+                    >
+                      <use
+                        xlink:href="#icon-reddit"
+                      />
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <ul
+              class="footer__nav"
+            >
+              <li
+                class="footer__nav-item"
+              >
+                <p
+                  class="footer__title"
+                >
+                  Навигация
+                </p>
+                <ul
+                  class="footer__list"
+                >
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Каталог
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Гарантии
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Доставка
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      О компании
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="footer__nav-item"
+              >
+                <p
+                  class="footer__title"
+                >
+                  Ресурсы
+                </p>
+                <ul
+                  class="footer__list"
+                >
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Курсы операторов
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Блог
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Сообщество
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="footer__nav-item"
+              >
+                <p
+                  class="footer__title"
+                >
+                  Поддержка
+                </p>
+                <ul
+                  class="footer__list"
+                >
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      FAQ
+                    </a>
+                  </li>
+                  <li
+                    class="footer__item"
+                  >
+                    <a
+                      class="link"
+                      href="#"
+                    >
+                      Задать вопрос
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="wrapper"
+    >
+      <header
+        class="header"
+        id="header"
+      >
+        <div
+          class="container"
+        >
+          <a
+            aria-label="Переход на главную"
+            class="header__logo"
+            href="index.html"
+          >
+            <svg
+              aria-hidden="true"
+              height="36"
+              width="100"
+            >
+              <use
+                xlink:href="#icon-logo"
+              />
+            </svg>
+          </a>
+          <nav
+            class="main-nav header__main-nav"
+          >
+            <ul
+              class="main-nav__list"
+            >
+              <li
+                class="main-nav__item"
+              >
+                <a
+                  class="main-nav__link"
+                  href="catalog.html"
+                >
+                  Каталог
+                </a>
+              </li>
+              <li
+                class="main-nav__item"
+              >
+                <a
+                  class="main-nav__link"
+                  href="#"
+                >
+                  Гарантии
+                </a>
+              </li>
+              <li
+                class="main-nav__item"
+              >
+                <a
+                  class="main-nav__link"
+                  href="#"
+                >
+                  Доставка
+                </a>
+              </li>
+              <li
+                class="main-nav__item"
+              >
+                <a
+                  class="main-nav__link"
+                  href="#"
+                >
+                  О компании
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div
+            class="form-search"
+          >
+            <form>
+              <label>
+                <svg
+                  aria-hidden="true"
+                  class="form-search__icon"
+                  height="16"
+                  width="16"
+                >
+                  <use
+                    xlink:href="#icon-lens"
+                  />
+                </svg>
+                <input
+                  autocomplete="off"
+                  class="form-search__input"
+                  placeholder="Поиск по сайту"
+                  type="text"
+                />
+              </label>
+              <ul
+                class="form-search__select-list"
+              >
+                <li
+                  class="form-search__select-item"
+                  tabindex="0"
+                >
+                  Cannonball Pro MX 8i
+                </li>
+                <li
+                  class="form-search__select-item"
+                  tabindex="0"
+                >
+                  Cannonball Pro MX 7i
+                </li>
+                <li
+                  class="form-search__select-item"
+                  tabindex="0"
+                >
+                  Cannonball Pro MX 6i
+                </li>
+                <li
+                  class="form-search__select-item"
+                  tabindex="0"
+                >
+                  Cannonball Pro MX 5i
+                </li>
+                <li
+                  class="form-search__select-item"
+                  tabindex="0"
+                >
+                  Cannonball Pro MX 4i
+                </li>
+              </ul>
+            </form>
+            <button
+              class="form-search__reset"
+              type="reset"
+            >
+              <svg
+                aria-hidden="true"
+                height="10"
+                width="10"
+              >
+                <use
+                  xlink:href="#icon-close"
+                />
+              </svg>
+              <span
+                class="visually-hidden"
+              >
+                Сбросить поиск
+              </span>
+            </button>
+          </div>
+          <a
+            class="header__basket-link"
+            href="#"
+          >
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="16"
+            >
+              <use
+                xlink:href="#icon-basket"
+              />
+            </svg>
+          </a>
+        </div>
+      </header>
+      <footer
+        class="footer"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="footer__info"
+          >
+            <a
+              aria-label="Переход на главную"
+              class="footer__logo"
+              href="index.html"
+            >
+              <svg
+                aria-hidden="true"
+                height="36"
+                width="100"
+              >
+                <use
+                  xlink:href="#icon-logo-mono"
+                />
+              </svg>
+            </a>
+            <p
+              class="footer__description"
+            >
+              Интернет-магазин фото- и видеотехники
+            </p>
+            <ul
+              class="social"
+            >
+              <li
+                class="social__item"
+              >
+                <a
+                  aria-label="Переход на страницу вконтатке"
+                  class="link"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="20"
+                    width="20"
+                  >
+                    <use
+                      xlink:href="#icon-vk"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="social__item"
+              >
+                <a
+                  aria-label="Переход на страницу pinterest"
+                  class="link"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="20"
+                    width="20"
+                  >
+                    <use
+                      xlink:href="#icon-pinterest"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="social__item"
+              >
+                <a
+                  aria-label="Переход на страницу reddit"
+                  class="link"
+                  href="#"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="20"
+                    width="20"
+                  >
+                    <use
+                      xlink:href="#icon-reddit"
+                    />
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <ul
+            class="footer__nav"
+          >
+            <li
+              class="footer__nav-item"
+            >
+              <p
+                class="footer__title"
+              >
+                Навигация
+              </p>
+              <ul
+                class="footer__list"
+              >
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Каталог
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Гарантии
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Доставка
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    О компании
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              class="footer__nav-item"
+            >
+              <p
+                class="footer__title"
+              >
+                Ресурсы
+              </p>
+              <ul
+                class="footer__list"
+              >
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Курсы операторов
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Блог
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Сообщество
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li
+              class="footer__nav-item"
+            >
+              <p
+                class="footer__title"
+              >
+                Поддержка
+              </p>
+              <ul
+                class="footer__list"
+              >
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    FAQ
+                  </a>
+                </li>
+                <li
+                  class="footer__item"
+                >
+                  <a
+                    class="link"
+                    href="#"
+                  >
+                    Задать вопрос
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

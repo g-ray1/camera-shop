@@ -1,0 +1,992 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasketPage component Should render Banner 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <main>
+        <div
+          class="page-content"
+        >
+          <div
+            class="breadcrumbs"
+          >
+            <div
+              class="container"
+            >
+              <ul
+                class="breadcrumbs__list"
+              >
+                <li
+                  class="breadcrumbs__item"
+                >
+                  <a
+                    class="breadcrumbs__link"
+                    href="index.html"
+                  >
+                    Главная
+                    <svg
+                      aria-hidden="true"
+                      height="8"
+                      width="5"
+                    >
+                      <use
+                        xlink:href="#icon-arrow-mini"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="breadcrumbs__item"
+                >
+                  <a
+                    class="breadcrumbs__link"
+                    href="catalog.html"
+                  >
+                    Каталог
+                    <svg
+                      aria-hidden="true"
+                      height="8"
+                      width="5"
+                    >
+                      <use
+                        xlink:href="#icon-arrow-mini"
+                      />
+                    </svg>
+                  </a>
+                </li>
+                <li
+                  class="breadcrumbs__item"
+                >
+                  <span
+                    class="breadcrumbs__link breadcrumbs__link--active"
+                  >
+                    Корзина
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <section
+            class="basket"
+          >
+            <div
+              class="container"
+            >
+              <h1
+                class="title title--h2"
+              >
+                Корзина
+              </h1>
+              <ul
+                class="basket__list"
+              >
+                <li
+                  class="basket-item"
+                >
+                  <div
+                    class="basket-item__img"
+                  >
+                    <picture>
+                      <source
+                        srcset="img/content/img9.webp, img/content/img9@2x.webp 2x"
+                        type="image/webp"
+                      />
+                      <img
+                        alt="Фотоаппарат «Орлёнок»"
+                        height="120"
+                        src="img/content/img9.jpg"
+                        srcset="img/content/img9@2x.jpg 2x"
+                        width="140"
+                      />
+                    </picture>
+                  </div>
+                  <div
+                    class="basket-item__description"
+                  >
+                    <p
+                      class="basket-item__title"
+                    >
+                      Фотоаппарат «Орлёнок»
+                    </p>
+                    <ul
+                      class="basket-item__list"
+                    >
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        <span
+                          class="basket-item__article"
+                        >
+                          Артикул:
+                        </span>
+                         
+                        <span
+                          class="basket-item__number"
+                        >
+                          O78DFGSD832
+                        </span>
+                      </li>
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        Плёночная фотокамера
+                      </li>
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        Любительский уровень
+                      </li>
+                    </ul>
+                  </div>
+                  <p
+                    class="basket-item__price"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Цена:
+                    </span>
+                    18 970 ₽
+                  </p>
+                  <div
+                    class="quantity"
+                  >
+                    <button
+                      aria-label="уменьшить количество товара"
+                      class="btn-icon btn-icon--prev"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        height="12"
+                        width="7"
+                      >
+                        <use
+                          xlink:href="#icon-arrow"
+                        />
+                      </svg>
+                    </button>
+                    <label
+                      class="visually-hidden"
+                      for="counter1"
+                    />
+                    <input
+                      aria-label="количество товара"
+                      id="counter1"
+                      max="99"
+                      min="1"
+                      type="number"
+                      value="2"
+                    />
+                    <button
+                      aria-label="увеличить количество товара"
+                      class="btn-icon btn-icon--next"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        height="12"
+                        width="7"
+                      >
+                        <use
+                          xlink:href="#icon-arrow"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    class="basket-item__total-price"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Общая цена:
+                    </span>
+                    37 940 ₽
+                  </div>
+                  <button
+                    aria-label="Удалить товар"
+                    class="cross-btn"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="10"
+                      width="10"
+                    >
+                      <use
+                        xlink:href="#icon-close"
+                      />
+                    </svg>
+                  </button>
+                </li>
+                <li
+                  class="basket-item"
+                >
+                  <div
+                    class="basket-item__img"
+                  >
+                    <picture>
+                      <source
+                        srcset="img/content/img1.webp, img/content/img1@2x.webp 2x"
+                        type="image/webp"
+                      />
+                      <img
+                        alt="Ретрокамера «Das Auge IV»"
+                        height="120"
+                        src="img/content/img1.jpg"
+                        srcset="img/content/img1@2x.jpg 2x"
+                        width="140"
+                      />
+                    </picture>
+                  </div>
+                  <div
+                    class="basket-item__description"
+                  >
+                    <p
+                      class="basket-item__title"
+                    >
+                      Ретрокамера «Das Auge IV»
+                    </p>
+                    <ul
+                      class="basket-item__list"
+                    >
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        <span
+                          class="basket-item__article"
+                        >
+                          Артикул:
+                        </span>
+                         
+                        <span
+                          class="basket-item__number"
+                        >
+                          DA4IU67AD5
+                        </span>
+                      </li>
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        Коллекционная видеокамера
+                      </li>
+                      <li
+                        class="basket-item__list-item"
+                      >
+                        Любительский уровень
+                      </li>
+                    </ul>
+                  </div>
+                  <p
+                    class="basket-item__price"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Цена:
+                    </span>
+                    73 450 ₽
+                  </p>
+                  <div
+                    class="quantity"
+                  >
+                    <button
+                      aria-label="уменьшить количество товара"
+                      class="btn-icon btn-icon--prev"
+                      disabled=""
+                    >
+                      <svg
+                        aria-hidden="true"
+                        height="12"
+                        width="7"
+                      >
+                        <use
+                          xlink:href="#icon-arrow"
+                        />
+                      </svg>
+                    </button>
+                    <label
+                      class="visually-hidden"
+                      for="counter2"
+                    />
+                    <input
+                      aria-label="количество товара"
+                      id="counter2"
+                      max="99"
+                      min="1"
+                      type="number"
+                      value="1"
+                    />
+                    <button
+                      aria-label="увеличить количество товара"
+                      class="btn-icon btn-icon--next"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        height="12"
+                        width="7"
+                      >
+                        <use
+                          xlink:href="#icon-arrow"
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                  <div
+                    class="basket-item__total-price"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Общая цена:
+                    </span>
+                    73 450 ₽
+                  </div>
+                  <button
+                    aria-label="Удалить товар"
+                    class="cross-btn"
+                    type="button"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="10"
+                      width="10"
+                    >
+                      <use
+                        xlink:href="#icon-close"
+                      />
+                    </svg>
+                  </button>
+                </li>
+              </ul>
+              <div
+                class="basket__summary"
+              >
+                <div
+                  class="basket__promo"
+                >
+                  <p
+                    class="title title--h4"
+                  >
+                    Если у вас есть промокод на скидку, примените его в этом поле
+                  </p>
+                  <div
+                    class="basket-form"
+                  >
+                    <form
+                      action="#"
+                    >
+                      <div
+                        class="custom-input"
+                      >
+                        <label>
+                          <span
+                            class="custom-input__label"
+                          >
+                            Промокод
+                          </span>
+                          <input
+                            name="promo"
+                            placeholder="Введите промокод"
+                            type="text"
+                          />
+                        </label>
+                        <p
+                          class="custom-input__error"
+                        >
+                          Промокод неверный
+                        </p>
+                        <p
+                          class="custom-input__success"
+                        >
+                          Промокод принят!
+                        </p>
+                      </div>
+                      <button
+                        class="btn"
+                        type="submit"
+                      >
+                        Применить
+                      </button>
+                    </form>
+                  </div>
+                </div>
+                <div
+                  class="basket__summary-order"
+                >
+                  <p
+                    class="basket__summary-item"
+                  >
+                    <span
+                      class="basket__summary-text"
+                    >
+                      Всего:
+                    </span>
+                    <span
+                      class="basket__summary-value"
+                    >
+                      111 390 ₽
+                    </span>
+                  </p>
+                  <p
+                    class="basket__summary-item"
+                  >
+                    <span
+                      class="basket__summary-text"
+                    >
+                      Скидка:
+                    </span>
+                    <span
+                      class="basket__summary-value basket__summary-value--bonus"
+                    >
+                      0 ₽
+                    </span>
+                  </p>
+                  <p
+                    class="basket__summary-item"
+                  >
+                    <span
+                      class="basket__summary-text basket__summary-text--total"
+                    >
+                      К оплате:
+                    </span>
+                    <span
+                      class="basket__summary-value basket__summary-value--total"
+                    >
+                      111 390 ₽
+                    </span>
+                  </p>
+                  <button
+                    class="btn btn--purple"
+                    type="submit"
+                  >
+                    Оформить заказ
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>,
+  "container": <div>
+    <main>
+      <div
+        class="page-content"
+      >
+        <div
+          class="breadcrumbs"
+        >
+          <div
+            class="container"
+          >
+            <ul
+              class="breadcrumbs__list"
+            >
+              <li
+                class="breadcrumbs__item"
+              >
+                <a
+                  class="breadcrumbs__link"
+                  href="index.html"
+                >
+                  Главная
+                  <svg
+                    aria-hidden="true"
+                    height="8"
+                    width="5"
+                  >
+                    <use
+                      xlink:href="#icon-arrow-mini"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="breadcrumbs__item"
+              >
+                <a
+                  class="breadcrumbs__link"
+                  href="catalog.html"
+                >
+                  Каталог
+                  <svg
+                    aria-hidden="true"
+                    height="8"
+                    width="5"
+                  >
+                    <use
+                      xlink:href="#icon-arrow-mini"
+                    />
+                  </svg>
+                </a>
+              </li>
+              <li
+                class="breadcrumbs__item"
+              >
+                <span
+                  class="breadcrumbs__link breadcrumbs__link--active"
+                >
+                  Корзина
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <section
+          class="basket"
+        >
+          <div
+            class="container"
+          >
+            <h1
+              class="title title--h2"
+            >
+              Корзина
+            </h1>
+            <ul
+              class="basket__list"
+            >
+              <li
+                class="basket-item"
+              >
+                <div
+                  class="basket-item__img"
+                >
+                  <picture>
+                    <source
+                      srcset="img/content/img9.webp, img/content/img9@2x.webp 2x"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Фотоаппарат «Орлёнок»"
+                      height="120"
+                      src="img/content/img9.jpg"
+                      srcset="img/content/img9@2x.jpg 2x"
+                      width="140"
+                    />
+                  </picture>
+                </div>
+                <div
+                  class="basket-item__description"
+                >
+                  <p
+                    class="basket-item__title"
+                  >
+                    Фотоаппарат «Орлёнок»
+                  </p>
+                  <ul
+                    class="basket-item__list"
+                  >
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      <span
+                        class="basket-item__article"
+                      >
+                        Артикул:
+                      </span>
+                       
+                      <span
+                        class="basket-item__number"
+                      >
+                        O78DFGSD832
+                      </span>
+                    </li>
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      Плёночная фотокамера
+                    </li>
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      Любительский уровень
+                    </li>
+                  </ul>
+                </div>
+                <p
+                  class="basket-item__price"
+                >
+                  <span
+                    class="visually-hidden"
+                  >
+                    Цена:
+                  </span>
+                  18 970 ₽
+                </p>
+                <div
+                  class="quantity"
+                >
+                  <button
+                    aria-label="уменьшить количество товара"
+                    class="btn-icon btn-icon--prev"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="12"
+                      width="7"
+                    >
+                      <use
+                        xlink:href="#icon-arrow"
+                      />
+                    </svg>
+                  </button>
+                  <label
+                    class="visually-hidden"
+                    for="counter1"
+                  />
+                  <input
+                    aria-label="количество товара"
+                    id="counter1"
+                    max="99"
+                    min="1"
+                    type="number"
+                    value="2"
+                  />
+                  <button
+                    aria-label="увеличить количество товара"
+                    class="btn-icon btn-icon--next"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="12"
+                      width="7"
+                    >
+                      <use
+                        xlink:href="#icon-arrow"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  class="basket-item__total-price"
+                >
+                  <span
+                    class="visually-hidden"
+                  >
+                    Общая цена:
+                  </span>
+                  37 940 ₽
+                </div>
+                <button
+                  aria-label="Удалить товар"
+                  class="cross-btn"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="10"
+                    width="10"
+                  >
+                    <use
+                      xlink:href="#icon-close"
+                    />
+                  </svg>
+                </button>
+              </li>
+              <li
+                class="basket-item"
+              >
+                <div
+                  class="basket-item__img"
+                >
+                  <picture>
+                    <source
+                      srcset="img/content/img1.webp, img/content/img1@2x.webp 2x"
+                      type="image/webp"
+                    />
+                    <img
+                      alt="Ретрокамера «Das Auge IV»"
+                      height="120"
+                      src="img/content/img1.jpg"
+                      srcset="img/content/img1@2x.jpg 2x"
+                      width="140"
+                    />
+                  </picture>
+                </div>
+                <div
+                  class="basket-item__description"
+                >
+                  <p
+                    class="basket-item__title"
+                  >
+                    Ретрокамера «Das Auge IV»
+                  </p>
+                  <ul
+                    class="basket-item__list"
+                  >
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      <span
+                        class="basket-item__article"
+                      >
+                        Артикул:
+                      </span>
+                       
+                      <span
+                        class="basket-item__number"
+                      >
+                        DA4IU67AD5
+                      </span>
+                    </li>
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      Коллекционная видеокамера
+                    </li>
+                    <li
+                      class="basket-item__list-item"
+                    >
+                      Любительский уровень
+                    </li>
+                  </ul>
+                </div>
+                <p
+                  class="basket-item__price"
+                >
+                  <span
+                    class="visually-hidden"
+                  >
+                    Цена:
+                  </span>
+                  73 450 ₽
+                </p>
+                <div
+                  class="quantity"
+                >
+                  <button
+                    aria-label="уменьшить количество товара"
+                    class="btn-icon btn-icon--prev"
+                    disabled=""
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="12"
+                      width="7"
+                    >
+                      <use
+                        xlink:href="#icon-arrow"
+                      />
+                    </svg>
+                  </button>
+                  <label
+                    class="visually-hidden"
+                    for="counter2"
+                  />
+                  <input
+                    aria-label="количество товара"
+                    id="counter2"
+                    max="99"
+                    min="1"
+                    type="number"
+                    value="1"
+                  />
+                  <button
+                    aria-label="увеличить количество товара"
+                    class="btn-icon btn-icon--next"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="12"
+                      width="7"
+                    >
+                      <use
+                        xlink:href="#icon-arrow"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <div
+                  class="basket-item__total-price"
+                >
+                  <span
+                    class="visually-hidden"
+                  >
+                    Общая цена:
+                  </span>
+                  73 450 ₽
+                </div>
+                <button
+                  aria-label="Удалить товар"
+                  class="cross-btn"
+                  type="button"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="10"
+                    width="10"
+                  >
+                    <use
+                      xlink:href="#icon-close"
+                    />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+            <div
+              class="basket__summary"
+            >
+              <div
+                class="basket__promo"
+              >
+                <p
+                  class="title title--h4"
+                >
+                  Если у вас есть промокод на скидку, примените его в этом поле
+                </p>
+                <div
+                  class="basket-form"
+                >
+                  <form
+                    action="#"
+                  >
+                    <div
+                      class="custom-input"
+                    >
+                      <label>
+                        <span
+                          class="custom-input__label"
+                        >
+                          Промокод
+                        </span>
+                        <input
+                          name="promo"
+                          placeholder="Введите промокод"
+                          type="text"
+                        />
+                      </label>
+                      <p
+                        class="custom-input__error"
+                      >
+                        Промокод неверный
+                      </p>
+                      <p
+                        class="custom-input__success"
+                      >
+                        Промокод принят!
+                      </p>
+                    </div>
+                    <button
+                      class="btn"
+                      type="submit"
+                    >
+                      Применить
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div
+                class="basket__summary-order"
+              >
+                <p
+                  class="basket__summary-item"
+                >
+                  <span
+                    class="basket__summary-text"
+                  >
+                    Всего:
+                  </span>
+                  <span
+                    class="basket__summary-value"
+                  >
+                    111 390 ₽
+                  </span>
+                </p>
+                <p
+                  class="basket__summary-item"
+                >
+                  <span
+                    class="basket__summary-text"
+                  >
+                    Скидка:
+                  </span>
+                  <span
+                    class="basket__summary-value basket__summary-value--bonus"
+                  >
+                    0 ₽
+                  </span>
+                </p>
+                <p
+                  class="basket__summary-item"
+                >
+                  <span
+                    class="basket__summary-text basket__summary-text--total"
+                  >
+                    К оплате:
+                  </span>
+                  <span
+                    class="basket__summary-value basket__summary-value--total"
+                  >
+                    111 390 ₽
+                  </span>
+                </p>
+                <button
+                  class="btn btn--purple"
+                  type="submit"
+                >
+                  Оформить заказ
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

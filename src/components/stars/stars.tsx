@@ -32,7 +32,7 @@ function Stars({rating, reviewCount}: StarsProps): JSX.Element {
 
       {getStars()}
 
-      <p className="visually-hidden">Рейтинг: {rating}</p>
+      <p className="visually-hidden">Рейтинг:</p>
       <p className="rate__count"><span className="visually-hidden">Всего оценок:</span>{reviewCount}</p>
     </div>
   );

@@ -1,0 +1,348 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewCard component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <li
+        class="review-card"
+      >
+        <div
+          class="review-card__head"
+        >
+          <p
+            class="title title--h4"
+          >
+            Павел
+          </p>
+          <time
+            class="review-card__data"
+            datetime="2022-04-13"
+          >
+            29
+             
+            ноябрь
+             
+            2022
+          </time>
+        </div>
+        <div
+          class="rate review-card__rate"
+        >
+          <div
+            class="rate product-card__rate"
+          >
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="17"
+            >
+              <use
+                xlink:href="#icon-full-star"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="17"
+            >
+              <use
+                xlink:href="#icon-full-star"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="17"
+            >
+              <use
+                xlink:href="#icon-full-star"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="17"
+            >
+              <use
+                xlink:href="#icon-full-star"
+              />
+            </svg>
+            <svg
+              aria-hidden="true"
+              height="16"
+              width="17"
+            >
+              <use
+                xlink:href="#icon-star"
+              />
+            </svg>
+            <p
+              class="visually-hidden"
+            >
+              Рейтинг:
+            </p>
+            <p
+              class="rate__count"
+            >
+              <span
+                class="visually-hidden"
+              >
+                Всего оценок:
+              </span>
+            </p>
+          </div>
+          <p
+            class="visually-hidden"
+          >
+            Оценка: 
+            4
+          </p>
+        </div>
+        <ul
+          class="review-card__list"
+        >
+          <li
+            class="item-list"
+          >
+            <span
+              class="item-list__title"
+            >
+              Достоинства:
+            </span>
+            <p
+              class="item-list__text"
+            >
+              Нет.
+            </p>
+          </li>
+          <li
+            class="item-list"
+          >
+            <span
+              class="item-list__title"
+            >
+              Недостатки:
+            </span>
+            <p
+              class="item-list__text"
+            >
+              Не удобный интерфейс и кнопки
+            </p>
+          </li>
+          <li
+            class="item-list"
+          >
+            <span
+              class="item-list__title"
+            >
+              Комментарий:
+            </span>
+            <p
+              class="item-list__text"
+            >
+              Хорошая камера. Лучше за эти деньги не найти.
+            </p>
+          </li>
+        </ul>
+      </li>
+    </div>
+  </body>,
+  "container": <div>
+    <li
+      class="review-card"
+    >
+      <div
+        class="review-card__head"
+      >
+        <p
+          class="title title--h4"
+        >
+          Павел
+        </p>
+        <time
+          class="review-card__data"
+          datetime="2022-04-13"
+        >
+          29
+           
+          ноябрь
+           
+          2022
+        </time>
+      </div>
+      <div
+        class="rate review-card__rate"
+      >
+        <div
+          class="rate product-card__rate"
+        >
+          <svg
+            aria-hidden="true"
+            height="16"
+            width="17"
+          >
+            <use
+              xlink:href="#icon-full-star"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            height="16"
+            width="17"
+          >
+            <use
+              xlink:href="#icon-full-star"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            height="16"
+            width="17"
+          >
+            <use
+              xlink:href="#icon-full-star"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            height="16"
+            width="17"
+          >
+            <use
+              xlink:href="#icon-full-star"
+            />
+          </svg>
+          <svg
+            aria-hidden="true"
+            height="16"
+            width="17"
+          >
+            <use
+              xlink:href="#icon-star"
+            />
+          </svg>
+          <p
+            class="visually-hidden"
+          >
+            Рейтинг:
+          </p>
+          <p
+            class="rate__count"
+          >
+            <span
+              class="visually-hidden"
+            >
+              Всего оценок:
+            </span>
+          </p>
+        </div>
+        <p
+          class="visually-hidden"
+        >
+          Оценка: 
+          4
+        </p>
+      </div>
+      <ul
+        class="review-card__list"
+      >
+        <li
+          class="item-list"
+        >
+          <span
+            class="item-list__title"
+          >
+            Достоинства:
+          </span>
+          <p
+            class="item-list__text"
+          >
+            Нет.
+          </p>
+        </li>
+        <li
+          class="item-list"
+        >
+          <span
+            class="item-list__title"
+          >
+            Недостатки:
+          </span>
+          <p
+            class="item-list__text"
+          >
+            Не удобный интерфейс и кнопки
+          </p>
+        </li>
+        <li
+          class="item-list"
+        >
+          <span
+            class="item-list__title"
+          >
+            Комментарий:
+          </span>
+          <p
+            class="item-list__text"
+          >
+            Хорошая камера. Лучше за эти деньги не найти.
+          </p>
+        </li>
+      </ul>
+    </li>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

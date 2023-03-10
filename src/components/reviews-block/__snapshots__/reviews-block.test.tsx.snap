@@ -1,0 +1,998 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReviewsBlock component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="page-content__section"
+      >
+        <section
+          class="review-block"
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="page-content__headed"
+            >
+              <h2
+                class="title title--h3"
+              >
+                Отзывы
+              </h2>
+              <button
+                class="btn"
+                type="button"
+              >
+                Оставить свой отзыв
+              </button>
+            </div>
+            <ul
+              class="review-block__list"
+            >
+              <li
+                class="review-card"
+              >
+                <div
+                  class="review-card__head"
+                >
+                  <p
+                    class="title title--h4"
+                  >
+                    Кирилл
+                  </p>
+                  <time
+                    class="review-card__data"
+                    datetime="2022-04-13"
+                  >
+                    26
+                     
+                    февраль
+                     
+                    2023
+                  </time>
+                </div>
+                <div
+                  class="rate review-card__rate"
+                >
+                  <div
+                    class="rate product-card__rate"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <p
+                      class="visually-hidden"
+                    >
+                      Рейтинг:
+                    </p>
+                    <p
+                      class="rate__count"
+                    >
+                      <span
+                        class="visually-hidden"
+                      >
+                        Всего оценок:
+                      </span>
+                    </p>
+                  </div>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Оценка: 
+                    1
+                  </p>
+                </div>
+                <ul
+                  class="review-card__list"
+                >
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Достоинства:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Рекомендую данный аппарат
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Недостатки:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Плохая камера, не рекомендую
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Комментарий:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Отличная камера, мне понравилась, пользуюсь около года. Профессионально оценить нет возможности. Есть разные мелкие недочеты, но, по скольку я не являюсь специалисто в данной области, они не ощущаются в моих работах.
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="review-card"
+              >
+                <div
+                  class="review-card__head"
+                >
+                  <p
+                    class="title title--h4"
+                  >
+                    Александр
+                  </p>
+                  <time
+                    class="review-card__data"
+                    datetime="2022-04-13"
+                  >
+                    21
+                     
+                    февраль
+                     
+                    2023
+                  </time>
+                </div>
+                <div
+                  class="rate review-card__rate"
+                >
+                  <div
+                    class="rate product-card__rate"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-star"
+                      />
+                    </svg>
+                    <p
+                      class="visually-hidden"
+                    >
+                      Рейтинг:
+                    </p>
+                    <p
+                      class="rate__count"
+                    >
+                      <span
+                        class="visually-hidden"
+                      >
+                        Всего оценок:
+                      </span>
+                    </p>
+                  </div>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Оценка: 
+                    2
+                  </p>
+                </div>
+                <ul
+                  class="review-card__list"
+                >
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Достоинства:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Хороший стабилизатор и матрица
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Недостатки:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Пришла поврежденная упаковка. Нет теперь понимая со внутренностями
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Комментарий:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Не возможно найти дополнительные аккамуляторы. К сожалению, те, что идут в комплекте не держут более 7 часов?
+                    </p>
+                  </li>
+                </ul>
+              </li>
+              <li
+                class="review-card"
+              >
+                <div
+                  class="review-card__head"
+                >
+                  <p
+                    class="title title--h4"
+                  >
+                    Анастасия
+                  </p>
+                  <time
+                    class="review-card__data"
+                    datetime="2022-04-13"
+                  >
+                    31
+                     
+                    январь
+                     
+                    2023
+                  </time>
+                </div>
+                <div
+                  class="rate review-card__rate"
+                >
+                  <div
+                    class="rate product-card__rate"
+                  >
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <svg
+                      aria-hidden="true"
+                      height="16"
+                      width="17"
+                    >
+                      <use
+                        xlink:href="#icon-full-star"
+                      />
+                    </svg>
+                    <p
+                      class="visually-hidden"
+                    >
+                      Рейтинг:
+                    </p>
+                    <p
+                      class="rate__count"
+                    >
+                      <span
+                        class="visually-hidden"
+                      >
+                        Всего оценок:
+                      </span>
+                    </p>
+                  </div>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Оценка: 
+                    5
+                  </p>
+                </div>
+                <ul
+                  class="review-card__list"
+                >
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Достоинства:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Цена соответствует качеству.
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Недостатки:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Без объектива
+                    </p>
+                  </li>
+                  <li
+                    class="item-list"
+                  >
+                    <span
+                      class="item-list__title"
+                    >
+                      Комментарий:
+                    </span>
+                    <p
+                      class="item-list__text"
+                    >
+                      Это моя первая камера. Я в восторге, нареканий нет
+                    </p>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <div
+              class="review-block__buttons"
+            >
+              <button
+                class="btn btn--purple"
+                type="button"
+              >
+                Показать больше отзывов
+              </button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="page-content__section"
+    >
+      <section
+        class="review-block"
+      >
+        <div
+          class="container"
+        >
+          <div
+            class="page-content__headed"
+          >
+            <h2
+              class="title title--h3"
+            >
+              Отзывы
+            </h2>
+            <button
+              class="btn"
+              type="button"
+            >
+              Оставить свой отзыв
+            </button>
+          </div>
+          <ul
+            class="review-block__list"
+          >
+            <li
+              class="review-card"
+            >
+              <div
+                class="review-card__head"
+              >
+                <p
+                  class="title title--h4"
+                >
+                  Кирилл
+                </p>
+                <time
+                  class="review-card__data"
+                  datetime="2022-04-13"
+                >
+                  26
+                   
+                  февраль
+                   
+                  2023
+                </time>
+              </div>
+              <div
+                class="rate review-card__rate"
+              >
+                <div
+                  class="rate product-card__rate"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Рейтинг:
+                  </p>
+                  <p
+                    class="rate__count"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Всего оценок:
+                    </span>
+                  </p>
+                </div>
+                <p
+                  class="visually-hidden"
+                >
+                  Оценка: 
+                  1
+                </p>
+              </div>
+              <ul
+                class="review-card__list"
+              >
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Достоинства:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Рекомендую данный аппарат
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Недостатки:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Плохая камера, не рекомендую
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Комментарий:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Отличная камера, мне понравилась, пользуюсь около года. Профессионально оценить нет возможности. Есть разные мелкие недочеты, но, по скольку я не являюсь специалисто в данной области, они не ощущаются в моих работах.
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li
+              class="review-card"
+            >
+              <div
+                class="review-card__head"
+              >
+                <p
+                  class="title title--h4"
+                >
+                  Александр
+                </p>
+                <time
+                  class="review-card__data"
+                  datetime="2022-04-13"
+                >
+                  21
+                   
+                  февраль
+                   
+                  2023
+                </time>
+              </div>
+              <div
+                class="rate review-card__rate"
+              >
+                <div
+                  class="rate product-card__rate"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-star"
+                    />
+                  </svg>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Рейтинг:
+                  </p>
+                  <p
+                    class="rate__count"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Всего оценок:
+                    </span>
+                  </p>
+                </div>
+                <p
+                  class="visually-hidden"
+                >
+                  Оценка: 
+                  2
+                </p>
+              </div>
+              <ul
+                class="review-card__list"
+              >
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Достоинства:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Хороший стабилизатор и матрица
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Недостатки:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Пришла поврежденная упаковка. Нет теперь понимая со внутренностями
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Комментарий:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Не возможно найти дополнительные аккамуляторы. К сожалению, те, что идут в комплекте не держут более 7 часов?
+                  </p>
+                </li>
+              </ul>
+            </li>
+            <li
+              class="review-card"
+            >
+              <div
+                class="review-card__head"
+              >
+                <p
+                  class="title title--h4"
+                >
+                  Анастасия
+                </p>
+                <time
+                  class="review-card__data"
+                  datetime="2022-04-13"
+                >
+                  31
+                   
+                  январь
+                   
+                  2023
+                </time>
+              </div>
+              <div
+                class="rate review-card__rate"
+              >
+                <div
+                  class="rate product-card__rate"
+                >
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <svg
+                    aria-hidden="true"
+                    height="16"
+                    width="17"
+                  >
+                    <use
+                      xlink:href="#icon-full-star"
+                    />
+                  </svg>
+                  <p
+                    class="visually-hidden"
+                  >
+                    Рейтинг:
+                  </p>
+                  <p
+                    class="rate__count"
+                  >
+                    <span
+                      class="visually-hidden"
+                    >
+                      Всего оценок:
+                    </span>
+                  </p>
+                </div>
+                <p
+                  class="visually-hidden"
+                >
+                  Оценка: 
+                  5
+                </p>
+              </div>
+              <ul
+                class="review-card__list"
+              >
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Достоинства:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Цена соответствует качеству.
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Недостатки:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Без объектива
+                  </p>
+                </li>
+                <li
+                  class="item-list"
+                >
+                  <span
+                    class="item-list__title"
+                  >
+                    Комментарий:
+                  </span>
+                  <p
+                    class="item-list__text"
+                  >
+                    Это моя первая камера. Я в восторге, нареканий нет
+                  </p>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <div
+            class="review-block__buttons"
+          >
+            <button
+              class="btn btn--purple"
+              type="button"
+            >
+              Показать больше отзывов
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -1,0 +1,588 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddReviewModal component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <p
+        class="title title--h4"
+      >
+        Оставить отзыв
+      </p>
+      <div
+        class="form-review"
+      >
+        <form
+          method="post"
+        >
+          <div
+            class="form-review__rate"
+          >
+            <fieldset
+              class="rate form-review__item"
+            >
+              <legend
+                class="rate__caption"
+              >
+                Рейтинг
+                <svg
+                  aria-hidden="true"
+                  height="9"
+                  width="9"
+                >
+                  <use
+                    xlink:href="#icon-snowflake"
+                  />
+                </svg>
+              </legend>
+              <div
+                class="rate__bar"
+              >
+                <div
+                  class="rate__group"
+                >
+                  <input
+                    class="visually-hidden"
+                    id="star-5"
+                    name="rate"
+                    required=""
+                    type="radio"
+                    value="5"
+                  />
+                  <label
+                    class="rate__label"
+                    for="star-5"
+                    title="Отлично"
+                  />
+                  <input
+                    class="visually-hidden"
+                    id="star-4"
+                    name="rate"
+                    required=""
+                    type="radio"
+                    value="4"
+                  />
+                  <label
+                    class="rate__label"
+                    for="star-4"
+                    title="Хорошо"
+                  />
+                  <input
+                    class="visually-hidden"
+                    id="star-3"
+                    name="rate"
+                    required=""
+                    type="radio"
+                    value="3"
+                  />
+                  <label
+                    class="rate__label"
+                    for="star-3"
+                    title="Нормально"
+                  />
+                  <input
+                    class="visually-hidden"
+                    id="star-2"
+                    name="rate"
+                    required=""
+                    type="radio"
+                    value="2"
+                  />
+                  <label
+                    class="rate__label"
+                    for="star-2"
+                    title="Плохо"
+                  />
+                  <input
+                    class="visually-hidden"
+                    id="star-1"
+                    name="rate"
+                    required=""
+                    type="radio"
+                    value="1"
+                  />
+                  <label
+                    class="rate__label"
+                    for="star-1"
+                    title="Ужасно"
+                  />
+                </div>
+                <div
+                  class="rate__progress"
+                >
+                  <span
+                    class="rate__stars"
+                  >
+                    0
+                  </span>
+                   
+                  <span>
+                    /
+                  </span>
+                   
+                  <span
+                    class="rate__all-stars"
+                  >
+                    5
+                  </span>
+                </div>
+              </div>
+              <p
+                class="rate__message"
+              >
+                Нужно оценить товар
+              </p>
+            </fieldset>
+            <div
+              class="custom-input form-review__item"
+            >
+              <label>
+                <span
+                  class="custom-input__label"
+                >
+                  Ваше имя
+                  <svg
+                    aria-hidden="true"
+                    height="9"
+                    width="9"
+                  >
+                    <use
+                      xlink:href="#icon-snowflake"
+                    />
+                  </svg>
+                </span>
+                <input
+                  name="user-name"
+                  placeholder="Введите ваше имя"
+                  required=""
+                  type="text"
+                />
+              </label>
+              <p
+                class="custom-input__error"
+              >
+                Нужно указать имя
+              </p>
+            </div>
+            <div
+              class="custom-input form-review__item"
+            >
+              <label>
+                <span
+                  class="custom-input__label"
+                >
+                  Достоинства
+                  <svg
+                    aria-hidden="true"
+                    height="9"
+                    width="9"
+                  >
+                    <use
+                      xlink:href="#icon-snowflake"
+                    />
+                  </svg>
+                </span>
+                <input
+                  name="user-plus"
+                  placeholder="Основные преимущества товара"
+                  required=""
+                  type="text"
+                />
+              </label>
+              <p
+                class="custom-input__error"
+              >
+                Нужно указать достоинства
+              </p>
+            </div>
+            <div
+              class="custom-input form-review__item"
+            >
+              <label>
+                <span
+                  class="custom-input__label"
+                >
+                  Недостатки
+                  <svg
+                    aria-hidden="true"
+                    height="9"
+                    width="9"
+                  >
+                    <use
+                      xlink:href="#icon-snowflake"
+                    />
+                  </svg>
+                </span>
+                <input
+                  name="user-minus"
+                  placeholder="Главные недостатки товара"
+                  required=""
+                  type="text"
+                />
+              </label>
+              <p
+                class="custom-input__error"
+              >
+                Нужно указать недостатки
+              </p>
+            </div>
+            <div
+              class="custom-textarea form-review__item"
+            >
+              <label>
+                <span
+                  class="custom-textarea__label"
+                >
+                  Комментарий
+                  <svg
+                    aria-hidden="true"
+                    height="9"
+                    width="9"
+                  >
+                    <use
+                      xlink:href="#icon-snowflake"
+                    />
+                  </svg>
+                </span>
+                <textarea
+                  minlength="5"
+                  name="user-comment"
+                  placeholder="Поделитесь своим опытом покупки"
+                  required=""
+                />
+              </label>
+              <div
+                class="custom-textarea__error"
+              >
+                Нужно добавить комментарий
+              </div>
+            </div>
+          </div>
+          <button
+            class="btn btn--purple form-review__btn"
+            type="submit"
+          >
+            Отправить отзыв
+          </button>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <p
+      class="title title--h4"
+    >
+      Оставить отзыв
+    </p>
+    <div
+      class="form-review"
+    >
+      <form
+        method="post"
+      >
+        <div
+          class="form-review__rate"
+        >
+          <fieldset
+            class="rate form-review__item"
+          >
+            <legend
+              class="rate__caption"
+            >
+              Рейтинг
+              <svg
+                aria-hidden="true"
+                height="9"
+                width="9"
+              >
+                <use
+                  xlink:href="#icon-snowflake"
+                />
+              </svg>
+            </legend>
+            <div
+              class="rate__bar"
+            >
+              <div
+                class="rate__group"
+              >
+                <input
+                  class="visually-hidden"
+                  id="star-5"
+                  name="rate"
+                  required=""
+                  type="radio"
+                  value="5"
+                />
+                <label
+                  class="rate__label"
+                  for="star-5"
+                  title="Отлично"
+                />
+                <input
+                  class="visually-hidden"
+                  id="star-4"
+                  name="rate"
+                  required=""
+                  type="radio"
+                  value="4"
+                />
+                <label
+                  class="rate__label"
+                  for="star-4"
+                  title="Хорошо"
+                />
+                <input
+                  class="visually-hidden"
+                  id="star-3"
+                  name="rate"
+                  required=""
+                  type="radio"
+                  value="3"
+                />
+                <label
+                  class="rate__label"
+                  for="star-3"
+                  title="Нормально"
+                />
+                <input
+                  class="visually-hidden"
+                  id="star-2"
+                  name="rate"
+                  required=""
+                  type="radio"
+                  value="2"
+                />
+                <label
+                  class="rate__label"
+                  for="star-2"
+                  title="Плохо"
+                />
+                <input
+                  class="visually-hidden"
+                  id="star-1"
+                  name="rate"
+                  required=""
+                  type="radio"
+                  value="1"
+                />
+                <label
+                  class="rate__label"
+                  for="star-1"
+                  title="Ужасно"
+                />
+              </div>
+              <div
+                class="rate__progress"
+              >
+                <span
+                  class="rate__stars"
+                >
+                  0
+                </span>
+                 
+                <span>
+                  /
+                </span>
+                 
+                <span
+                  class="rate__all-stars"
+                >
+                  5
+                </span>
+              </div>
+            </div>
+            <p
+              class="rate__message"
+            >
+              Нужно оценить товар
+            </p>
+          </fieldset>
+          <div
+            class="custom-input form-review__item"
+          >
+            <label>
+              <span
+                class="custom-input__label"
+              >
+                Ваше имя
+                <svg
+                  aria-hidden="true"
+                  height="9"
+                  width="9"
+                >
+                  <use
+                    xlink:href="#icon-snowflake"
+                  />
+                </svg>
+              </span>
+              <input
+                name="user-name"
+                placeholder="Введите ваше имя"
+                required=""
+                type="text"
+              />
+            </label>
+            <p
+              class="custom-input__error"
+            >
+              Нужно указать имя
+            </p>
+          </div>
+          <div
+            class="custom-input form-review__item"
+          >
+            <label>
+              <span
+                class="custom-input__label"
+              >
+                Достоинства
+                <svg
+                  aria-hidden="true"
+                  height="9"
+                  width="9"
+                >
+                  <use
+                    xlink:href="#icon-snowflake"
+                  />
+                </svg>
+              </span>
+              <input
+                name="user-plus"
+                placeholder="Основные преимущества товара"
+                required=""
+                type="text"
+              />
+            </label>
+            <p
+              class="custom-input__error"
+            >
+              Нужно указать достоинства
+            </p>
+          </div>
+          <div
+            class="custom-input form-review__item"
+          >
+            <label>
+              <span
+                class="custom-input__label"
+              >
+                Недостатки
+                <svg
+                  aria-hidden="true"
+                  height="9"
+                  width="9"
+                >
+                  <use
+                    xlink:href="#icon-snowflake"
+                  />
+                </svg>
+              </span>
+              <input
+                name="user-minus"
+                placeholder="Главные недостатки товара"
+                required=""
+                type="text"
+              />
+            </label>
+            <p
+              class="custom-input__error"
+            >
+              Нужно указать недостатки
+            </p>
+          </div>
+          <div
+            class="custom-textarea form-review__item"
+          >
+            <label>
+              <span
+                class="custom-textarea__label"
+              >
+                Комментарий
+                <svg
+                  aria-hidden="true"
+                  height="9"
+                  width="9"
+                >
+                  <use
+                    xlink:href="#icon-snowflake"
+                  />
+                </svg>
+              </span>
+              <textarea
+                minlength="5"
+                name="user-comment"
+                placeholder="Поделитесь своим опытом покупки"
+                required=""
+              />
+            </label>
+            <div
+              class="custom-textarea__error"
+            >
+              Нужно добавить комментарий
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn btn--purple form-review__btn"
+          type="submit"
+        >
+          Отправить отзыв
+        </button>
+      </form>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

@@ -20,18 +20,6 @@ function ReviewsBlock({ reviews }: ReviewsBlockProps): JSX.Element | null {
     lockScroll();
   };
 
-  // const scrollHandler = () => {
-  //   console.log('scroll');
-  // };
-
-  // useEffect(() => {
-  //   document.addEventListener('scroll', scrollHandler);
-
-  //   return () => {
-  //     document.removeEventListener('scroll', scrollHandler);
-  //   };
-  // });
-
   if (reviews.length === 0) {
     return null;
   }
