@@ -7,6 +7,11 @@ import { dataSlice } from './data-slice';
 
 const initialState = {
   cameras: [],
+  camerasIsLoading: false,
+  cameraIsLoading: false,
+  promoIsLoading: false,
+  similarCamerasIsLoading: false,
+  reviewsIsLoading: false,
   similarCameras: [],
   reviews: [],
 };
@@ -26,12 +31,44 @@ describe('dataSlice', () => {
     expect(result.cameras).toBe(cameras);
   });
 
+  it('should set camerasIsLoaging true', () => {
+    const action = { type: fetchAllCameras.pending.type, payload: true };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.camerasIsLoading).toBe(true);
+  });
+
+  it('should set camerasIsLoaging false', () => {
+    const action = { type: fetchAllCameras.rejected.type, payload: false };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.camerasIsLoading).toBe(false);
+  });
+
   it('should fill camera by payload', () => {
     const action = { type: fetchCamera.fulfilled.type, payload: cameras[0] };
 
     const result = dataSlice.reducer(initialState, action);
 
     expect(result.camera).toBe(cameras[0]);
+  });
+
+  it('should set cameraIsLoaging true', () => {
+    const action = { type: fetchCamera.pending.type, payload: true };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.cameraIsLoading).toBe(true);
+  });
+
+  it('should set cameraIsLoading false', () => {
+    const action = { type: fetchCamera.rejected.type, payload: false };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.cameraIsLoading).toBe(false);
   });
 
   it('should fill promo by payload', () => {
@@ -42,6 +79,22 @@ describe('dataSlice', () => {
     expect(result.promo).toBe(promoProduct);
   });
 
+  it('should set promoIsLoading true', () => {
+    const action = { type: fetchPromo.pending.type, payload: true };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.promoIsLoading).toBe(true);
+  });
+
+  it('should set promoIsLoading false', () => {
+    const action = { type: fetchPromo.rejected.type, payload: false };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.promoIsLoading).toBe(false);
+  });
+
   it('should fill reviews by payload', () => {
     const action = { type: fetchReviews.fulfilled.type, payload: reviews };
 
@@ -50,11 +103,43 @@ describe('dataSlice', () => {
     expect(result.reviews).toBe(reviews);
   });
 
+  it('should set reviewsIsLoading true', () => {
+    const action = { type: fetchReviews.pending.type, payload: true };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.reviewsIsLoading).toBe(true);
+  });
+
+  it('should set reviewsIsLoading false', () => {
+    const action = { type: fetchReviews.rejected.type, payload: false };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.reviewsIsLoading).toBe(false);
+  });
+
   it('should fill similarCameras by payload', () => {
     const action = { type: fetchSimilarCameras.fulfilled.type, payload: similarCameras };
 
     const result = dataSlice.reducer(initialState, action);
 
     expect(result.similarCameras).toBe(similarCameras);
+  });
+
+  it('should set similarCamerasIsLoading true', () => {
+    const action = { type: fetchSimilarCameras.pending.type, payload: true };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.similarCamerasIsLoading).toBe(true);
+  });
+
+  it('should set similarCamerasIsLoading false', () => {
+    const action = { type: fetchSimilarCameras.rejected.type, payload: false };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.similarCamerasIsLoading).toBe(false);
   });
 });
