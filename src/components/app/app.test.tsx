@@ -5,7 +5,6 @@ import App from './app';
 import { Provider } from 'react-redux';
 import { cameras } from '../../mocks/cameras';
 
-
 jest.mock('react-redux');
 
 const mockStore = configureMockStore([thunk]);

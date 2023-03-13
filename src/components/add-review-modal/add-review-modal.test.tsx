@@ -1,5 +1,4 @@
 import { render } from '@testing-library/react';
-import { reviews } from '../../mocks/reviews';
 import AddReviewModal from './add-review-modal';
 
 jest.mock('react-redux');

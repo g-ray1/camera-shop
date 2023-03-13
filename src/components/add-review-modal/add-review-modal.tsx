@@ -4,11 +4,11 @@ import { ModalContent } from '../../consts';
 import { useAppDispatch } from '../../hooks/hooks';
 import { postUserReview } from '../../store/api-actions';
 import { setModalContent } from '../../store/utils-slice/utils-slice';
-import { UserReview } from '../../types/types';
+import { UserParams, UserReview } from '../../types/types';
 
 const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
   const dispatch = useAppDispatch();
-  const { id } = useParams();
+  const { id } = useParams<keyof UserParams>() as UserParams;
   const [rating, setRating] = useState('');
   const [userName, setUserName] = useState('');
   const [advantage, setAdvantage] = useState('');
@@ -60,7 +60,7 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
                   <label className="rate__label" htmlFor="star-1" title="Ужасно" ></label>
                 </div>
                 <div className="rate__progress">
-                  <span className="rate__stars">0</span> <span>/</span> <span className="rate__all-stars">5</span>
+                  <span className="rate__stars">{rating ? rating : 0}</span> <span>/</span> <span className="rate__all-stars">5</span>
                 </div>
               </div>
               <p className="rate__message">Нужно оценить товар</p>
