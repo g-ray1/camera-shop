@@ -28,7 +28,7 @@ function ProductPage(): JSX.Element {
     dispatch(fetchCamera(id));
     dispatch(fetchSimilarCameras(id));
     dispatch(fetchReviews(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   const productIsLoading = useAppSelector(getCameraIsLoading);
   const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
