@@ -23,15 +23,16 @@ function ProductPage(): JSX.Element {
   const reviews = useAppSelector(getReviews);
   const modalIsActive = useAppSelector(getModalMode);
   const modalContent = useAppSelector(getModalContent);
-  const productIsLoading = useAppSelector(getCameraIsLoading);
-  const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
-  const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
 
   useEffect(() => {
     dispatch(fetchCamera(id));
     dispatch(fetchSimilarCameras(id));
     dispatch(fetchReviews(id));
   }, [id]);
+
+  const productIsLoading = useAppSelector(getCameraIsLoading);
+  const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
+  const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
 
   if(productIsLoading || similarProductsIsLoading || reviewsIsLoading) {
     return <Loader />;
