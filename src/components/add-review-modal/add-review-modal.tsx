@@ -35,7 +35,6 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
     window.scrollTo(0, 0);
   };
 
-
   return (
     <>
       <p className="title title--h4">Оставить отзыв</p>

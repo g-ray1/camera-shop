@@ -11,7 +11,7 @@ import UpButton from '../../components/up-button/up-button';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { fetchCamera, fetchReviews, fetchSimilarCameras } from '../../store/api-actions';
 import { getCamera, getCameraIsLoading, getReviews, getSimilarCameras, getSimilarCamerasIsLoading, getReviewsIsLoading } from '../../store/data-slice/data-slice-selectors';
-import { getModalContent, getModalMode } from '../../store/utils-slice/utils-slice-selectors';
+import { getIsReviewFormDisabled, getModalContent, getModalMode } from '../../store/utils-slice/utils-slice-selectors';
 import { UserParams } from '../../types/types';
 
 function ProductPage(): JSX.Element {
@@ -33,8 +33,9 @@ function ProductPage(): JSX.Element {
   const productIsLoading = useAppSelector(getCameraIsLoading);
   const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
   const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
+  const isReviewFormDisabled = useAppSelector(getIsReviewFormDisabled);
 
-  if(productIsLoading || similarProductsIsLoading || reviewsIsLoading) {
+  if(productIsLoading || similarProductsIsLoading || reviewsIsLoading || isReviewFormDisabled) {
     return <Loader />;
   }
 
