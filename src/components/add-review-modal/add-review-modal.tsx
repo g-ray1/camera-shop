@@ -36,7 +36,9 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
   };
 
   useEffect(() => {
-    return dispatch(fetchReviews(id));
+    return () => {
+      dispatch(fetchReviews(id));
+    }
   }, []);
 
   return (
