@@ -17,7 +17,7 @@ const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
 
   useEffect(() => {
     dispatch(fetchReviews(id));
-  }, [id]);
+  }, [dispatch, id]);
 
   return (
     <>
