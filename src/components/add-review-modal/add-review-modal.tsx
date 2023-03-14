@@ -32,7 +32,6 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
     dispatch(postUserReview(reviewPost));
     dispatch(setModalContent(ModalContent.ReviewSuccess));
     dispatch(fetchReviews(id));
-    window.scrollTo(0, 0);
   };
 
   return (
