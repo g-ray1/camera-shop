@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { fetchReviews } from '../../store/api-actions';
@@ -48,7 +48,3 @@ const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
 ReviewSuccessModal.displayName = 'ReviewSuccessModal';
 
 export default ReviewSuccessModal;
-function useEffect(arg0: () => void) {
-  throw new Error('Function not implemented.');
-}
-
