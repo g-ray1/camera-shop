@@ -1,10 +1,12 @@
 import { forwardRef, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { fetchReviews } from '../../store/api-actions';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
 
 const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
   const dispatch = useAppDispatch();
+  const { id } = useParams();
   const { unlockScroll } = useScrollLock();
 
   const handleButtonClick = () => {
@@ -13,7 +15,7 @@ const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
   };
 
   useEffect(() => {
-    dispatch(fetchReviews);
+    dispatch(fetchReviews(id));
   }, []);
 
   return (
