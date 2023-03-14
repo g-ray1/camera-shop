@@ -1,12 +1,9 @@
 import { forwardRef, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
-import { UserParams } from '../../types/types';
 
 const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
   const dispatch = useAppDispatch();
-  const { id } = useParams<keyof UserParams>() as UserParams;
   const { unlockScroll } = useScrollLock();
 
   const handleButtonClick = () => {
