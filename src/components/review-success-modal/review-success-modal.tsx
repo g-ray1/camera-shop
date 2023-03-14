@@ -1,4 +1,4 @@
-import { forwardRef, useEffect } from 'react';
+import { forwardRef } from 'react';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
 
