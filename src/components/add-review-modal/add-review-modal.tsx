@@ -15,7 +15,7 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
   const [disadvantage, setDisadvantage] = useState('');
   const [review, setReview] = useState('');
 
-  const handleSubmit = (evt: FormEvent) => {
+  const handleSubmit = async (evt: FormEvent) => {
     evt.preventDefault();
     const cameraId = Number(id);
     const cameraRating = Number(rating);
@@ -29,7 +29,7 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
       review: review,
     };
 
-    postUserReview(reviewPost);
+    await dispatch(postUserReview(reviewPost));
     dispatch(fetchReviews(id));
     dispatch(setModalContent(ModalContent.ReviewSuccess));
 
