@@ -1,4 +1,4 @@
-import { FormEvent, forwardRef, useState, useEffect } from 'react';
+import { FormEvent, forwardRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ModalContent } from '../../consts';
 import { useAppDispatch } from '../../hooks/hooks';
@@ -35,11 +35,6 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
     window.scrollTo(0, 0);
   };
 
-  useEffect(() => {
-    return () => {
-      dispatch(fetchReviews(id));
-    }
-  }, []);
 
   return (
     <>
