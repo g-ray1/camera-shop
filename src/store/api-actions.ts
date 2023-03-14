@@ -85,7 +85,11 @@ export const postUserReview = createAsyncThunk<void, UserReview, {
   extra: AxiosInstance;
 }>(
   'utils/postUserReview',
-  async (userReview, { extra: api }) => {
-    await api.post<UserReview>(APIRoutes.Reviews, userReview);
+  async (userReview, { dispatch, extra: api }) => {
+    const response = await api.post<UserReview>(APIRoutes.Reviews, userReview);
+
+    if (response.status === 201) {
+      await dispatch(fetchReviews(userReview.cameraId.toString()));
+    }
   }
 );

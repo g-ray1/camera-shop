@@ -17,12 +17,15 @@ import { UserParams } from '../../types/types';
 function ProductPage(): JSX.Element {
   const { id } = useParams<keyof UserParams>() as UserParams;
   const dispatch = useAppDispatch();
-
   const product = useAppSelector(getCamera);
   const similarProducts = useAppSelector(getSimilarCameras);
   const reviews = useAppSelector(getReviews);
   const modalIsActive = useAppSelector(getModalMode);
   const modalContent = useAppSelector(getModalContent);
+  const productIsLoading = useAppSelector(getCameraIsLoading);
+  const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
+  const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
+  const isReviewFormDisabled = useAppSelector(getIsReviewFormDisabled);
 
   useEffect(() => {
     dispatch(fetchCamera(id));
@@ -30,16 +33,11 @@ function ProductPage(): JSX.Element {
     dispatch(fetchReviews(id));
   }, [dispatch, id]);
 
-  const productIsLoading = useAppSelector(getCameraIsLoading);
-  const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
-  const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
-  const isReviewFormDisabled = useAppSelector(getIsReviewFormDisabled);
-
-  if(productIsLoading || similarProductsIsLoading || reviewsIsLoading || isReviewFormDisabled) {
+  if (productIsLoading || similarProductsIsLoading || reviewsIsLoading || isReviewFormDisabled) {
     return <Loader />;
   }
 
-  if(!product) {
+  if (!product) {
     return <Page404 />;
   }
 

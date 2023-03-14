@@ -2,7 +2,7 @@ import { FormEvent, forwardRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ModalContent } from '../../consts';
 import { useAppDispatch } from '../../hooks/hooks';
-import { fetchReviews, postUserReview } from '../../store/api-actions';
+import { postUserReview } from '../../store/api-actions';
 import { setModalContent } from '../../store/utils-slice/utils-slice';
 import { UserParams, UserReview } from '../../types/types';
 
@@ -29,9 +29,8 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
       review: review,
     };
 
-    dispatch(postUserReview(reviewPost))
-    .then(dispatch(fetchReviews(id)))
-    .then(dispatch(setModalContent(ModalContent.ReviewSuccess)));
+    dispatch(postUserReview(reviewPost));
+    dispatch(setModalContent(ModalContent.ReviewSuccess));
   };
 
   return (
