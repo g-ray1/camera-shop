@@ -1,5 +1,6 @@
-import { forwardRef } from 'react';
+import { forwardRef, useEffect } from 'react';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { fetchReviews } from '../../store/api-actions';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
 
 const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
@@ -10,6 +11,10 @@ const ReviewSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
     dispatch(setModalMode(false));
     unlockScroll();
   };
+
+  useEffect(() => {
+    dispatch(fetchReviews);
+  }, []);
 
   return (
     <>
