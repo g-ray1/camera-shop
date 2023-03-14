@@ -29,10 +29,9 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
       review: review,
     };
 
-    dispatch(postUserReview(reviewPost));
-    dispatch(fetchReviews(id));
-    dispatch(setModalContent(ModalContent.ReviewSuccess));
-
+    dispatch(postUserReview(reviewPost))
+    .then(dispatch(fetchReviews(id)))
+    .then(dispatch(setModalContent(ModalContent.ReviewSuccess)));
   };
 
   return (
