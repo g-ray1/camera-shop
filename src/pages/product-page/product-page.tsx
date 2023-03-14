@@ -32,9 +32,8 @@ function ProductPage(): JSX.Element {
 
   const productIsLoading = useAppSelector(getCameraIsLoading);
   const similarProductsIsLoading = useAppSelector(getSimilarCamerasIsLoading);
-  const reviewsIsLoading = useAppSelector(getReviewsIsLoading);
 
-  if(productIsLoading || similarProductsIsLoading || reviewsIsLoading) {
+  if(productIsLoading || similarProductsIsLoading) {
     return <Loader />;
   }
 
