@@ -5,6 +5,7 @@ const utilsInitialState = {
   modalIsActive: false,
   modalContent: 'addItem',
   isReviewFormDisabled: false,
+  currentCatalogPage: 1,
 };
 
 describe('utilsSlice', () => {
