@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import Banner from '../../components/banner/banner';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import CatalogFilter from '../../components/catalog-filter/catalog-filter';
-import CatalogSort from '../../components/catalog-sort/catalog-sort';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getCamera, getCameraIsLoading, getCamerasIsLoading, getPromo, getPromoIsLoading } from '../../store/data-slice/data-slice-selectors';
 import { getModalContent, getModalMode } from '../../store/utils-slice/utils-slice-selectors';
@@ -12,6 +11,7 @@ import Loader from '../../components/loader/loader';
 import Catalog from '../../components/catalog/catalog';
 import PaginationList from '../../components/pagination-list/pagination-list';
 import { setCurrentCatalogPage } from '../../store/utils-slice/utils-slice';
+import CatalogSort from '../../components/catalog-sort/catalog-sort';
 
 function CatalogPage(): JSX.Element {
   const dispatch = useAppDispatch();

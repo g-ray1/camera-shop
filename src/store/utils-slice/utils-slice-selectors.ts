@@ -7,3 +7,5 @@ export const getModalContent = (state: RootState) => state.utils.modalContent;
 export const getIsReviewFormDisabled = (state: RootState) => state.utils.isReviewFormDisabled;
 
 export const getCurrentCatalogPage = (state: RootState) => state.utils.currentCatalogPage;
+
+export const getSearchParams = (state: RootState) => state.utils.searchParams;

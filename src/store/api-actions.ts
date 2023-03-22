@@ -19,6 +19,21 @@ export const fetchAllCameras = createAsyncThunk<Camera[], undefined, {
     }
   });
 
+export const fetchSortedCameras = createAsyncThunk<Camera[], string, {
+  dispatch: AppDispatch;
+  state: RootState;
+  extra: AxiosInstance;
+}>(
+  'data/fetchSortedCameras',
+  async (_arg, { extra: api }) => {
+    const { data } = await api.get<Camera[]>(`${APIRoutes.Cameras}?${_arg}`);
+    if (data) {
+      return (data);
+    } else {
+      throw new Error('No data');
+    }
+  });
+
 export const fetchCamera = createAsyncThunk<Camera, number | string, {
   dispatch: AppDispatch;
   state: RootState;
