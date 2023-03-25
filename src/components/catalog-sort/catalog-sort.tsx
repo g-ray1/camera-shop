@@ -1,17 +1,15 @@
-import { ChangeEvent, useEffect } from 'react';
+import { ChangeEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { OrderType, SortingType } from '../../consts';
-import { useAppDispatch } from '../../hooks/hooks';
-import { fetchSortedCameras } from '../../store/api-actions';
-import { setCurrentCatalogPage, setSearchParamsInState } from '../../store/utils-slice/utils-slice';
 
 function CatalogSort(): JSX.Element {
-  const dispatch = useAppDispatch();
   const [searchParams, setSearchParams] = useSearchParams();
 
   const handleChangeSort = (evt: ChangeEvent) => {
     if (!searchParams.has('_order')) {
-      setSearchParams({ _sort: evt.target.id, _order: OrderType.ByAscending });
+      searchParams.set('_sort', evt.target.id);
+      searchParams.set('_order', OrderType.ByAscending);
+      setSearchParams(searchParams);
     } else {
       searchParams.set('_sort', evt.target.id);
       setSearchParams(searchParams);
@@ -20,20 +18,14 @@ function CatalogSort(): JSX.Element {
 
   const handleChangeOrder = (evt: ChangeEvent) => {
     if (!searchParams.has('_sort')) {
-      setSearchParams({ _sort: SortingType.ByPrice, _order: evt.target.id });
+      searchParams.set('_sort', SortingType.ByPrice);
+      searchParams.set('_order', evt.target.id);
+      setSearchParams(searchParams);
     } else {
       searchParams.set('_order', evt.target.id);
       setSearchParams(searchParams);
     }
   };
-
-  useEffect(() => {
-    if (searchParams.toString()) {
-      dispatch(fetchSortedCameras(searchParams.toString()));
-      dispatch(setCurrentCatalogPage(1));
-      dispatch(setSearchParamsInState(searchParams.toString()));
-    }
-  }, [dispatch, searchParams]);
 
   return (
     <div className="catalog-sort">
