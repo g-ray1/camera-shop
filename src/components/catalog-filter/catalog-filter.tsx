@@ -1,28 +1,42 @@
 import { ChangeEvent } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { CodesForCyrillicString } from '../../consts';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { setCurrentCatalogPage, setFilterParamsInState } from '../../store/utils-slice/utils-slice';
+import { getFilterParams } from '../../store/utils-slice/utils-slice-selectors';
+import PriceBlock from '../price-block/price-block';
 
 function CatalogFilter(): JSX.Element {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const dispatch = useAppDispatch();
+  const [searchParams] = useSearchParams();
+  const filterParams = useAppSelector(getFilterParams);
 
   const handleChangeCategory = (evt: ChangeEvent) => {
     searchParams.set('category', evt.target.id);
-    setSearchParams(searchParams);
+    dispatch(setFilterParamsInState(searchParams.toString()));
+    dispatch(setCurrentCatalogPage(1));
   };
 
   const handleChangeType = (evt: ChangeEvent) => {
     const types = searchParams.getAll('type');
-    if (types.includes(evt.target.id)) {
+    const target = evt.target as HTMLInputElement;
+
+    if (types.includes(target.id)) {
       searchParams.delete('type');
-      types.splice(types.indexOf(evt.target.id), 1);
+      types.splice(types.indexOf(target.id), 1);
       types.forEach((item) => searchParams.append('type', item));
     } else {
-      searchParams.append('type', evt.target.id);
+      searchParams.append('type', target.id);
+      target.checked = true;
     }
-    setSearchParams(searchParams);
+
+    dispatch(setCurrentCatalogPage(1));
+    dispatch(setFilterParamsInState(searchParams.toString()));
   };
 
   const handleChangeLevel = (evt: ChangeEvent) => {
     const levels = searchParams.getAll('level');
+
     if (levels.includes(evt.target.id)) {
       searchParams.delete('level');
       levels.splice(levels.indexOf(evt.target.id), 1);
@@ -30,14 +44,17 @@ function CatalogFilter(): JSX.Element {
     } else {
       searchParams.append('level', evt.target.id);
     }
-    setSearchParams(searchParams);
+
+    dispatch(setCurrentCatalogPage(1));
+    dispatch(setFilterParamsInState(searchParams.toString()));
   };
 
   const handleResetButton = () => {
     searchParams.delete('category');
     searchParams.delete('type');
     searchParams.delete('level');
-    setSearchParams(searchParams);
+    dispatch(setCurrentCatalogPage(1));
+    dispatch(setFilterParamsInState(searchParams.toString()));
   };
 
   return (
@@ -46,21 +63,7 @@ function CatalogFilter(): JSX.Element {
         <form>
           <h2 className="visually-hidden">Фильтр</h2>
 
-          <fieldset className="catalog-filter__block">
-            <legend className="title title--h5">Цена, ₽</legend>
-            <div className="catalog-filter__price-range">
-              <div className="custom-input">
-                <label>
-                  <input type="number" name="price" placeholder="от" />
-                </label>
-              </div>
-              <div className="custom-input">
-                <label>
-                  <input type="number" name="priceUp" placeholder="до" />
-                </label>
-              </div>
-            </div>
-          </fieldset>
+          <PriceBlock />
 
           <fieldset className="catalog-filter__block">
             <legend className="title title--h5">Категория</legend>
@@ -71,7 +74,6 @@ function CatalogFilter(): JSX.Element {
                   id='Фотоаппарат'
                   name="cameraType"
                   onChange={(evt) => handleChangeCategory(evt)}
-                  checked={searchParams.get('category') === 'Фотоаппарат'}
                 />
                 <span className="custom-checkbox__icon"></span>
                 <span className="custom-checkbox__label">Фотокамера</span>
@@ -83,9 +85,8 @@ function CatalogFilter(): JSX.Element {
                   type="radio"
                   id='Видеокамера'
                   name="cameraType"
-                  disabled={searchParams.getAll('type').includes('Плёночная') || searchParams.getAll('type').includes('Моментальная')}
+                  disabled={filterParams.includes(CodesForCyrillicString.Плёночная) || filterParams.includes(CodesForCyrillicString.Моментальная)}
                   onChange={(evt) => handleChangeCategory(evt)}
-                  checked={searchParams.get('category') === 'Видеокамера'}
                 />
                 <span className="custom-checkbox__icon" ></span>
                 <span className="custom-checkbox__label">Видеокамера</span>
@@ -102,7 +103,6 @@ function CatalogFilter(): JSX.Element {
                   id='Цифровая'
                   name="digital"
                   onChange={(evt) => handleChangeType(evt)}
-                  checked={searchParams.getAll('type').includes('Цифровая')}
                 />
                 <span className="custom-checkbox__icon"></span>
                 <span className="custom-checkbox__label">Цифровая</span>
@@ -114,9 +114,8 @@ function CatalogFilter(): JSX.Element {
                   type="checkbox"
                   id='Плёночная'
                   name="film"
-                  disabled={searchParams.get('category') === 'Видеокамера'}
+                  disabled={filterParams.includes(CodesForCyrillicString.Видеокамера)}
                   onChange={(evt) => handleChangeType(evt)}
-                  checked={searchParams.getAll('type').includes('Плёночная')}
                 />
                 <span className="custom-checkbox__icon"></span>
                 <span className="custom-checkbox__label">Плёночная</span>
@@ -128,9 +127,8 @@ function CatalogFilter(): JSX.Element {
                   type="checkbox"
                   id='Моментальная'
                   name="snapshot"
-                  disabled={searchParams.get('category') === 'Видеокамера'}
+                  disabled={filterParams.includes(CodesForCyrillicString.Видеокамера)}
                   onChange={(evt) => handleChangeType(evt)}
-                  checked={searchParams.getAll('type').includes('Моментальная')}
                 />
                 <span className="custom-checkbox__icon"></span>
                 <span className="custom-checkbox__label">Моментальная</span>
@@ -143,7 +141,6 @@ function CatalogFilter(): JSX.Element {
                   id='Коллекционная'
                   name="collection"
                   onChange={(evt) => handleChangeType(evt)}
-                  checked={searchParams.getAll('type').includes('Коллекционная')}
                 />
                 <span className="custom-checkbox__icon"></span>
                 <span className="custom-checkbox__label">Коллекционная</span>

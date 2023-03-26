@@ -7,7 +7,8 @@ const utilsInitialState = {
   isReviewFormDisabled: false,
   currentCatalogPage: 1,
   sortingMode: 'byPrice',
-  searchParams: '',
+  sortParams: '',
+  filterParams: '',
 };
 
 describe('utilsSlice', () => {

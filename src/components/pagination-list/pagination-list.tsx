@@ -18,7 +18,7 @@ function PaginationList(): JSX.Element {
       pages.push(
         <li className="pagination__item" key='back'>
           <Link
-            to="/"
+            to={'/'}
             className="pagination__link pagination__link--text"
             onClick={() => dispatch(setCurrentCatalogPage(--currentCatalogPage))}
           >Назад
@@ -31,7 +31,7 @@ function PaginationList(): JSX.Element {
       pages.push(
         <li className="pagination__item" key={i}>
           <Link
-            to="/"
+            to={'/'}
             className={`pagination__link ${i === currentCatalogPage ? 'pagination__link--active' : ''}`}
             onClick={() => dispatch(setCurrentCatalogPage(i))}
           >{i}
