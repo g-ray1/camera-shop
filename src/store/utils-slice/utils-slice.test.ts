@@ -9,6 +9,7 @@ const utilsInitialState = {
   sortingMode: 'byPrice',
   sortParams: '',
   filterParams: '',
+  priceParams: '',
 };
 
 describe('utilsSlice', () => {

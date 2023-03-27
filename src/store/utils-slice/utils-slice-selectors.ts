@@ -11,3 +11,5 @@ export const getCurrentCatalogPage = (state: RootState) => state.utils.currentCa
 export const getSortParams = (state: RootState) => state.utils.sortParams;
 
 export const getFilterParams = (state: RootState) => state.utils.filterParams;
+
+export const getPriceParams = (state: RootState) => state.utils.priceParams;

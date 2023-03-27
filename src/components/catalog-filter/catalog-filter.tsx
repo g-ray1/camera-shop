@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { setCurrentCatalogPage, setFilterParamsInState } from '../../store/utils-slice/utils-slice';
 import { getFilterParams } from '../../store/utils-slice/utils-slice-selectors';
 import PriceBlock from '../price-block/price-block';
+import ResetFiltresButton from '../reset-filters-button/reset-filters-button';
 
 function CatalogFilter(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -45,14 +46,6 @@ function CatalogFilter(): JSX.Element {
       searchParams.append('level', evt.target.id);
     }
 
-    dispatch(setCurrentCatalogPage(1));
-    dispatch(setFilterParamsInState(searchParams.toString()));
-  };
-
-  const handleResetButton = () => {
-    searchParams.delete('category');
-    searchParams.delete('type');
-    searchParams.delete('level');
     dispatch(setCurrentCatalogPage(1));
     dispatch(setFilterParamsInState(searchParams.toString()));
   };
@@ -191,12 +184,8 @@ function CatalogFilter(): JSX.Element {
             </div>
           </fieldset>
 
-          <button
-            className="btn catalog-filter__reset-btn"
-            type="reset"
-            onClick={handleResetButton}
-          >Сбросить фильтры
-          </button>
+          <ResetFiltresButton />
+
         </form>
       </div>
     </div>

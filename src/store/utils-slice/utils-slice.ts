@@ -8,6 +8,7 @@ type UtilsState = {
   currentCatalogPage: number;
   sortParams: string;
   filterParams: string;
+  priceParams: string;
 }
 
 const initialState: UtilsState = {
@@ -17,6 +18,7 @@ const initialState: UtilsState = {
   currentCatalogPage: 1,
   sortParams: '',
   filterParams: '',
+  priceParams: '',
 };
 
 export const utilSlice = createSlice({
@@ -37,6 +39,9 @@ export const utilSlice = createSlice({
     },
     setFilterParamsInState(state, action: PayloadAction<string>) {
       state.filterParams = action.payload;
+    },
+    setPriceParamsInState(state, action: PayloadAction<string>) {
+      state.priceParams = action.payload;
     }
   },
   extraReducers(builder) {
@@ -53,4 +58,11 @@ export const utilSlice = createSlice({
   },
 });
 
-export const { setModalMode, setModalContent, setCurrentCatalogPage, setSortParamsInState, setFilterParamsInState } = utilSlice.actions;
+export const {
+  setModalMode,
+  setModalContent,
+  setCurrentCatalogPage,
+  setSortParamsInState,
+  setFilterParamsInState,
+  setPriceParamsInState
+} = utilSlice.actions;
