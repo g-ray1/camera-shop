@@ -5,12 +5,14 @@ type UtilsState = {
   modalIsActive: boolean;
   modalContent: string;
   isReviewFormDisabled: boolean;
+  currentCatalogPage: number;
 }
 
 const initialState: UtilsState = {
   modalIsActive: false,
   modalContent: 'addItem',
   isReviewFormDisabled: false,
+  currentCatalogPage: 1,
 };
 
 export const utilSlice = createSlice({
@@ -22,6 +24,9 @@ export const utilSlice = createSlice({
     },
     setModalContent(state, action: PayloadAction<string>) {
       state.modalContent = action.payload;
+    },
+    setCurrentCatalogPage(state, action: PayloadAction<number>) {
+      state.currentCatalogPage = action.payload;
     }
   },
   extraReducers(builder) {
@@ -38,4 +43,4 @@ export const utilSlice = createSlice({
   },
 });
 
-export const { setModalMode, setModalContent } = utilSlice.actions;
+export const { setModalMode, setModalContent, setCurrentCatalogPage } = utilSlice.actions;

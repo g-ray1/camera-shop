@@ -1,37 +1,29 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import Banner from '../../components/banner/banner';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import CatalogFilter from '../../components/catalog-filter/catalog-filter';
 import CatalogSort from '../../components/catalog-sort/catalog-sort';
-import PaginationList from '../../components/pagination-list/pagination-list';
-import PreviewCardsList from '../../components/preview-cards-list/preview-cards-list';
-import { PRODUCTS_PER_PAGE } from '../../consts';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { getAllCameras, getCamera, getCameraIsLoading, getCamerasIsLoading, getPromo, getPromoIsLoading } from '../../store/data-slice/data-slice-selectors';
+import { getCamera, getCameraIsLoading, getCamerasIsLoading, getPromo, getPromoIsLoading } from '../../store/data-slice/data-slice-selectors';
 import { getModalContent, getModalMode } from '../../store/utils-slice/utils-slice-selectors';
 import ModalWindow from '../../components/modal-window/modal-window';
 import { fetchCamera } from '../../store/api-actions';
 import Loader from '../../components/loader/loader';
-import { createBrowserHistory } from 'history';
+import Catalog from '../../components/catalog/catalog';
+import PaginationList from '../../components/pagination-list/pagination-list';
+import { setCurrentCatalogPage } from '../../store/utils-slice/utils-slice';
 
 function CatalogPage(): JSX.Element {
   const dispatch = useAppDispatch();
-  const history = createBrowserHistory();
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalProducts = useAppSelector(getAllCameras);
   const promo = useAppSelector(getPromo);
   const promoProduct = useAppSelector(getCamera);
   const modalIsActive = useAppSelector(getModalMode);
   const modalContent = useAppSelector(getModalContent);
 
-  const lastIndex = currentPage * PRODUCTS_PER_PAGE;
-  const firstIndex = lastIndex - PRODUCTS_PER_PAGE;
-  const productsOnPage = totalProducts.slice(firstIndex, lastIndex);
-
   useEffect(() => {
     promo?.id && dispatch(fetchCamera(promo.id));
-    history.push(`page_${currentPage}`);
-  }, [currentPage, dispatch, promo?.id]);
+    dispatch(setCurrentCatalogPage(1));
+  }, [dispatch, promo?.id]);
 
   const promoIsLoading = useAppSelector(getPromoIsLoading);
   const camerasIsLoaging = useAppSelector(getCamerasIsLoading);
@@ -43,7 +35,6 @@ function CatalogPage(): JSX.Element {
 
   return (
     <main>
-
       <Banner product={promo} description={promoProduct?.description} />
 
       <div className="page-content">
@@ -61,10 +52,9 @@ function CatalogPage(): JSX.Element {
 
                 <CatalogSort />
 
-                <PreviewCardsList products={productsOnPage} />
+                <Catalog />
 
-                <PaginationList cardsCount={totalProducts.length} currentPage={currentPage} clickHandler={setCurrentPage} />
-
+                <PaginationList />
               </div>
             </div>
           </div>

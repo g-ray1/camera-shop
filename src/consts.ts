@@ -4,6 +4,8 @@ export const SIMILAR_PRODUCTS_COUNT = 3;
 
 export const REVIEWS_PER_PAGE = 3;
 
+export const OPTIONS_IN_DROPDOWN_MENU = 4;
+
 export const enum ModalContent {
   AddItem = 'addItem',
   AddReview = 'addReview',

@@ -1,25 +1,26 @@
 import { Link } from 'react-router-dom';
 import { PRODUCTS_PER_PAGE } from '../../consts';
+import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
+import { getAllCameras } from '../../store/data-slice/data-slice-selectors';
+import { setCurrentCatalogPage } from '../../store/utils-slice/utils-slice';
+import { getCurrentCatalogPage } from '../../store/utils-slice/utils-slice-selectors';
 
-type PaginationListProps = {
-  cardsCount: number;
-  currentPage: number;
-  clickHandler: React.Dispatch<React.SetStateAction<number>>;
-}
-
-function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationListProps): JSX.Element {
+function PaginationList(): JSX.Element {
+  const { length } = useAppSelector(getAllCameras);
+  let currentCatalogPage = useAppSelector(getCurrentCatalogPage);
+  const dispatch = useAppDispatch();
 
   const getPages = () => {
-    const pagesCount = Math.ceil(cardsCount / PRODUCTS_PER_PAGE);
+    const pagesCount = Math.ceil(length / PRODUCTS_PER_PAGE);
     const pages = [];
 
-    if (currentPage > 1) {
+    if (currentCatalogPage > 1) {
       pages.push(
         <li className="pagination__item" key='back'>
           <Link
-            to="#"
+            to="/"
             className="pagination__link pagination__link--text"
-            onClick={() => clickHandler(--currentPage)}
+            onClick={() => dispatch(setCurrentCatalogPage(--currentCatalogPage))}
           >Назад
           </Link>
         </li>
@@ -30,22 +31,22 @@ function PaginationList({ cardsCount, currentPage, clickHandler }: PaginationLis
       pages.push(
         <li className="pagination__item" key={i}>
           <Link
-            to="#"
-            className={`pagination__link ${i === currentPage ? 'pagination__link--active' : ''}`}
-            onClick={() => clickHandler(i)}
+            to="/"
+            className={`pagination__link ${i === currentCatalogPage ? 'pagination__link--active' : ''}`}
+            onClick={() => dispatch(setCurrentCatalogPage(i))}
           >{i}
           </Link>
         </li>
       );
     }
 
-    if (cardsCount > PRODUCTS_PER_PAGE && currentPage < pagesCount) {
+    if (length > PRODUCTS_PER_PAGE && currentCatalogPage < pagesCount) {
       pages.push(
         <li className="pagination__item" key='forward'>
           <Link
-            to="#"
+            to={'/'}
             className="pagination__link pagination__link--text"
-            onClick={() => clickHandler(++currentPage)}
+            onClick={() => dispatch(setCurrentCatalogPage(++currentCatalogPage))}
           >Далее
           </Link>
         </li>
