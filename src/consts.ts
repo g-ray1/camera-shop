@@ -18,3 +18,13 @@ export const enum APIRoutes {
   SimilarCameras = '/similar',
   Promo = '/promo'
 }
+
+export const enum SortingType {
+  ByPrice = 'price',
+  ByRating = 'rating'
+}
+
+export const enum OrderType {
+  ByAscending = 'asc',
+  ByDescending = 'desc'
+}

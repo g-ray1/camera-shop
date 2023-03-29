@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { Camera, Promo, Review } from '../../types/types';
-import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras } from '../api-actions';
+import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
 
 type DataState = {
   cameras: Camera[];
@@ -41,6 +41,16 @@ export const dataSlice = createSlice({
         state.camerasIsLoading = false;
       })
       .addCase(fetchAllCameras.rejected, (state) => {
+        state.camerasIsLoading = false;
+      })
+      .addCase(fetchSortedCameras.pending, (state) => {
+        state.camerasIsLoading = false;
+      })
+      .addCase(fetchSortedCameras.fulfilled, (state, action) => {
+        state.cameras = action.payload;
+        state.camerasIsLoading = false;
+      })
+      .addCase(fetchSortedCameras.rejected, (state) => {
         state.camerasIsLoading = false;
       })
       .addCase(fetchCamera.pending, (state) => {

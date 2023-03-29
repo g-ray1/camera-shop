@@ -6,6 +6,8 @@ const utilsInitialState = {
   modalContent: 'addItem',
   isReviewFormDisabled: false,
   currentCatalogPage: 1,
+  sortingMode: 'byPrice',
+  searchParams: '',
 };
 
 describe('utilsSlice', () => {

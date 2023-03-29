@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { PRODUCTS_PER_PAGE } from '../../consts';
 import { useAppSelector } from '../../hooks/hooks';
 import { getAllCameras } from '../../store/data-slice/data-slice-selectors';
-import { getCurrentCatalogPage } from '../../store/utils-slice/utils-slice-selectors';
+import { getCurrentCatalogPage, getSearchParams } from '../../store/utils-slice/utils-slice-selectors';
 import PreviewCard from '../preview-card/preview-card';
 
 function Catalog(): JSX.Element {
@@ -15,8 +15,10 @@ function Catalog(): JSX.Element {
   const firstIndex = lastIndex - PRODUCTS_PER_PAGE;
   const productsOnPage = totalProducts.slice(firstIndex, lastIndex);
 
+  const searchParams = useAppSelector(getSearchParams);
+
   useEffect(() => {
-    history.push(`page_${currentCatalogPage}`);
+    history.push(`page_${currentCatalogPage}?${searchParams}`);
   });
 
   return (
