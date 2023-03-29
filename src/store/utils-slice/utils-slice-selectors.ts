@@ -8,4 +8,8 @@ export const getIsReviewFormDisabled = (state: RootState) => state.utils.isRevie
 
 export const getCurrentCatalogPage = (state: RootState) => state.utils.currentCatalogPage;
 
-export const getSearchParams = (state: RootState) => state.utils.searchParams;
+export const getSortParams = (state: RootState) => state.utils.sortParams;
+
+export const getFilterParams = (state: RootState) => state.utils.filterParams;
+
+export const getPriceParams = (state: RootState) => state.utils.priceParams;

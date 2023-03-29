@@ -6,7 +6,9 @@ type UtilsState = {
   modalContent: string;
   isReviewFormDisabled: boolean;
   currentCatalogPage: number;
-  searchParams: string;
+  sortParams: string;
+  filterParams: string;
+  priceParams: string;
 }
 
 const initialState: UtilsState = {
@@ -14,7 +16,9 @@ const initialState: UtilsState = {
   modalContent: 'addItem',
   isReviewFormDisabled: false,
   currentCatalogPage: 1,
-  searchParams: '',
+  sortParams: '',
+  filterParams: '',
+  priceParams: '',
 };
 
 export const utilSlice = createSlice({
@@ -30,8 +34,14 @@ export const utilSlice = createSlice({
     setCurrentCatalogPage(state, action: PayloadAction<number>) {
       state.currentCatalogPage = action.payload;
     },
-    setSearchParamsInState(state, action: PayloadAction<string>) {
-      state.searchParams = action.payload;
+    setSortParamsInState(state, action: PayloadAction<string>) {
+      state.sortParams = action.payload;
+    },
+    setFilterParamsInState(state, action: PayloadAction<string>) {
+      state.filterParams = action.payload;
+    },
+    setPriceParamsInState(state, action: PayloadAction<string>) {
+      state.priceParams = action.payload;
     }
   },
   extraReducers(builder) {
@@ -48,4 +58,11 @@ export const utilSlice = createSlice({
   },
 });
 
-export const { setModalMode, setModalContent, setCurrentCatalogPage, setSearchParamsInState } = utilSlice.actions;
+export const {
+  setModalMode,
+  setModalContent,
+  setCurrentCatalogPage,
+  setSortParamsInState,
+  setFilterParamsInState,
+  setPriceParamsInState
+} = utilSlice.actions;
