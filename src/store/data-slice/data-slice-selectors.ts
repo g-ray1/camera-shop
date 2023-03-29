@@ -19,3 +19,5 @@ export const getSimilarCamerasIsLoading = (state: RootState) => state.data.simil
 export const getReviews = (state: RootState) => state.data.reviews;
 
 export const getReviewsIsLoading = (state: RootState) => state.data.reviewsIsLoading;
+
+export const getSortedCamerasIsLoading = (state: RootState) => state.data.sortedCamerasIsLoading;
