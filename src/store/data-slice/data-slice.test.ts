@@ -11,6 +11,7 @@ const initialState = {
   cameraIsLoading: false,
   promoIsLoading: false,
   similarCamerasIsLoading: false,
+  sortedCamerasIsLoading: false,
   reviewsIsLoading: false,
   similarCameras: [],
   reviews: [],

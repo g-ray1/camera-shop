@@ -12,6 +12,7 @@ type DataState = {
   promoDescription?: string;
   similarCameras: Camera[];
   similarCamerasIsLoading: boolean;
+  sortedCamerasIsLoading: boolean;
   reviews: Review[];
   reviewsIsLoading: boolean;
 }
@@ -23,6 +24,7 @@ const initialState: DataState = {
   promoIsLoading: false,
   similarCameras: [],
   similarCamerasIsLoading: false,
+  sortedCamerasIsLoading: false,
   reviews: [],
   reviewsIsLoading: false,
 };
@@ -44,14 +46,14 @@ export const dataSlice = createSlice({
         state.camerasIsLoading = false;
       })
       .addCase(fetchSortedCameras.pending, (state) => {
-        state.camerasIsLoading = true;
+        state.sortedCamerasIsLoading = true;
       })
       .addCase(fetchSortedCameras.fulfilled, (state, action) => {
         state.cameras = action.payload;
-        state.camerasIsLoading = false;
+        state.sortedCamerasIsLoading = false;
       })
       .addCase(fetchSortedCameras.rejected, (state) => {
-        state.camerasIsLoading = false;
+        state.sortedCamerasIsLoading = false;
       })
       .addCase(fetchCamera.pending, (state) => {
         state.cameraIsLoading = true;
