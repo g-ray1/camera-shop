@@ -2,7 +2,7 @@ import { createApi } from '../services/api';
 import MockAdapter from 'axios-mock-adapter';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import thunk from 'redux-thunk';
-import { fetchAllCameras, fetchCamera, fetchPromo, fetchSimilarCameras, fetchReviews, postUserReview } from './api-actions';
+import { fetchAllCameras, fetchCamera, fetchPromo, fetchSimilarCameras, fetchReviews, postUserReview, fetchSortedCameras } from './api-actions';
 import { RootState } from '.';
 import { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { cameras } from '../mocks/cameras';
@@ -38,6 +38,26 @@ describe('Async actions', () => {
     expect(actions).toEqual([
       fetchAllCameras.pending.type,
       fetchAllCameras.fulfilled.type
+    ]);
+  });
+
+  it('should dispatch sorted cameras when GET /cameras', async () => {
+    const allCameras = cameras;
+    const params = '_sort=price';
+
+    mockAPI
+      .onGet(`${APIRoutes.Cameras}?${params}`)
+      .reply(200, allCameras);
+
+    const store = mockStore();
+
+    await store.dispatch(fetchSortedCameras(params));
+
+    const actions = store.getActions().map(({ type }) => type);
+
+    expect(actions).toEqual([
+      fetchSortedCameras.pending.type,
+      fetchSortedCameras.fulfilled.type
     ]);
   });
 

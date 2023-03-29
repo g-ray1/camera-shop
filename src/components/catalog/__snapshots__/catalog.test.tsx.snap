@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CatalogSort component Snapshot 1`] = `
+exports[`Catalog component Snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

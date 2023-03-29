@@ -1,22 +1,22 @@
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import { render } from '@testing-library/react';
-import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import thunk from 'redux-thunk';
-import CatalogFilter from './catalog-filter';
+import PriceBlock from './price-block';
+import { Provider } from 'react-redux';
 
 jest.mock('react-redux');
 
 const mockStore = configureMockStore([thunk]);
 const store = mockStore({
-  data: { filterParams: '' },
+  utils: { priceParams: '' },
 });
 
-describe('CatalogFilter component', () => {
+describe('PriceBlock component', () => {
   it('Snapshot', () => {
     const view = render(
       <Provider store={store}>
-        <CatalogFilter />
+        <PriceBlock />
       </Provider>, { wrapper: BrowserRouter });
 
     expect(view).toMatchSnapshot();

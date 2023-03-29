@@ -2,7 +2,7 @@ import { cameras } from '../../mocks/cameras';
 import { promoProduct } from '../../mocks/promo';
 import { reviews } from '../../mocks/reviews';
 import { similarCameras } from '../../mocks/similar';
-import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras } from '../api-actions';
+import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
 import { dataSlice } from './data-slice';
 
 const initialState = {
@@ -24,27 +24,36 @@ describe('dataSlice', () => {
   });
 
   it('should fill cameras by payload', () => {
-    const action = { type: fetchAllCameras.fulfilled.type, payload: cameras };
+    const actionForFetchAllCameras = { type: fetchAllCameras.fulfilled.type, payload: cameras };
+    const actionForFetchSortedCameras = { type: fetchSortedCameras.fulfilled.type, payload: cameras };
 
-    const result = dataSlice.reducer(initialState, action);
+    const result = dataSlice.reducer(initialState, actionForFetchAllCameras);
+    const resultSorted = dataSlice.reducer(initialState, actionForFetchSortedCameras);
 
     expect(result.cameras).toBe(cameras);
+    expect(resultSorted.cameras).toBe(cameras);
   });
 
   it('should set camerasIsLoaging true', () => {
-    const action = { type: fetchAllCameras.pending.type, payload: true };
+    const actionForFetchAllCameras = { type: fetchAllCameras.pending.type};
+    const actionForFetchSortedCameras = { type: fetchSortedCameras.pending.type};
 
-    const result = dataSlice.reducer(initialState, action);
+    const result = dataSlice.reducer(initialState, actionForFetchAllCameras);
+    const resultSorted = dataSlice.reducer(initialState, actionForFetchSortedCameras);
 
     expect(result.camerasIsLoading).toBe(true);
+    expect(resultSorted.camerasIsLoading).toBe(true);
   });
 
   it('should set camerasIsLoaging false', () => {
-    const action = { type: fetchAllCameras.rejected.type, payload: false };
+    const actionForFetchAllCameras = { type: fetchAllCameras.rejected.type};
+    const actionForFetchSortedCameras = { type: fetchSortedCameras.rejected.type};
 
-    const result = dataSlice.reducer(initialState, action);
+    const result = dataSlice.reducer(initialState, actionForFetchAllCameras);
+    const resultSorted = dataSlice.reducer(initialState, actionForFetchSortedCameras);
 
     expect(result.camerasIsLoading).toBe(false);
+    expect(resultSorted.camerasIsLoading).toBe(false);
   });
 
   it('should fill camera by payload', () => {
@@ -56,7 +65,7 @@ describe('dataSlice', () => {
   });
 
   it('should set cameraIsLoaging true', () => {
-    const action = { type: fetchCamera.pending.type, payload: true };
+    const action = { type: fetchCamera.pending.type};
 
     const result = dataSlice.reducer(initialState, action);
 
@@ -64,7 +73,7 @@ describe('dataSlice', () => {
   });
 
   it('should set cameraIsLoading false', () => {
-    const action = { type: fetchCamera.rejected.type, payload: false };
+    const action = { type: fetchCamera.rejected.type};
 
     const result = dataSlice.reducer(initialState, action);
 

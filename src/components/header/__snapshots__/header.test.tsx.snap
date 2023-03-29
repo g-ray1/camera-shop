@@ -38,7 +38,7 @@ Object {
               >
                 <a
                   class="main-nav__link"
-                  href="catalog.html"
+                  href="/page_1"
                 >
                   Каталог
                 </a>
@@ -48,7 +48,7 @@ Object {
               >
                 <a
                   class="main-nav__link"
-                  href="#"
+                  href="/"
                 >
                   Гарантии
                 </a>
@@ -58,7 +58,7 @@ Object {
               >
                 <a
                   class="main-nav__link"
-                  href="#"
+                  href="/"
                 >
                   Доставка
                 </a>
@@ -68,7 +68,7 @@ Object {
               >
                 <a
                   class="main-nav__link"
-                  href="#"
+                  href="/"
                 >
                   О компании
                 </a>
@@ -95,42 +95,9 @@ Object {
                   class="form-search__input"
                   placeholder="Поиск по сайту"
                   type="text"
+                  value=""
                 />
               </label>
-              <ul
-                class="form-search__select-list"
-              >
-                <li
-                  class="form-search__select-item"
-                  tabindex="0"
-                >
-                  Cannonball Pro MX 8i
-                </li>
-                <li
-                  class="form-search__select-item"
-                  tabindex="0"
-                >
-                  Cannonball Pro MX 7i
-                </li>
-                <li
-                  class="form-search__select-item"
-                  tabindex="0"
-                >
-                  Cannonball Pro MX 6i
-                </li>
-                <li
-                  class="form-search__select-item"
-                  tabindex="0"
-                >
-                  Cannonball Pro MX 5i
-                </li>
-                <li
-                  class="form-search__select-item"
-                  tabindex="0"
-                >
-                  Cannonball Pro MX 4i
-                </li>
-              </ul>
             </form>
             <button
               class="form-search__reset"
@@ -154,7 +121,7 @@ Object {
           </div>
           <a
             class="header__basket-link"
-            href="#"
+            href="/basket"
           >
             <svg
               aria-hidden="true"
@@ -204,7 +171,7 @@ Object {
             >
               <a
                 class="main-nav__link"
-                href="catalog.html"
+                href="/page_1"
               >
                 Каталог
               </a>
@@ -214,7 +181,7 @@ Object {
             >
               <a
                 class="main-nav__link"
-                href="#"
+                href="/"
               >
                 Гарантии
               </a>
@@ -224,7 +191,7 @@ Object {
             >
               <a
                 class="main-nav__link"
-                href="#"
+                href="/"
               >
                 Доставка
               </a>
@@ -234,7 +201,7 @@ Object {
             >
               <a
                 class="main-nav__link"
-                href="#"
+                href="/"
               >
                 О компании
               </a>
@@ -261,42 +228,9 @@ Object {
                 class="form-search__input"
                 placeholder="Поиск по сайту"
                 type="text"
+                value=""
               />
             </label>
-            <ul
-              class="form-search__select-list"
-            >
-              <li
-                class="form-search__select-item"
-                tabindex="0"
-              >
-                Cannonball Pro MX 8i
-              </li>
-              <li
-                class="form-search__select-item"
-                tabindex="0"
-              >
-                Cannonball Pro MX 7i
-              </li>
-              <li
-                class="form-search__select-item"
-                tabindex="0"
-              >
-                Cannonball Pro MX 6i
-              </li>
-              <li
-                class="form-search__select-item"
-                tabindex="0"
-              >
-                Cannonball Pro MX 5i
-              </li>
-              <li
-                class="form-search__select-item"
-                tabindex="0"
-              >
-                Cannonball Pro MX 4i
-              </li>
-            </ul>
           </form>
           <button
             class="form-search__reset"
@@ -320,7 +254,7 @@ Object {
         </div>
         <a
           class="header__basket-link"
-          href="#"
+          href="/basket"
         >
           <svg
             aria-hidden="true"

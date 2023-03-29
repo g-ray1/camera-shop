@@ -40,6 +40,9 @@ function PriceBlock(): JSX.Element {
     if (Number(evt.currentTarget.value) > Number(evt.currentTarget.placeholder)) {
       evt.currentTarget.value = evt.currentTarget.placeholder;
     }
+    if (evt.currentTarget.value === '') {
+      evt.currentTarget.value = evt.currentTarget.placeholder;
+    }
     searchParams.set('price_lte', evt.currentTarget.value);
     dispatch(setPriceParamsInState(searchParams.toString()));
     dispatch(setCurrentCatalogPage(1));
