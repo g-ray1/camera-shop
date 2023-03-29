@@ -1,4 +1,4 @@
-import { utilSlice, setModalMode, setModalContent } from './utils-slice';
+import { utilSlice, setModalMode, setModalContent, setCurrentCatalogPage, setSortParamsInState, setFilterParamsInState, setPriceParamsInState } from './utils-slice';
 import { postUserReview } from '../api-actions';
 
 const utilsInitialState = {
@@ -6,7 +6,6 @@ const utilsInitialState = {
   modalContent: 'addItem',
   isReviewFormDisabled: false,
   currentCatalogPage: 1,
-  sortingMode: 'byPrice',
   sortParams: '',
   filterParams: '',
   priceParams: '',
@@ -33,6 +32,38 @@ describe('utilsSlice', () => {
     const result = utilSlice.reducer(utilsInitialState, action);
 
     expect(result.modalContent).toBe('text');
+  });
+
+  it('should set currentCatalogPage to 2', () => {
+    const action = { type: setCurrentCatalogPage, payload: 2 };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.currentCatalogPage).toBe(2);
+  });
+
+  it('should set sortParams to text', () => {
+    const action = { type: setSortParamsInState, payload: 'text' };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.sortParams).toBe('text');
+  });
+
+  it('should set filterParams to text', () => {
+    const action = { type: setFilterParamsInState, payload: 'text' };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.filterParams).toBe('text');
+  });
+
+  it('should set priceParams to text', () => {
+    const action = { type: setPriceParamsInState, payload: 'text' };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.priceParams).toBe('text');
   });
 
   it('should set isReviewFormDisabled on true', () => {

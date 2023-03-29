@@ -1,12 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CatalogSort component Snapshot 1`] = `
+exports[`ResetFiltresButton component Snapshot 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <button
+        class="btn catalog-filter__reset-btn"
+        type="reset"
+      >
+        Сбросить фильтры
+      </button>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <button
+      class="btn catalog-filter__reset-btn"
+      type="reset"
+    >
+      Сбросить фильтры
+    </button>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],

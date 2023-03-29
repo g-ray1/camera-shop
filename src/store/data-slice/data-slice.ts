@@ -44,7 +44,7 @@ export const dataSlice = createSlice({
         state.camerasIsLoading = false;
       })
       .addCase(fetchSortedCameras.pending, (state) => {
-        state.camerasIsLoading = false;
+        state.camerasIsLoading = true;
       })
       .addCase(fetchSortedCameras.fulfilled, (state, action) => {
         state.cameras = action.payload;

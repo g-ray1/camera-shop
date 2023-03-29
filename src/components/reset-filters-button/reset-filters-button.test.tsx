@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Layout from './layout';
+import ResetFiltresButton from './reset-filters-button';
 
 jest.mock('react-redux');
 
-describe('Layout component', () => {
+describe('ResetFiltresButton component', () => {
   it('Snapshot', () => {
-    const view = render(<Layout />, {wrapper: BrowserRouter});
+    const view = render(<ResetFiltresButton />, { wrapper: BrowserRouter });
 
     expect(view).toMatchSnapshot();
   });

@@ -34,3 +34,5 @@ export const enum CodesForCyrillicString {
   Плёночная = '%D0%9F%D0%BB%D1%91%D0%BD%D0%BE%D1%87%D0%BD%D0%B0%D1%8F',
   Моментальная = '%D0%9C%D0%BE%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D0%BB%D1%8C%D0%BD%D0%B0%D1%8F',
 }
+
+export const ERROR_MESSAGE = 'Возможно, сервер недоступен.';

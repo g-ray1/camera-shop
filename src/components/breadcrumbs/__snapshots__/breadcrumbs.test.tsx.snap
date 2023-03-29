@@ -19,7 +19,7 @@ Object {
             >
               <a
                 class="breadcrumbs__link"
-                href="/"
+                href="/page_1"
               >
                 Главная
                 <svg
@@ -62,7 +62,7 @@ Object {
           >
             <a
               class="breadcrumbs__link"
-              href="/"
+              href="/page_1"
             >
               Главная
               <svg
@@ -162,7 +162,7 @@ Object {
             >
               <a
                 class="breadcrumbs__link"
-                href="/"
+                href="/page_1"
               >
                 Главная
                 <svg
@@ -205,7 +205,7 @@ Object {
           >
             <a
               class="breadcrumbs__link"
-              href="/"
+              href="/page_1"
             >
               Главная
               <svg
