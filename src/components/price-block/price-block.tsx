@@ -20,12 +20,17 @@ function PriceBlock(): JSX.Element {
 
   const handleChangePriceFrom = (evt: ChangeEvent<HTMLInputElement>) => {
     evt.preventDefault();
+    if (evt.currentTarget.value === '') {
+      evt.currentTarget.value = evt.currentTarget.placeholder;
+    }
     if (Number(evt.currentTarget.value) < Number(evt.currentTarget.placeholder)) {
       evt.currentTarget.value = evt.currentTarget.placeholder;
     }
-    if (Number(evt.currentTarget.value) > Number(inputToRef.current?.value) && inputToRef.current !== null) {
-      inputToRef.current.value = inputToRef.current.placeholder;
-      searchParams.set('price_lte', inputToRef.current.value);
+    if (Number(evt.currentTarget.value) > Number(inputToRef.current?.placeholder) && inputToRef.current !== null) {
+      evt.currentTarget.value = inputToRef.current.placeholder;
+    }
+    if (inputToRef.current?.value === '') {
+      searchParams.delete('price_lte');
     }
     searchParams.set('price_gte', evt.currentTarget.value);
     dispatch(setPriceParamsInState(searchParams.toString()));
@@ -34,14 +39,20 @@ function PriceBlock(): JSX.Element {
 
   const handleChangePriceTo = (evt: ChangeEvent<HTMLInputElement>) => {
     evt.preventDefault();
-    if ((Number(evt.currentTarget.value) < Number(inputFromRef.current?.value)) && inputToRef.current !== null) {
-      evt.currentTarget.value = inputToRef.current.value;
+    if (evt.currentTarget.value === '') {
+      evt.currentTarget.value = evt.currentTarget.placeholder;
     }
     if (Number(evt.currentTarget.value) > Number(evt.currentTarget.placeholder)) {
       evt.currentTarget.value = evt.currentTarget.placeholder;
     }
-    if (evt.currentTarget.value === '') {
-      evt.currentTarget.value = evt.currentTarget.placeholder;
+    if ((Number(evt.currentTarget.value) < Number(inputFromRef.current?.placeholder)) && inputFromRef.current !== null) {
+      evt.currentTarget.value = inputFromRef.current.placeholder;
+    }
+    if ((Number(evt.currentTarget.value) < Number(inputFromRef.current?.value)) && inputFromRef.current !== null) {
+      evt.currentTarget.value = inputFromRef.current.value;
+    }
+    if (inputFromRef.current?.value === '') {
+      searchParams.delete('price_gte');
     }
     searchParams.set('price_lte', evt.currentTarget.value);
     dispatch(setPriceParamsInState(searchParams.toString()));
@@ -67,8 +78,8 @@ function PriceBlock(): JSX.Element {
               name="price"
               placeholder="от"
               ref={inputFromRef}
-              onKeyUp={(evt) => handleInputKeydown(evt)}
-              onBlur={(evt) => handleChangePriceFrom(evt)}
+              onKeyUp={handleInputKeydown}
+              onBlur={handleChangePriceFrom}
             />
           </label>
         </div>
@@ -79,8 +90,8 @@ function PriceBlock(): JSX.Element {
               name="priceUp"
               placeholder="до"
               ref={inputToRef}
-              onKeyUp={(evt) => handleInputKeydown(evt)}
-              onBlur={(evt) => handleChangePriceTo(evt)}
+              onKeyUp={handleInputKeydown}
+              onBlur={handleChangePriceTo}
             />
           </label>
         </div>

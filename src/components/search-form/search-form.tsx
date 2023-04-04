@@ -59,7 +59,7 @@ function SearchForm(): JSX.Element {
 
     return (
       <ul
-        className="form-search__select-list"
+        className="form-search__select-list scroller"
         ref={listRef}
         onKeyDown={(evt) => handleKeyDown(evt)}
       >
