@@ -15,6 +15,7 @@ const initialState = {
   reviewsIsLoading: false,
   similarCameras: [],
   reviews: [],
+  orders: [],
 };
 
 describe('dataSlice', () => {

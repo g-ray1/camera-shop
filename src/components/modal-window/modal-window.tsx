@@ -6,6 +6,7 @@ import { getModalContent } from '../../store/utils-slice/utils-slice-selectors';
 import AddItemModal from '../add-item-modal/add-item-modal';
 import AddReviewModal from '../add-review-modal/add-review-modal';
 import ReviewSuccessModal from '../review-success-modal/review-success-modal';
+import AddItemSuccessModal from '../add-item-success-modal/add-item-success-modal';
 
 type ModalWindowProps = {
   content: string;
@@ -36,6 +37,9 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
       case ModalContent.ReviewSuccess:
         backButtonRef.current && backButtonRef.current.focus();
         break;
+      case ModalContent.AddItemSuccess:
+        backButtonRef.current && backButtonRef.current.focus();
+        break;
     }
   };
 
@@ -49,6 +53,8 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         return <AddReviewModal ref={inputRef} />;
       case ModalContent.ReviewSuccess:
         return <ReviewSuccessModal ref={backButtonRef} />;
+      case ModalContent.AddItemSuccess:
+        return <AddItemSuccessModal ref={backButtonRef} />;
     }
   };
 

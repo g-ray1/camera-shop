@@ -9,7 +9,8 @@ export const OPTIONS_IN_DROPDOWN_MENU = 4;
 export const enum ModalContent {
   AddItem = 'addItem',
   AddReview = 'addReview',
-  ReviewSuccess = 'reviewSuccess'
+  ReviewSuccess = 'reviewSuccess',
+  AddItemSuccess = 'addItemSuccess'
 }
 
 export const enum APIRoutes {

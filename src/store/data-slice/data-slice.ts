@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { Camera, Promo, Review } from '../../types/types';
 import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
 
@@ -6,6 +6,7 @@ type DataState = {
   cameras: Camera[];
   camerasIsLoading: boolean;
   camera?: Camera;
+  selectedCamera?: Camera;
   cameraIsLoading: boolean;
   promo?: Promo;
   promoIsLoading: boolean;
@@ -15,6 +16,7 @@ type DataState = {
   sortedCamerasIsLoading: boolean;
   reviews: Review[];
   reviewsIsLoading: boolean;
+  orders: Camera[];
 }
 
 const initialState: DataState = {
@@ -27,12 +29,20 @@ const initialState: DataState = {
   sortedCamerasIsLoading: false,
   reviews: [],
   reviewsIsLoading: false,
+  orders: [],
 };
 
 export const dataSlice = createSlice({
   name: 'data',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setSelectedCamera(state, action: PayloadAction<Camera>) {
+      state.selectedCamera = action.payload;
+    },
+    setOrders(state, action: PayloadAction<Camera>) {
+      state.orders.push(action.payload);
+    },
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchAllCameras.pending, (state) => {
@@ -97,3 +107,5 @@ export const dataSlice = createSlice({
       });
   },
 });
+
+export const { setSelectedCamera, setOrders } = dataSlice.actions;

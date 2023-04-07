@@ -21,3 +21,7 @@ export const getReviews = (state: RootState) => state.data.reviews;
 export const getReviewsIsLoading = (state: RootState) => state.data.reviewsIsLoading;
 
 export const getSortedCamerasIsLoading = (state: RootState) => state.data.sortedCamerasIsLoading;
+
+export const getSelectedCamera = (state: RootState) => state.data.selectedCamera;
+
+export const getOrders = (state: RootState) => state.data.orders;
