@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { SIMILAR_PRODUCTS_COUNT } from '../../consts';
 import { Camera } from '../../types/types';
 import PreviewCard from '../preview-card/preview-card';
+import { useAppSelector } from '../../hooks/hooks';
+import { getOrders } from '../../store/data-slice/data-slice-selectors';
 
 type SliderProps = {
   products: Camera[];
@@ -9,6 +11,7 @@ type SliderProps = {
 
 function Slider({ products }: SliderProps): JSX.Element | null {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const productsInCart = useAppSelector(getOrders);
 
   const list = products.slice(currentIndex, currentIndex + SIMILAR_PRODUCTS_COUNT);
 
@@ -24,7 +27,14 @@ function Slider({ products }: SliderProps): JSX.Element | null {
           <div className="product-similar__slider">
             <div className="product-similar__slider-list">
 
-              {list.map((product) => <PreviewCard product={product} inSlider key={product.id} />)}
+              {list.map((product) => (
+                <PreviewCard
+                  key={product.id}
+                  product={product}
+                  inSlider
+                  inCart={Boolean(productsInCart.find((item) => item.id === product.id))}
+                />
+              ))}
 
               <button
                 className="slider-controls slider-controls--prev"
