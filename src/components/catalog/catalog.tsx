@@ -38,7 +38,7 @@ function Catalog(): JSX.Element {
 
       {productsOnPage.length > 0
         ? productsOnPage.map((product) =>
-          <PreviewCard product={product} key={product.id} inCart={Boolean(productsInCart.find((item) => item.id === product.id))}/>)
+          <PreviewCard product={product} key={product.id} inCart={Boolean(productsInCart.find((item) => item.camera.id === product.id))}/>)
         : <h3>По вашему запросу ничего не найдено.</h3>}
 
     </div>

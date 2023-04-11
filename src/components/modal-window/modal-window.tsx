@@ -7,6 +7,7 @@ import AddItemModal from '../add-item-modal/add-item-modal';
 import AddReviewModal from '../add-review-modal/add-review-modal';
 import ReviewSuccessModal from '../review-success-modal/review-success-modal';
 import AddItemSuccessModal from '../add-item-success-modal/add-item-success-modal';
+import RemoveBasketItemModal from '../remove-basket-item-modal/remove-basket-item-modal';
 
 type ModalWindowProps = {
   content: string;
@@ -20,6 +21,7 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
   const addButtonRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const backButtonRef = useRef<HTMLButtonElement>(null);
+  const deleteButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleCloseButtoneClick = () => {
     dispatch(setModalMode(false));
@@ -40,6 +42,8 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
       case ModalContent.AddItemSuccess:
         backButtonRef.current && backButtonRef.current.focus();
         break;
+      case ModalContent.RemoveBasketItem:
+        deleteButtonRef.current && deleteButtonRef.current.focus();
     }
   };
 
@@ -55,12 +59,14 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         return <ReviewSuccessModal ref={backButtonRef} />;
       case ModalContent.AddItemSuccess:
         return <AddItemSuccessModal ref={backButtonRef} />;
+      case ModalContent.RemoveBasketItem:
+        return <RemoveBasketItemModal ref={deleteButtonRef} />;
     }
   };
 
   useEffect(() => {
     window.addEventListener('keydown', handleEscKeydown);
-
+    closeButtonRef.current?.focus();
     return () => window.removeEventListener('keydown', handleEscKeydown);
   });
 

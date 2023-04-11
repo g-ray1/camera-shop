@@ -1,7 +1,7 @@
 import { forwardRef } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getSelectedCamera } from '../../store/data-slice/data-slice-selectors';
-import { setOrders } from '../../store/data-slice/data-slice';
+import { increaseOrders } from '../../store/data-slice/data-slice';
 import { setModalContent } from '../../store/utils-slice/utils-slice';
 import { ModalContent } from '../../consts';
 
@@ -14,7 +14,8 @@ const AddItemModal = forwardRef<HTMLButtonElement>((props, ref) => {
   }
 
   const handleAddButtonClick = () => {
-    dispatch(setOrders(product));
+    const order = {camera: product, count: 1};
+    dispatch(increaseOrders(order));
     dispatch(setModalContent(ModalContent.AddItemSuccess));
   };
 

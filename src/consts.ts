@@ -10,7 +10,8 @@ export const enum ModalContent {
   AddItem = 'addItem',
   AddReview = 'addReview',
   ReviewSuccess = 'reviewSuccess',
-  AddItemSuccess = 'addItemSuccess'
+  AddItemSuccess = 'addItemSuccess',
+  RemoveBasketItem = 'removeBasketItem'
 }
 
 export const enum APIRoutes {

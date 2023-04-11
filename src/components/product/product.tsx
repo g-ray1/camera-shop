@@ -1,6 +1,6 @@
 import { ModalContent } from '../../consts';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
-import { setOrders, setSelectedCamera } from '../../store/data-slice/data-slice';
+import { setSelectedCamera } from '../../store/data-slice/data-slice';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
 import Page404 from '../page-404/page-404';

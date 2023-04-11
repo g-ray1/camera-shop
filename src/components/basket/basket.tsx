@@ -10,7 +10,9 @@ function Basket(): JSX.Element {
       return <h3>Ваша корзина пуста.</h3>;
     }
 
-    return orders.map((item) => <BasketItem key={item.id} product={item}/>);
+    const result = orders.map((item) => <BasketItem key={item.camera.id} product={item} />);
+
+    return result;
   };
 
   return (

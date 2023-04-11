@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { Camera, Promo, Review } from '../../types/types';
+import { BasketItemType, Camera, Promo, Review } from '../../types/types';
 import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
 
 type DataState = {
@@ -16,7 +16,7 @@ type DataState = {
   sortedCamerasIsLoading: boolean;
   reviews: Review[];
   reviewsIsLoading: boolean;
-  orders: Camera[];
+  orders: BasketItemType[];
 }
 
 const initialState: DataState = {
@@ -39,9 +39,29 @@ export const dataSlice = createSlice({
     setSelectedCamera(state, action: PayloadAction<Camera>) {
       state.selectedCamera = action.payload;
     },
-    setOrders(state, action: PayloadAction<Camera>) {
-      state.orders.push(action.payload);
+    increaseOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      if (index !== -1) {
+        state.orders[index].count += 1;
+      } else {
+        state.orders.push(action.payload);
+      }
     },
+    decreaseOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      state.orders[index].count -= 1;
+    },
+    setOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera, count } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      state.orders[index].count = count;
+    },
+    deleteOrders(state, action: PayloadAction<Camera>) {
+      const index = state.orders.findIndex((item) => item.camera.id === action.payload.id);
+      state.orders.splice(index, 1);
+    }
   },
   extraReducers(builder) {
     builder
@@ -108,4 +128,4 @@ export const dataSlice = createSlice({
   },
 });
 
-export const { setSelectedCamera, setOrders } = dataSlice.actions;
+export const { setSelectedCamera, increaseOrders, decreaseOrders, deleteOrders, setOrders } = dataSlice.actions;

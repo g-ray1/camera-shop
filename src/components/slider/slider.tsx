@@ -32,7 +32,7 @@ function Slider({ products }: SliderProps): JSX.Element | null {
                   key={product.id}
                   product={product}
                   inSlider
-                  inCart={Boolean(productsInCart.find((item) => item.id === product.id))}
+                  inCart={Boolean(productsInCart.find((item) => item.camera.id === product.id))}
                 />
               ))}
 

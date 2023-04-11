@@ -10,8 +10,8 @@ function Header(): JSX.Element {
     if (productInCart.length === 0) {
       return null;
     }
-
-    return <span className="header__basket-count">{productInCart.length}</span>;
+    const quantity = productInCart.reduce((sum, item) => sum + item.count, 0);
+    return <span className="header__basket-count">{quantity}</span>;
   };
 
   return (
