@@ -1,6 +1,6 @@
 import { BasketItemType } from '../../types/types';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
-import { increaseOrders, decreaseOrders, deleteOrders, setOrders, setSelectedCamera } from '../../store/data-slice/data-slice';
+import { increaseOrders, decreaseOrders, setOrders, setSelectedCamera } from '../../store/data-slice/data-slice';
 import { useRef } from 'react';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { ModalContent } from '../../consts';
@@ -62,7 +62,7 @@ function BasketItem({ product }: BasketItemProps): JSX.Element {
           <li className="basket-item__list-item">{level} уровень</li>
         </ul>
       </div>
-      <p className="basket-item__price"><span className="visually-hidden">Цена:</span>{price} ₽</p>
+      <p className="basket-item__price"><span className="visually-hidden">Цена:</span>{price.toLocaleString()} ₽</p>
       <div className="quantity">
         <button
           className="btn-icon btn-icon--prev"
@@ -94,7 +94,7 @@ function BasketItem({ product }: BasketItemProps): JSX.Element {
           </svg>
         </button>
       </div>
-      <div className="basket-item__total-price"><span className="visually-hidden">Общая цена:</span>{price * product.count} ₽</div>
+      <div className="basket-item__total-price"><span className="visually-hidden">Общая цена:</span>{(price * product.count).toLocaleString()} ₽</div>
       <button
         className="cross-btn"
         type="button"

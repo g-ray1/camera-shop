@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { postUserReview } from '../api-actions';
+import { postCoupon, postUserReview } from '../api-actions';
 
 type UtilsState = {
   modalIsActive: boolean;
@@ -9,6 +9,8 @@ type UtilsState = {
   sortParams: string;
   filterParams: string;
   priceParams: string;
+  discount?: number;
+  isCouponFormDisabled?: boolean;
 }
 
 const initialState: UtilsState = {
@@ -42,6 +44,9 @@ export const utilSlice = createSlice({
     },
     setPriceParamsInState(state, action: PayloadAction<string>) {
       state.priceParams = action.payload;
+    },
+    setDiscount(state, action: PayloadAction<number>) {
+      state.discount = action.payload;
     }
   },
   extraReducers(builder) {
@@ -54,6 +59,15 @@ export const utilSlice = createSlice({
       })
       .addCase(postUserReview.rejected, (state) => {
         state.isReviewFormDisabled = false;
+      })
+      .addCase(postCoupon.pending, (state) => {
+        state.isCouponFormDisabled = true;
+      })
+      .addCase(postCoupon.rejected, (state) => {
+        state.isCouponFormDisabled = false;
+      })
+      .addCase(postCoupon.fulfilled, (state) => {
+        state.isCouponFormDisabled = false;
       });
   },
 });
@@ -64,5 +78,6 @@ export const {
   setCurrentCatalogPage,
   setSortParamsInState,
   setFilterParamsInState,
-  setPriceParamsInState
+  setPriceParamsInState,
+  setDiscount
 } = utilSlice.actions;

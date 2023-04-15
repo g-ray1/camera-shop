@@ -52,3 +52,7 @@ export type BasketItemType = {
   camera: Camera;
   count: number;
 }
+
+export type Coupon = {
+  coupon: string;
+};

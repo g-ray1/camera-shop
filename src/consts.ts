@@ -15,10 +15,11 @@ export const enum ModalContent {
 }
 
 export const enum APIRoutes {
+  Promo = '/promo',
   Cameras = '/cameras',
-  Reviews = '/reviews',
   SimilarCameras = '/similar',
-  Promo = '/promo'
+  Reviews = '/reviews',
+  Coupons = '/coupons',
 }
 
 export const enum SortingType {
