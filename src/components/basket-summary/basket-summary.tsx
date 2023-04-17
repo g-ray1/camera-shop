@@ -1,18 +1,22 @@
 import { FormEvent, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
-import { postCoupon } from '../../store/api-actions';
+import { postCoupon, postOrder } from '../../store/api-actions';
 import { getDiscount } from '../../store/utils-slice/utils-slice-selectors';
+import { BasketItemType } from '../../types/types';
+import { OrderPost } from '../../types/types';
 
 type BasketItemProps = {
-  summaryPrice: number;
+  productsInCart: BasketItemType[];
 }
 
-function BasketSummary({ summaryPrice }: BasketItemProps): JSX.Element {
+function BasketSummary({ productsInCart }: BasketItemProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const [promocode, setPromocode] = useState('');
   const discount = useAppSelector(getDiscount);
+  const [promocode, setPromocode] = useState('');
 
-  const handleSubmit = (evt: FormEvent) => {
+  const summaryPrice = productsInCart.reduce((sum, product) => sum + product.camera.price * product.count, 0);
+
+  const handlePromoSubmit = (evt: FormEvent) => {
     evt.preventDefault();
     if (promocode.trim()) {
       dispatch(postCoupon({ coupon: promocode }));
@@ -40,13 +44,36 @@ function BasketSummary({ summaryPrice }: BasketItemProps): JSX.Element {
     }
   };
 
+  const getOrder = (): OrderPost => {
+    const camerasIds: number[] = [];
+
+    productsInCart.forEach((product) => {
+      for (let i = product.count; i !== 0; i--) {
+        camerasIds.push(product.camera.id);
+      }
+    });
+
+    const validation = getValidation();
+
+    if (validation === 'is-valid') {
+      return { camerasIds: camerasIds, coupon: promocode };
+    }
+
+    return { camerasIds: camerasIds, coupon: null };
+  };
+
+  const handleBuyButtoneClick = () => {
+    const order = getOrder();
+    dispatch(postOrder(order));
+  };
+
   return (
     <div className="basket__summary">
       <div className="basket__promo">
         <p className="title title--h4">Если у вас есть промокод на скидку, примените его в этом поле</p>
         <div className="basket-form">
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handlePromoSubmit}
           >
             <div className={`custom-input ${getValidation()}`}>
               <label>
@@ -57,12 +84,18 @@ function BasketSummary({ summaryPrice }: BasketItemProps): JSX.Element {
                   placeholder="Введите промокод"
                   value={promocode}
                   onChange={(evt) => setPromocode(evt.target.value)}
+                  disabled={productsInCart.length === 0}
                 />
               </label>
               <p className="custom-input__error">Промокод неверный</p>
               <p className="custom-input__success">Промокод принят!</p>
             </div>
-            <button className="btn" type="submit">Применить
+            <button
+              className="btn"
+              type="submit"
+              disabled={promocode === ''}
+            >
+              Применить
             </button>
           </form>
         </div>
@@ -86,7 +119,8 @@ function BasketSummary({ summaryPrice }: BasketItemProps): JSX.Element {
         </p>
         <button
           className="btn btn--purple"
-          type="submit"
+          disabled={productsInCart.length === 0}
+          onClick={handleBuyButtoneClick}
         >
           Оформить заказ
         </button>

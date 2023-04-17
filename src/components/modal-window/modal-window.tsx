@@ -8,6 +8,7 @@ import AddReviewModal from '../add-review-modal/add-review-modal';
 import ReviewSuccessModal from '../review-success-modal/review-success-modal';
 import AddItemSuccessModal from '../add-item-success-modal/add-item-success-modal';
 import RemoveBasketItemModal from '../remove-basket-item-modal/remove-basket-item-modal';
+import OrderSuccessModal from '../order-success-modal/order-success-modal';
 
 type ModalWindowProps = {
   content: string;
@@ -15,7 +16,7 @@ type ModalWindowProps = {
 
 function ModalWindow({ content }: ModalWindowProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const { unlockScroll } = useScrollLock();
+  const { unlockScroll, lockScroll } = useScrollLock();
   const modalContent = useAppSelector(getModalContent);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const addButtonRef = useRef<HTMLButtonElement>(null);
@@ -25,7 +26,6 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
 
   const handleCloseButtoneClick = () => {
     dispatch(setModalMode(false));
-    unlockScroll();
   };
 
   const handleCloseButtoneBlur = () => {
@@ -44,6 +44,10 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         break;
       case ModalContent.RemoveBasketItem:
         deleteButtonRef.current && deleteButtonRef.current.focus();
+        break;
+      case ModalContent.OrderSuccess:
+        backButtonRef.current && backButtonRef.current.focus();
+        break;
     }
   };
 
@@ -61,13 +65,19 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         return <AddItemSuccessModal ref={backButtonRef} />;
       case ModalContent.RemoveBasketItem:
         return <RemoveBasketItemModal ref={deleteButtonRef} />;
+      case ModalContent.OrderSuccess:
+        return <OrderSuccessModal ref={backButtonRef} />;
     }
   };
 
   useEffect(() => {
+    lockScroll();
     window.addEventListener('keydown', handleEscKeydown);
     closeButtonRef.current?.focus();
-    return () => window.removeEventListener('keydown', handleEscKeydown);
+    return () => {
+      unlockScroll();
+      window.removeEventListener('keydown', handleEscKeydown);
+    };
   });
 
   return (

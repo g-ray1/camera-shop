@@ -56,3 +56,8 @@ export type BasketItemType = {
 export type Coupon = {
   coupon: string;
 };
+
+export type OrderPost = {
+  camerasIds: number[];
+  coupon: string | null;
+};

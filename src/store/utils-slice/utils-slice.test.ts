@@ -9,6 +9,8 @@ const utilsInitialState = {
   sortParams: '',
   filterParams: '',
   priceParams: '',
+  isOrderPosting: false,
+  errorMessage: '',
 };
 
 describe('utilsSlice', () => {

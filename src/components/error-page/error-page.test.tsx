@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Page404 from './page-404';
+import Page404 from './error-page';
 
 
 describe('Page404 component', () => {

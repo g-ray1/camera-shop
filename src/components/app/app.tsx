@@ -4,7 +4,7 @@ import BasketPage from '../../pages/basket-page/basket-page';
 import CatalogPage from '../../pages/catalog-page/catalog-page';
 import ProductPage from '../../pages/product-page/product-page';
 import Layout from '../layout/layout';
-import Page404 from '../page-404/page-404';
+import Page404 from '../error-page/error-page';
 
 function App(): JSX.Element {
   return (

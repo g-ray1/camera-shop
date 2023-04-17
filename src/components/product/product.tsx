@@ -3,7 +3,7 @@ import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { setSelectedCamera } from '../../store/data-slice/data-slice';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
-import Page404 from '../page-404/page-404';
+import Page404 from '../error-page/error-page';
 import Stars from '../stars/stars';
 import Tabs from '../tabs/tabs';
 

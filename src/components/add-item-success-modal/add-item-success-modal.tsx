@@ -1,22 +1,19 @@
 import { forwardRef } from 'react';
-import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { useAppDispatch } from '../../hooks/hooks';
 import { setModalMode } from '../../store/utils-slice/utils-slice';
 import { useNavigate } from 'react-router-dom';
 
 const AddItemSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
   const dispatch = useAppDispatch();
-  const { unlockScroll } = useScrollLock();
   const navigate = useNavigate();
 
   const handleGoToCatalogButtonClick = () => {
     dispatch(setModalMode(false));
-    unlockScroll();
   };
 
   const handleGoToBasketButtonClick = () => {
     navigate('/basket');
     dispatch(setModalMode(false));
-    unlockScroll();
   };
 
   return (
@@ -40,11 +37,6 @@ const AddItemSuccessModal = forwardRef<HTMLButtonElement>((props, ref) => {
           Перейти в корзину
         </button>
       </div>
-      <button className="cross-btn" type="button" aria-label="Закрыть попап">
-        <svg width="10" height="10" aria-hidden="true">
-          <use xlinkHref="#icon-close"></use>
-        </svg>
-      </button>
     </>
   );
 }

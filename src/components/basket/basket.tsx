@@ -1,11 +1,13 @@
 import { useAppSelector } from '../../hooks/hooks';
 import { getOrders } from '../../store/data-slice/data-slice-selectors';
+import { getErrorMessage } from '../../store/utils-slice/utils-slice-selectors';
 import BasketItem from '../basket-item/basket-item';
 import BasketSummary from '../basket-summary/basket-summary';
+import ErrorPage from '../error-page/error-page';
 
 function Basket(): JSX.Element {
   const productsInCart = useAppSelector(getOrders);
-  const summaryPrice = productsInCart.reduce((sum, product) => sum + product.camera.price * product.count, 0);
+  const errorMessage = useAppSelector(getErrorMessage);
 
   const getCards = () => {
     if (productsInCart.length === 0) {
@@ -17,6 +19,10 @@ function Basket(): JSX.Element {
     return result;
   };
 
+  if (errorMessage !== '') {
+    return <ErrorPage />;
+  }
+
   return (
     <section className="basket">
       <div className="container">
@@ -27,7 +33,7 @@ function Basket(): JSX.Element {
 
         </ul>
 
-        <BasketSummary summaryPrice={summaryPrice} />
+        <BasketSummary productsInCart={productsInCart} />
 
       </div>
     </section>

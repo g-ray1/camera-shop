@@ -11,7 +11,8 @@ export const enum ModalContent {
   AddReview = 'addReview',
   ReviewSuccess = 'reviewSuccess',
   AddItemSuccess = 'addItemSuccess',
-  RemoveBasketItem = 'removeBasketItem'
+  RemoveBasketItem = 'removeBasketItem',
+  OrderSuccess = 'orderSuccess'
 }
 
 export const enum APIRoutes {
@@ -20,6 +21,7 @@ export const enum APIRoutes {
   SimilarCameras = '/similar',
   Reviews = '/reviews',
   Coupons = '/coupons',
+  Orders = '/orders'
 }
 
 export const enum SortingType {
