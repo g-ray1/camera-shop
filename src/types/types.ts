@@ -47,3 +47,17 @@ export type UserReview = {
 export type UserParams = {
   id: string;
 };
+
+export type BasketItemType = {
+  camera: Camera;
+  count: number;
+}
+
+export type Coupon = {
+  coupon: string;
+};
+
+export type OrderPost = {
+  camerasIds: number[];
+  coupon: string | null;
+};

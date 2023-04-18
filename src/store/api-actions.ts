@@ -1,8 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { AppDispatch, RootState } from '.';
-import { APIRoutes } from '../consts';
-import { Camera, Promo, Review, UserReview } from '../types/types';
+import { APIRoutes, ModalContent } from '../consts';
+import { Camera, Coupon, OrderPost, Promo, Review, UserReview } from '../types/types';
+import { setDiscount, setErrorMessage, setModalContent, setModalMode } from './utils-slice/utils-slice';
+import { AxiosError } from 'axios';
 
 export const fetchAllCameras = createAsyncThunk<Camera[], undefined, {
   dispatch: AppDispatch;
@@ -108,3 +110,32 @@ export const postUserReview = createAsyncThunk<void, UserReview, {
     }
   }
 );
+
+export const postCoupon = createAsyncThunk<void, Coupon, {
+  dispatch: AppDispatch;
+  state: RootState;
+  extra: AxiosInstance;
+}>(
+  'utils/postCoupon',
+  async (coupon, { dispatch, extra: api }) => {
+    await api.post<Coupon>(APIRoutes.Coupons, coupon)
+      .then((response) => {
+        dispatch(setDiscount(Number(response.data)));
+      })
+      .catch(() => dispatch(setDiscount(0)));
+  });
+
+export const postOrder = createAsyncThunk<void, OrderPost, {
+  dispatch: AppDispatch;
+  state: RootState;
+  extra: AxiosInstance;
+}>(
+  'utils/postOrder',
+  async (orderPost, { dispatch, extra: api }) => {
+    await api.post<Coupon>(APIRoutes.Orders, orderPost)
+      .then(() => {
+        dispatch(setModalMode(true));
+        dispatch(setModalContent(ModalContent.OrderSuccess));
+      })
+      .catch((error: AxiosError) => dispatch(setErrorMessage(error.message)));
+  });

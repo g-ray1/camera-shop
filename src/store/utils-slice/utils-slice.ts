@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { postUserReview } from '../api-actions';
+import { postCoupon, postOrder, postUserReview } from '../api-actions';
 
 type UtilsState = {
   modalIsActive: boolean;
@@ -9,6 +9,10 @@ type UtilsState = {
   sortParams: string;
   filterParams: string;
   priceParams: string;
+  discount?: number;
+  isCouponFormDisabled?: boolean;
+  isOrderPosting: boolean;
+  errorMessage: string;
 }
 
 const initialState: UtilsState = {
@@ -19,6 +23,8 @@ const initialState: UtilsState = {
   sortParams: '',
   filterParams: '',
   priceParams: '',
+  isOrderPosting: false,
+  errorMessage: '',
 };
 
 export const utilSlice = createSlice({
@@ -42,6 +48,12 @@ export const utilSlice = createSlice({
     },
     setPriceParamsInState(state, action: PayloadAction<string>) {
       state.priceParams = action.payload;
+    },
+    setDiscount(state, action: PayloadAction<number>) {
+      state.discount = action.payload;
+    },
+    setErrorMessage(state, action: PayloadAction<string>) {
+      state.errorMessage = action.payload;
     }
   },
   extraReducers(builder) {
@@ -54,6 +66,24 @@ export const utilSlice = createSlice({
       })
       .addCase(postUserReview.rejected, (state) => {
         state.isReviewFormDisabled = false;
+      })
+      .addCase(postCoupon.pending, (state) => {
+        state.isCouponFormDisabled = true;
+      })
+      .addCase(postCoupon.fulfilled, (state) => {
+        state.isCouponFormDisabled = false;
+      })
+      .addCase(postCoupon.rejected, (state) => {
+        state.isCouponFormDisabled = false;
+      })
+      .addCase(postOrder.pending, (state) => {
+        state.isOrderPosting = true;
+      })
+      .addCase(postOrder.fulfilled, (state) => {
+        state.isOrderPosting = false;
+      })
+      .addCase(postOrder.rejected, (state) => {
+        state.isOrderPosting = false;
       });
   },
 });
@@ -64,5 +94,7 @@ export const {
   setCurrentCatalogPage,
   setSortParamsInState,
   setFilterParamsInState,
-  setPriceParamsInState
+  setPriceParamsInState,
+  setDiscount,
+  setErrorMessage
 } = utilSlice.actions;

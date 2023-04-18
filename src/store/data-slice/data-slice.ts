@@ -1,11 +1,12 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { Camera, Promo, Review } from '../../types/types';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
+import { BasketItemType, Camera, Promo, Review } from '../../types/types';
 import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
 
 type DataState = {
   cameras: Camera[];
   camerasIsLoading: boolean;
   camera?: Camera;
+  selectedCamera?: Camera;
   cameraIsLoading: boolean;
   promo?: Promo;
   promoIsLoading: boolean;
@@ -15,6 +16,7 @@ type DataState = {
   sortedCamerasIsLoading: boolean;
   reviews: Review[];
   reviewsIsLoading: boolean;
+  orders: BasketItemType[];
 }
 
 const initialState: DataState = {
@@ -27,12 +29,40 @@ const initialState: DataState = {
   sortedCamerasIsLoading: false,
   reviews: [],
   reviewsIsLoading: false,
+  orders: [],
 };
 
 export const dataSlice = createSlice({
   name: 'data',
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setSelectedCamera(state, action: PayloadAction<Camera>) {
+      state.selectedCamera = action.payload;
+    },
+    increaseOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      if (index !== -1) {
+        state.orders[index].count += 1;
+      } else {
+        state.orders.push(action.payload);
+      }
+    },
+    decreaseOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      state.orders[index].count -= 1;
+    },
+    setOrders(state, action: PayloadAction<BasketItemType>) {
+      const { camera, count } = action.payload;
+      const index = state.orders.findIndex((item) => item.camera.id === camera.id);
+      state.orders[index].count = count;
+    },
+    deleteOrders(state, action: PayloadAction<Camera>) {
+      const index = state.orders.findIndex((item) => item.camera.id === action.payload.id);
+      state.orders.splice(index, 1);
+    }
+  },
   extraReducers(builder) {
     builder
       .addCase(fetchAllCameras.pending, (state) => {
@@ -97,3 +127,5 @@ export const dataSlice = createSlice({
       });
   },
 });
+
+export const { setSelectedCamera, increaseOrders, decreaseOrders, deleteOrders, setOrders } = dataSlice.actions;

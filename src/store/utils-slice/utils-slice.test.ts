@@ -1,5 +1,8 @@
-import { utilSlice, setModalMode, setModalContent, setCurrentCatalogPage, setSortParamsInState, setFilterParamsInState, setPriceParamsInState } from './utils-slice';
-import { postUserReview } from '../api-actions';
+import { utilSlice, setModalMode,
+  setModalContent, setCurrentCatalogPage,
+  setSortParamsInState, setFilterParamsInState,
+  setPriceParamsInState, setDiscount, setErrorMessage} from './utils-slice';
+import { postCoupon, postOrder, postUserReview } from '../api-actions';
 
 const utilsInitialState = {
   modalIsActive: false,
@@ -9,6 +12,8 @@ const utilsInitialState = {
   sortParams: '',
   filterParams: '',
   priceParams: '',
+  isOrderPosting: false,
+  errorMessage: '',
 };
 
 describe('utilsSlice', () => {
@@ -58,6 +63,22 @@ describe('utilsSlice', () => {
     expect(result.filterParams).toBe('text');
   });
 
+  it('should set discount to 0', () => {
+    const action = { type: setDiscount, payload: 0 };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.discount).toBe(0);
+  });
+
+  it('should set errorMessage to text', () => {
+    const action = { type: setErrorMessage, payload: 'text' };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.errorMessage).toBe('text');
+  });
+
   it('should set priceParams to text', () => {
     const action = { type: setPriceParamsInState, payload: 'text' };
 
@@ -88,5 +109,53 @@ describe('utilsSlice', () => {
     const result = utilSlice.reducer(utilsInitialState, action);
 
     expect(result.isReviewFormDisabled).toEqual(false);
+  });
+
+  it('should set isCouponFormDisabled on true when pending', () => {
+    const action = { type: postCoupon.pending.type, payload: true };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isCouponFormDisabled).toEqual(true);
+  });
+
+  it('should set isCouponFormDisabled on false when rejected', () => {
+    const action = { type: postCoupon.rejected.type, payload: false };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isCouponFormDisabled).toEqual(false);
+  });
+
+  it('should set isCouponFormDisabled on false when fulfilled', () => {
+    const action = { type: postCoupon.fulfilled.type, payload: false };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isCouponFormDisabled).toEqual(false);
+  });
+
+  it('should set isOrderPosting on true when pending', () => {
+    const action = { type: postOrder.pending.type, payload: true };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isOrderPosting).toEqual(true);
+  });
+
+  it('should set isOrderPosting on false when rejected', () => {
+    const action = { type: postOrder.rejected.type, payload: false };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isOrderPosting).toEqual(false);
+  });
+
+  it('should set isOrderPosting on false when fulfilled', () => {
+    const action = { type: postOrder.fulfilled.type, payload: false };
+
+    const result = utilSlice.reducer(utilsInitialState, action);
+
+    expect(result.isOrderPosting).toEqual(false);
   });
 });

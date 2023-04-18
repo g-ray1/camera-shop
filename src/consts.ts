@@ -9,14 +9,19 @@ export const OPTIONS_IN_DROPDOWN_MENU = 4;
 export const enum ModalContent {
   AddItem = 'addItem',
   AddReview = 'addReview',
-  ReviewSuccess = 'reviewSuccess'
+  ReviewSuccess = 'reviewSuccess',
+  AddItemSuccess = 'addItemSuccess',
+  RemoveBasketItem = 'removeBasketItem',
+  OrderSuccess = 'orderSuccess'
 }
 
 export const enum APIRoutes {
+  Promo = '/promo',
   Cameras = '/cameras',
-  Reviews = '/reviews',
   SimilarCameras = '/similar',
-  Promo = '/promo'
+  Reviews = '/reviews',
+  Coupons = '/coupons',
+  Orders = '/orders'
 }
 
 export const enum SortingType {

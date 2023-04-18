@@ -2,7 +2,7 @@ import { createApi } from '../services/api';
 import MockAdapter from 'axios-mock-adapter';
 import { configureMockStore } from '@jedmao/redux-mock-store';
 import thunk from 'redux-thunk';
-import { fetchAllCameras, fetchCamera, fetchPromo, fetchSimilarCameras, fetchReviews, postUserReview, fetchSortedCameras } from './api-actions';
+import { fetchAllCameras, fetchCamera, fetchPromo, fetchSimilarCameras, fetchReviews, postUserReview, fetchSortedCameras, postCoupon, postOrder } from './api-actions';
 import { RootState } from '.';
 import { Action, ThunkDispatch } from '@reduxjs/toolkit';
 import { cameras } from '../mocks/cameras';
@@ -10,6 +10,7 @@ import { APIRoutes } from '../consts';
 import { promoProduct } from '../mocks/promo';
 import { similarCameras } from '../mocks/similar';
 import { reviews } from '../mocks/reviews';
+import { setDiscount, setModalContent, setModalMode } from './utils-slice/utils-slice';
 
 describe('Async actions', () => {
   const api = createApi();
@@ -162,6 +163,52 @@ describe('Async actions', () => {
     expect(actions).toEqual([
       postUserReview.pending.type,
       postUserReview.fulfilled.type
+    ]);
+  });
+
+  it('should dispatch discount when POST /coupons', async () => {
+    const coupon = {
+      coupon: '',
+    };
+
+    mockAPI
+      .onPost(`${APIRoutes.Coupons}`)
+      .reply(200, []);
+
+    const store = mockStore();
+
+    await store.dispatch(postCoupon(coupon));
+
+    const actions = store.getActions().map(({ type }) => type);
+
+    expect(actions).toEqual([
+      postCoupon.pending.type,
+      setDiscount.type,
+      postCoupon.fulfilled.type,
+    ]);
+  });
+
+  it('should dispatch POST /orders', async () => {
+    const order = {
+      camerasIds: [1, 2, 3],
+      coupon: null,
+    };
+
+    mockAPI
+      .onPost(`${APIRoutes.Orders}`)
+      .reply(200, []);
+
+    const store = mockStore();
+
+    await store.dispatch(postOrder(order));
+
+    const actions = store.getActions().map(({ type }) => type);
+
+    expect(actions).toEqual([
+      postOrder.pending.type,
+      setModalMode.type,
+      setModalContent.type,
+      postOrder.fulfilled.type,
     ]);
   });
 });

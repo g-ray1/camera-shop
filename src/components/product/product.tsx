@@ -1,8 +1,9 @@
 import { ModalContent } from '../../consts';
 import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { setSelectedCamera } from '../../store/data-slice/data-slice';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
-import Page404 from '../page-404/page-404';
+import Page404 from '../error-page/error-page';
 import Stars from '../stars/stars';
 import Tabs from '../tabs/tabs';
 
@@ -14,15 +15,16 @@ function Product({ product }: ProductProps): JSX.Element {
   const dispatch = useAppDispatch();
   const { lockScroll } = useScrollLock();
 
+  if (!product) {
+    return <Page404 />;
+  }
+
   const handleBuyButtoneClick = () => {
+    dispatch(setSelectedCamera(product));
     dispatch(setModalMode(true));
     dispatch(setModalContent(ModalContent.AddItem));
     lockScroll();
   };
-
-  if (!product) {
-    return <Page404 />;
-  }
 
   return (
     <div className="page-content__section">
@@ -49,7 +51,11 @@ function Product({ product }: ProductProps): JSX.Element {
             <Stars rating={product.rating} reviewCount={product.reviewCount} />
 
             <p className="product__price"><span className="visually-hidden">Цена:</span>{product.price} ₽</p>
-            <button className="btn btn--purple" type="button" onClick={handleBuyButtoneClick}>
+            <button
+              className="btn btn--purple"
+              type="button"
+              onClick={handleBuyButtoneClick}
+            >
               <svg width="24" height="16" aria-hidden="true">
                 <use xlinkHref="#icon-add-basket"></use>
               </svg>Добавить в корзину

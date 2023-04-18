@@ -6,6 +6,9 @@ import { getModalContent } from '../../store/utils-slice/utils-slice-selectors';
 import AddItemModal from '../add-item-modal/add-item-modal';
 import AddReviewModal from '../add-review-modal/add-review-modal';
 import ReviewSuccessModal from '../review-success-modal/review-success-modal';
+import AddItemSuccessModal from '../add-item-success-modal/add-item-success-modal';
+import RemoveBasketItemModal from '../remove-basket-item-modal/remove-basket-item-modal';
+import OrderSuccessModal from '../order-success-modal/order-success-modal';
 
 type ModalWindowProps = {
   content: string;
@@ -13,16 +16,16 @@ type ModalWindowProps = {
 
 function ModalWindow({ content }: ModalWindowProps): JSX.Element {
   const dispatch = useAppDispatch();
-  const { unlockScroll } = useScrollLock();
+  const { unlockScroll, lockScroll } = useScrollLock();
   const modalContent = useAppSelector(getModalContent);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const addButtonRef = useRef<HTMLButtonElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const backButtonRef = useRef<HTMLButtonElement>(null);
+  const deleteButtonRef = useRef<HTMLButtonElement>(null);
 
   const handleCloseButtoneClick = () => {
     dispatch(setModalMode(false));
-    unlockScroll();
   };
 
   const handleCloseButtoneBlur = () => {
@@ -34,6 +37,15 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         inputRef.current && inputRef.current.focus();
         break;
       case ModalContent.ReviewSuccess:
+        backButtonRef.current && backButtonRef.current.focus();
+        break;
+      case ModalContent.AddItemSuccess:
+        backButtonRef.current && backButtonRef.current.focus();
+        break;
+      case ModalContent.RemoveBasketItem:
+        deleteButtonRef.current && deleteButtonRef.current.focus();
+        break;
+      case ModalContent.OrderSuccess:
         backButtonRef.current && backButtonRef.current.focus();
         break;
     }
@@ -49,13 +61,23 @@ function ModalWindow({ content }: ModalWindowProps): JSX.Element {
         return <AddReviewModal ref={inputRef} />;
       case ModalContent.ReviewSuccess:
         return <ReviewSuccessModal ref={backButtonRef} />;
+      case ModalContent.AddItemSuccess:
+        return <AddItemSuccessModal ref={backButtonRef} />;
+      case ModalContent.RemoveBasketItem:
+        return <RemoveBasketItemModal ref={deleteButtonRef} />;
+      case ModalContent.OrderSuccess:
+        return <OrderSuccessModal ref={backButtonRef} />;
     }
   };
 
   useEffect(() => {
+    lockScroll();
     window.addEventListener('keydown', handleEscKeydown);
-
-    return () => window.removeEventListener('keydown', handleEscKeydown);
+    closeButtonRef.current?.focus();
+    return () => {
+      unlockScroll();
+      window.removeEventListener('keydown', handleEscKeydown);
+    };
   });
 
   return (

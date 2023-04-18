@@ -11,20 +11,21 @@ export const createApi = (): AxiosInstance => {
     timeout: REQUEST_TIMEOUT
   });
 
-  api.interceptors.request.use((config: AxiosRequestConfig) => {
-    const token = getToken();
-    if (token && config.headers) {
-      config.headers['x-token'] = token;
+  api.interceptors.request.use(
+    (config: AxiosRequestConfig) => {
+      const token = getToken();
+      if (token && config.headers) {
+        config.headers['x-token'] = token;
+      }
+      return config;
     }
-    return config;
-  });
+  );
 
   api.interceptors.response.use(
     (response) => response,
-    (error: AxiosError<{error: string}>) => {
+    (error: AxiosError<{ error: string }>) => {
       throw error;
-    }
-  );
+    });
 
   return api;
 };

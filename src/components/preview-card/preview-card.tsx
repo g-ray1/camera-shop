@@ -4,21 +4,46 @@ import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { Camera } from '../../types/types';
 import Stars from '../stars/stars';
+import { setSelectedCamera } from '../../store/data-slice/data-slice';
 
 type PreviewCardProps = {
   inSlider?: boolean;
+  inCart?: boolean;
   product: Camera;
 };
 
-function PreviewCard({ product, inSlider }: PreviewCardProps): JSX.Element {
+function PreviewCard({ product, inSlider, inCart }: PreviewCardProps): JSX.Element {
   const dispatch = useAppDispatch();
   const { lockScroll } = useScrollLock();
 
   const handleBuyButtoneClick = () => {
     dispatch(setModalMode(true));
     dispatch(setModalContent(ModalContent.AddItem));
+    dispatch(setSelectedCamera(product));
     lockScroll();
   };
+
+  const getButton = () => (
+    inCart
+      ?
+      <Link
+        className="btn btn--purple-border product-card__btn product-card__btn--in-cart"
+        to="/basket"
+      >
+        <svg width="16" height="16" aria-hidden="true">
+          <use xlinkHref="#icon-basket"></use>
+        </svg>
+        В корзине
+      </Link>
+      :
+      <button
+        className={`btn btn--purple product-card__btn ${inCart ? 'product-card__btn--in-cart' : ''}`}
+        type="button"
+        onClick={handleBuyButtoneClick}
+      >
+        Купить
+      </button>
+  );
 
   return (
     <div className={`product-card ${inSlider ? 'is-active' : ''}`}>
@@ -47,13 +72,9 @@ function PreviewCard({ product, inSlider }: PreviewCardProps): JSX.Element {
         <p className="product-card__price"><span className="visually-hidden">Цена:</span>{`${product.price} ₽`}</p>
       </div>
       <div className="product-card__buttons">
-        <button
-          className="btn btn--purple product-card__btn"
-          type="button"
-          onClick={handleBuyButtoneClick}
-        >
-          Купить
-        </button>
+
+        {getButton()}
+
         <Link className="btn btn--transparent" to={`/product/${product.id}`}>Подробнее</Link>
       </div>
     </div>

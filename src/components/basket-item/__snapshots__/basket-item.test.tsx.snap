@@ -1,0 +1,344 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BasketItem component Snapshot 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <li
+        class="basket-item"
+      >
+        <div
+          class="basket-item__img"
+        >
+          <picture>
+            <source
+              srcset="img/content/das-auge.webp, img/content/das-auge@2x.webp 2x"
+              type="image/webp"
+            />
+            <img
+              alt="Ретрокамера Dus Auge lV"
+              height="120"
+              src="img/content/das-auge.jpg"
+              srcset="img/content/das-auge@2x.jpg 2x"
+              width="140"
+            />
+          </picture>
+        </div>
+        <div
+          class="basket-item__description"
+        >
+          <p
+            class="basket-item__title"
+          >
+            Ретрокамера Dus Auge lV
+          </p>
+          <ul
+            class="basket-item__list"
+          >
+            <li
+              class="basket-item__list-item"
+            >
+              <span
+                class="basket-item__article"
+              >
+                Артикул:
+              </span>
+               
+              <span
+                class="basket-item__number"
+              >
+                DA4IU67AD5
+              </span>
+            </li>
+            <li
+              class="basket-item__list-item"
+            >
+              Коллекционная
+            </li>
+            <li
+              class="basket-item__list-item"
+            >
+              Любительский
+               уровень
+            </li>
+          </ul>
+        </div>
+        <p
+          class="basket-item__price"
+        >
+          <span
+            class="visually-hidden"
+          >
+            Цена:
+          </span>
+          73 450
+           ₽
+        </p>
+        <div
+          class="quantity"
+        >
+          <button
+            aria-label="уменьшить количество товара"
+            class="btn-icon btn-icon--prev"
+            disabled=""
+          >
+            <svg
+              aria-hidden="true"
+              height="12"
+              width="7"
+            >
+              <use
+                xlink:href="#icon-arrow"
+              />
+            </svg>
+          </button>
+          <label
+            class="visually-hidden"
+            for="counter1"
+          />
+          <input
+            aria-label="количество товара"
+            id="counter1"
+            placeholder="1"
+            type="number"
+          />
+          <button
+            aria-label="увеличить количество товара"
+            class="btn-icon btn-icon--next"
+          >
+            <svg
+              aria-hidden="true"
+              height="12"
+              width="7"
+            >
+              <use
+                xlink:href="#icon-arrow"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="basket-item__total-price"
+        >
+          <span
+            class="visually-hidden"
+          >
+            Общая цена:
+          </span>
+          73 450
+           ₽
+        </div>
+        <button
+          aria-label="Удалить товар"
+          class="cross-btn"
+          type="button"
+        >
+          <svg
+            aria-hidden="true"
+            height="10"
+            width="10"
+          >
+            <use
+              xlink:href="#icon-close"
+            />
+          </svg>
+        </button>
+      </li>
+    </div>
+  </body>,
+  "container": <div>
+    <li
+      class="basket-item"
+    >
+      <div
+        class="basket-item__img"
+      >
+        <picture>
+          <source
+            srcset="img/content/das-auge.webp, img/content/das-auge@2x.webp 2x"
+            type="image/webp"
+          />
+          <img
+            alt="Ретрокамера Dus Auge lV"
+            height="120"
+            src="img/content/das-auge.jpg"
+            srcset="img/content/das-auge@2x.jpg 2x"
+            width="140"
+          />
+        </picture>
+      </div>
+      <div
+        class="basket-item__description"
+      >
+        <p
+          class="basket-item__title"
+        >
+          Ретрокамера Dus Auge lV
+        </p>
+        <ul
+          class="basket-item__list"
+        >
+          <li
+            class="basket-item__list-item"
+          >
+            <span
+              class="basket-item__article"
+            >
+              Артикул:
+            </span>
+             
+            <span
+              class="basket-item__number"
+            >
+              DA4IU67AD5
+            </span>
+          </li>
+          <li
+            class="basket-item__list-item"
+          >
+            Коллекционная
+          </li>
+          <li
+            class="basket-item__list-item"
+          >
+            Любительский
+             уровень
+          </li>
+        </ul>
+      </div>
+      <p
+        class="basket-item__price"
+      >
+        <span
+          class="visually-hidden"
+        >
+          Цена:
+        </span>
+        73 450
+         ₽
+      </p>
+      <div
+        class="quantity"
+      >
+        <button
+          aria-label="уменьшить количество товара"
+          class="btn-icon btn-icon--prev"
+          disabled=""
+        >
+          <svg
+            aria-hidden="true"
+            height="12"
+            width="7"
+          >
+            <use
+              xlink:href="#icon-arrow"
+            />
+          </svg>
+        </button>
+        <label
+          class="visually-hidden"
+          for="counter1"
+        />
+        <input
+          aria-label="количество товара"
+          id="counter1"
+          placeholder="1"
+          type="number"
+        />
+        <button
+          aria-label="увеличить количество товара"
+          class="btn-icon btn-icon--next"
+        >
+          <svg
+            aria-hidden="true"
+            height="12"
+            width="7"
+          >
+            <use
+              xlink:href="#icon-arrow"
+            />
+          </svg>
+        </button>
+      </div>
+      <div
+        class="basket-item__total-price"
+      >
+        <span
+          class="visually-hidden"
+        >
+          Общая цена:
+        </span>
+        73 450
+         ₽
+      </div>
+      <button
+        aria-label="Удалить товар"
+        class="cross-btn"
+        type="button"
+      >
+        <svg
+          aria-hidden="true"
+          height="10"
+          width="10"
+        >
+          <use
+            xlink:href="#icon-close"
+          />
+        </svg>
+      </button>
+    </li>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

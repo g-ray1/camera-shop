@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import Breadcrumbs from '../../components/breadcrumbs/breadcrumbs';
 import Loader from '../../components/loader/loader';
 import ModalWindow from '../../components/modal-window/modal-window';
-import Page404 from '../../components/page-404/page-404';
+import Page404 from '../../components/error-page/error-page';
 import Product from '../../components/product/product';
 import ReviewsBlock from '../../components/reviews-block/reviews-block';
 import Slider from '../../components/slider/slider';
