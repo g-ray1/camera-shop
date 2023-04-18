@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
+import RemoveBasketItemModal from './remove-basket-item-modal';
 import { BrowserRouter } from 'react-router-dom';
-import ErrorPage from './error-page';
 
 jest.mock('react-redux');
 
-describe('Page404 component', () => {
+describe('RemoveBasketItemModal component', () => {
   it('Snapshot', () => {
-    const view = render(<ErrorPage />, {wrapper: BrowserRouter});
+    const view = render(<RemoveBasketItemModal />, {wrapper: BrowserRouter});
 
     expect(view).toMatchSnapshot();
   });

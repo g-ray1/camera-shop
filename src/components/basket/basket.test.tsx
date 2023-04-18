@@ -1,12 +1,12 @@
 import { render } from '@testing-library/react';
+import Basket from './basket';
 import { BrowserRouter } from 'react-router-dom';
-import ErrorPage from './error-page';
 
 jest.mock('react-redux');
 
-describe('Page404 component', () => {
+describe('Basket component', () => {
   it('Snapshot', () => {
-    const view = render(<ErrorPage />, {wrapper: BrowserRouter});
+    const view = render(<Basket />, {wrapper: BrowserRouter});
 
     expect(view).toMatchSnapshot();
   });

@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '../../hooks/hooks';
 import { getErrorMessage } from '../../store/utils-slice/utils-slice-selectors';
 import { setErrorMessage } from '../../store/utils-slice/utils-slice';
 
-function Page404(): JSX.Element {
+function ErrorPage(): JSX.Element {
   const dispatch = useAppDispatch();
   const message = useAppSelector(getErrorMessage);
 
@@ -25,4 +25,4 @@ function Page404(): JSX.Element {
   );
 }
 
-export default Page404;
+export default ErrorPage;

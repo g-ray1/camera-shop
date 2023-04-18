@@ -1,9 +1,10 @@
+import { basketItem } from '../../mocks/basketItem';
 import { cameras } from '../../mocks/cameras';
 import { promoProduct } from '../../mocks/promo';
 import { reviews } from '../../mocks/reviews';
 import { similarCameras } from '../../mocks/similar';
 import { fetchAllCameras, fetchCamera, fetchPromo, fetchReviews, fetchSimilarCameras, fetchSortedCameras } from '../api-actions';
-import { dataSlice } from './data-slice';
+import { dataSlice, decreaseOrders, deleteOrders, increaseOrders, setOrders, setSelectedCamera } from './data-slice';
 
 const initialState = {
   cameras: [],
@@ -25,6 +26,72 @@ describe('dataSlice', () => {
     expect(result).toEqual(initialState);
   });
 
+  it('should set selectedCamera', () => {
+    const action = { type: setSelectedCamera, payload: cameras[0] };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.selectedCamera).toBe(cameras[0]);
+  });
+
+  it('increase count in orders', () => {
+    const action = { type: increaseOrders, payload: basketItem };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.orders[0].count).toBe(1);
+  });
+
+  it('decrease count in orders', () => {
+    const state = {
+      cameras: [],
+      camerasIsLoading: false,
+      cameraIsLoading: false,
+      promoIsLoading: false,
+      similarCamerasIsLoading: false,
+      sortedCamerasIsLoading: false,
+      reviewsIsLoading: false,
+      similarCameras: [],
+      reviews: [],
+      orders: [basketItem],
+    };
+
+    const action = { type: decreaseOrders, payload: basketItem };
+
+    const result = dataSlice.reducer(state, action);
+
+    expect(result.orders[0].count).toBe(0);
+  });
+
+  it('should set orders', () => {
+    const state = {
+      cameras: [],
+      camerasIsLoading: false,
+      cameraIsLoading: false,
+      promoIsLoading: false,
+      similarCamerasIsLoading: false,
+      sortedCamerasIsLoading: false,
+      reviewsIsLoading: false,
+      similarCameras: [],
+      reviews: [],
+      orders: [basketItem],
+    };
+
+    const action = { type: setOrders, payload: basketItem };
+
+    const result = dataSlice.reducer(state, action);
+
+    expect(result.orders[0].count).toBe(basketItem.count);
+  });
+
+  it('should delete orders', () => {
+    const action = { type: deleteOrders, payload: cameras[0] };
+
+    const result = dataSlice.reducer(initialState, action);
+
+    expect(result.orders.length).toBe(0);
+  });
+
   it('should fill cameras by payload', () => {
     const actionForFetchAllCameras = { type: fetchAllCameras.fulfilled.type, payload: cameras };
     const actionForFetchSortedCameras = { type: fetchSortedCameras.fulfilled.type, payload: cameras };
@@ -37,19 +104,19 @@ describe('dataSlice', () => {
   });
 
   it('should set camerasIsLoaging true', () => {
-    const actionForFetchAllCameras = { type: fetchAllCameras.pending.type};
-    const actionForFetchSortedCameras = { type: fetchSortedCameras.pending.type};
+    const actionForFetchAllCameras = { type: fetchAllCameras.pending.type };
+    const actionForFetchSortedCameras = { type: fetchSortedCameras.pending.type };
 
     const result = dataSlice.reducer(initialState, actionForFetchAllCameras);
     const resultSorted = dataSlice.reducer(initialState, actionForFetchSortedCameras);
 
     expect(result.camerasIsLoading).toBe(true);
-    expect(resultSorted.camerasIsLoading).toBe(true);
+    expect(resultSorted.sortedCamerasIsLoading).toBe(true);
   });
 
   it('should set camerasIsLoaging false', () => {
-    const actionForFetchAllCameras = { type: fetchAllCameras.rejected.type};
-    const actionForFetchSortedCameras = { type: fetchSortedCameras.rejected.type};
+    const actionForFetchAllCameras = { type: fetchAllCameras.rejected.type };
+    const actionForFetchSortedCameras = { type: fetchSortedCameras.rejected.type };
 
     const result = dataSlice.reducer(initialState, actionForFetchAllCameras);
     const resultSorted = dataSlice.reducer(initialState, actionForFetchSortedCameras);
@@ -67,7 +134,7 @@ describe('dataSlice', () => {
   });
 
   it('should set cameraIsLoaging true', () => {
-    const action = { type: fetchCamera.pending.type};
+    const action = { type: fetchCamera.pending.type };
 
     const result = dataSlice.reducer(initialState, action);
 
@@ -75,7 +142,7 @@ describe('dataSlice', () => {
   });
 
   it('should set cameraIsLoading false', () => {
-    const action = { type: fetchCamera.rejected.type};
+    const action = { type: fetchCamera.rejected.type };
 
     const result = dataSlice.reducer(initialState, action);
 
