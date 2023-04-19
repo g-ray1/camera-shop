@@ -61,7 +61,7 @@ function SearchForm(): JSX.Element {
       <ul
         className="form-search__select-list scroller"
         ref={listRef}
-        onKeyDown={(evt) => handleKeyDown(evt)}
+        onKeyDown={handleKeyDown}
       >
         {items.map((item) => (
           <li
@@ -95,7 +95,7 @@ function SearchForm(): JSX.Element {
             value={searchString}
             ref={inputRef}
             onChange={(evt) => setSearchString(evt.target.value)}
-            onKeyDown={(evt) => handleKeyDown(evt)}
+            onKeyDown={handleKeyDown}
           />
         </label>
 

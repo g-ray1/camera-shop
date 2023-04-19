@@ -1,4 +1,4 @@
-import { FormEvent, forwardRef, useState } from 'react';
+import { ChangeEvent, FormEvent, forwardRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ModalContent } from '../../consts';
 import { useAppDispatch } from '../../hooks/hooks';
@@ -33,6 +33,10 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
     dispatch(setModalContent(ModalContent.ReviewSuccess));
   };
 
+  const handleChangeRaing = (evt: ChangeEvent<HTMLInputElement>) => {
+    setRating(evt.target.value);
+  };
+
   return (
     <>
       <p className="title title--h4">Оставить отзыв</p>
@@ -48,15 +52,15 @@ const AddReviewModal = forwardRef<HTMLInputElement>((props, ref) => {
               </legend>
               <div className="rate__bar">
                 <div className="rate__group">
-                  <input className="visually-hidden" id="star-5" name="rate" type="radio" value="5" onChange={(evt) => setRating(evt.target.value)} required />
+                  <input className="visually-hidden" id="star-5" name="rate" type="radio" value="5" onChange={handleChangeRaing} required />
                   <label className="rate__label" htmlFor="star-5" title="Отлично"></label>
-                  <input className="visually-hidden" id="star-4" name="rate" type="radio" value="4" onChange={(evt) => setRating(evt.target.value)} required />
+                  <input className="visually-hidden" id="star-4" name="rate" type="radio" value="4" onChange={handleChangeRaing} required />
                   <label className="rate__label" htmlFor="star-4" title="Хорошо"></label>
-                  <input className="visually-hidden" id="star-3" name="rate" type="radio" value="3" onChange={(evt) => setRating(evt.target.value)} required />
+                  <input className="visually-hidden" id="star-3" name="rate" type="radio" value="3" onChange={handleChangeRaing} required />
                   <label className="rate__label" htmlFor="star-3" title="Нормально"></label>
-                  <input className="visually-hidden" id="star-2" name="rate" type="radio" value="2" onChange={(evt) => setRating(evt.target.value)} required />
+                  <input className="visually-hidden" id="star-2" name="rate" type="radio" value="2" onChange={handleChangeRaing} required />
                   <label className="rate__label" htmlFor="star-2" title="Плохо"></label>
-                  <input className="visually-hidden" id="star-1" name="rate" type="radio" value="1" onChange={(evt) => setRating(evt.target.value)} required autoFocus ref={ref} />
+                  <input className="visually-hidden" id="star-1" name="rate" type="radio" value="1" onChange={handleChangeRaing} required autoFocus ref={ref} />
                   <label className="rate__label" htmlFor="star-1" title="Ужасно" ></label>
                 </div>
                 <div className="rate__progress">
