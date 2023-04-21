@@ -84,7 +84,7 @@ function BasketSummary({ productsInCart }: BasketItemProps): JSX.Element {
                   placeholder="Введите промокод"
                   value={promocode}
                   onChange={(evt) => setPromocode(evt.target.value)}
-                  disabled={productsInCart.length === 0}
+                  disabled={productsInCart.length === 0 || getToPayValue() === 0}
                 />
               </label>
               <p className="custom-input__error">Промокод неверный</p>
@@ -119,7 +119,7 @@ function BasketSummary({ productsInCart }: BasketItemProps): JSX.Element {
         </p>
         <button
           className="btn btn--purple"
-          disabled={productsInCart.length === 0}
+          disabled={productsInCart.length === 0 || getToPayValue() === 0}
           onClick={handleBuyButtoneClick}
         >
           Оформить заказ

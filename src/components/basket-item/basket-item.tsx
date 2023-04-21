@@ -1,7 +1,7 @@
 import { BasketItemType } from '../../types/types';
-import { useAppDispatch, useScrollLock } from '../../hooks/hooks';
+import { useAppDispatch } from '../../hooks/hooks';
 import { increaseOrders, decreaseOrders, setOrders, setSelectedCamera } from '../../store/data-slice/data-slice';
-import { useRef } from 'react';
+import { ChangeEvent, FocusEvent, useRef, useState } from 'react';
 import { setModalContent, setModalMode } from '../../store/utils-slice/utils-slice';
 import { ModalContent } from '../../consts';
 
@@ -13,33 +13,44 @@ function BasketItem({ product }: BasketItemProps): JSX.Element {
   const dispatch = useAppDispatch();
   const inputRef = useRef<HTMLInputElement>(null);
   const { name, vendorCode, type, level, price, previewImg, previewImg2x, previewImgWebp, previewImgWebp2x } = product.camera;
-  const { lockScroll } = useScrollLock();
-  const maxCount = 99;
-  const minCount = 1;
+  const [productsCount, setProductsCount] = useState(product.count);
+
+  const enum Count {
+    Max = 99,
+    Min = 0
+  }
 
   const handleDecreaseButtoneClick = () => {
     dispatch(decreaseOrders(product));
+    setProductsCount(productsCount - 1);
   };
 
   const handleIncreaseButtoneClick = () => {
     dispatch(increaseOrders(product));
+    setProductsCount(productsCount + 1);
   };
 
-  const handleInputBlur = () => {
-    if (inputRef.current && Number(inputRef.current.value) < minCount) {
-      inputRef.current.value = String(minCount);
-      dispatch(setOrders({ camera: product.camera, count: minCount }));
-    } else if (inputRef.current && Number(inputRef.current.value) > maxCount) {
-      inputRef.current.value = String(maxCount);
-      dispatch(setOrders({ camera: product.camera, count: maxCount }));
+  const handleInputChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    setProductsCount(Number(evt.target.value));
+  };
+
+  const handleInputBlur = (evt: FocusEvent<HTMLInputElement>) => {
+    const count = Number(evt.target.value);
+
+    if (count === product.count) {
+      return null;
+    } else if (count < Count.Min) {
+      setProductsCount(Count.Min);
+      dispatch(setOrders({ camera: product.camera, count: Count.Min }));
+    } else if (count > Count.Max) {
+      setProductsCount(Count.Max);
+      dispatch(setOrders({ camera: product.camera, count: Count.Max }));
     } else {
-      const value = Number(inputRef.current?.value);
-      dispatch(setOrders({ camera: product.camera, count: value }));
+      dispatch(setOrders({ camera: product.camera, count: count }));
     }
   };
 
   const handleDeleteButtonClick = () => {
-    lockScroll();
     dispatch(setSelectedCamera(product.camera));
     dispatch(setModalContent(ModalContent.RemoveBasketItem));
     dispatch(setModalMode(true));
@@ -68,7 +79,7 @@ function BasketItem({ product }: BasketItemProps): JSX.Element {
           className="btn-icon btn-icon--prev"
           aria-label="уменьшить количество товара"
           onClick={handleDecreaseButtoneClick}
-          disabled={product.count === minCount}
+          disabled={product.count === Count.Min}
         >
           <svg width="7" height="12" aria-hidden="true">
             <use xlinkHref="#icon-arrow"></use>
@@ -79,15 +90,17 @@ function BasketItem({ product }: BasketItemProps): JSX.Element {
           ref={inputRef}
           type="number"
           id="counter1"
-          placeholder={String(product.count)}
+          value={productsCount}
           aria-label="количество товара"
           onBlur={handleInputBlur}
+          onChange={handleInputChange}
+          onSubmit={handleInputChange}
         />
         <button
           className="btn-icon btn-icon--next"
           aria-label="увеличить количество товара"
           onClick={handleIncreaseButtoneClick}
-          disabled={product.count === maxCount}
+          disabled={product.count === Count.Max}
         >
           <svg width="7" height="12" aria-hidden="true">
             <use xlinkHref="#icon-arrow"></use>
